@@ -1,0 +1,64 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do ula_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/david/Dropbox/UFBA/Semestre\ 2023.2/ENGG56\ -\ PROJETO\ DE\ CIRCUITOS\ INTEGRADOS\ DIGITAIS/TRABALHO\ FINAL/ALU {C:/Users/david/Dropbox/UFBA/Semestre 2023.2/ENGG56 - PROJETO DE CIRCUITOS INTEGRADOS DIGITAIS/TRABALHO FINAL/ALU/ula.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 05:46:44 on Nov 20,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/david/Dropbox/UFBA/Semestre 2023.2/ENGG56 - PROJETO DE CIRCUITOS INTEGRADOS DIGITAIS/TRABALHO FINAL/ALU" C:/Users/david/Dropbox/UFBA/Semestre 2023.2/ENGG56 - PROJETO DE CIRCUITOS INTEGRADOS DIGITAIS/TRABALHO FINAL/ALU/ula.v 
+# -- Compiling module ula
+# 
+# Top level modules:
+# 	ula
+# End time: 05:46:44 on Nov 20,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ** Warning: (vlog-31) Unable to unlink file "C:/Users/david/Dropbox/UFBA/Semestre 2023.2/ENGG56 - PROJETO DE CIRCUITOS INTEGRADOS DIGITAIS/TRABALHO FINAL/ALU/simulation/modelsim/rtl_work/_lock".
+# Permission denied. (errno = EACCES)
+# 
+vsim work.ula
+# vsim work.ula 
+# Start time: 05:46:50 on Nov 20,2023
+# Loading work.ula
+vsim work.ula
+# End time: 05:46:53 on Nov 20,2023, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim work.ula 
+# Start time: 05:46:53 on Nov 20,2023
+# Loading work.ula
+add wave -position end  sim:/ula/A
+add wave -position end  sim:/ula/B
+add wave -position end  sim:/ula/ALU_Sel
+add wave -position end  sim:/ula/ALU_Out
+add wave -position end  sim:/ula/CarryOut
+add wave -position end  sim:/ula/ALU_Result
+force -freeze sim:/ula/A 1010 0
+force -freeze sim:/ula/B 10 0
+force -freeze sim:/ula/ALU_Sel 0111 0
+run
+force -freeze sim:/ula/ALU_Sel 1000 0
+run
+run
+force -freeze sim:/ula/A 10 0
+run
+force -freeze sim:/ula/B 00000011 0
+run
+force -freeze sim:/ula/A 11111111 0
+force -freeze sim:/ula/B 00000001 0
+force -freeze sim:/ula/ALU_Sel 0 0
+run
+force -freeze sim:/ula/ALU_Sel 1001 0
+run
+force -freeze sim:/ula/ALU_Sel 1010 0
+run
+force -freeze sim:/ula/ALU_Sel 1011 0
+run
+# End time: 06:04:15 on Nov 20,2023, Elapsed time: 0:17:22
+# Errors: 0, Warnings: 0
