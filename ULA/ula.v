@@ -1,62 +1,62 @@
-module ula(
-           input [7:0] A,B,  // ALU 8-bit Inputs                 
-           input [3:0] ALU_Sel,// ALU Selection
-           output [7:0] ALU_Out, // ALU 8-bit Output
-           output CarryOut // Carry Out Flag
-    );
-    reg [7:0] ALU_Result;
-    wire [8:0] tmp;
-    assign ALU_Out = ALU_Result; // ALU out
-    assign tmp = {1'b0,A} + {1'b0,B};
-    assign CarryOut = tmp[8]; // Carryout flag
-    always @(*)
-    begin
-		case(ALU_Sel)
-		4'b0000: // ADD
-		  ALU_Result = A + B ; 
-		 
-		4'b0001: // SUB
-		  ALU_Result = A - B ;
-		 
-		4'b0010: // MUL
-		  ALU_Result = A * B;
-		 
-		4'b0011: // DIV
-		  ALU_Result = A / B;
-		 
-		4'b0100: // AND
-		  ALU_Result = A & B;
-		 
-		4'b0101: // NAND
-		  ALU_Result = ~(A & B);
-		 
-		4'b0110: // OR
-		  ALU_Result = A | B;
-		 
-		4'b0111: // XOR 
-		  ALU_Result = A ^ B;
-		 
-		4'b1000: // CMP
-		  if(A > B) begin
-				ALU_Result = 8'd1;
-			end
-			
-			else if(A < B) begin
-				ALU_Result = -8'd1;
-			end
-			else begin
-				ALU_Result = 8'd0;
-			end
-		 
-		4'b1001: // NOT A
-		  ALU_Result = ~A;
-		 
-		4'b1010: // NOT B
-		  ALU_Result = ~B;
-		 
-		default: ALU_Result = 8'd0  ; 
-		 
-		endcase
-	end
+module ula (
+    input [7:0] temp1,
+    input [7:0] temp2,
+    input [4:0] seletor,
+    output reg [7:0] saida,
+    output reg carryOut
+);
+
+always @(*)
+begin
+    case (seletor)
+        5'b00100: // ADD
+            begin
+                saida = temp1 + temp2;
+                carryOut = (temp1 + temp2 > 255) ? 8'd1 : 8'd0;
+            end
+				
+        5'b00101: // SUB
+            saida = temp1 - temp2;
+				
+        5'b00110: // MUL
+            begin
+                saida = temp1 * temp2;
+                carryOut = (temp1 * temp2 > 255) ? 8'd1 : 8'd0;
+            end
+				
+        5'b00111: // DIV
+            saida = temp1 / temp2;
+				
+        5'b01000: // AND
+            saida = temp1 & temp2;
+				
+        5'b01001: // NAND
+            saida = ~(temp1 & temp2);
+				
+        5'b01010: // OR
+            saida = temp1 | temp2;
+				
+        5'b01011: // XOR 
+            saida = temp1 ^ temp2;
+				
+        5'b01100: // CMP
+            if (temp1 > temp2)
+                saida = 8'd1;
+            else if (temp1 < temp2)
+                saida = -8'd1;
+            else
+                saida = 8'd0;
+					 
+        5'b01101: // NOT temp1
+            saida = ~temp1;
+				
+        default:
+            begin
+                saida = 8'd0;
+                carryOut = 8'd0;
+            end
+				
+    endcase
+end
 
 endmodule
