@@ -1,0 +1,13 @@
+module tb_integracao;
+
+	reg clk, rstn, pop, push;
+	reg [4:0] opcode;
+	reg [7:0] din;
+	wire empty, full, carryout;
+	wire [7:0] s_ula;
+	
+	integracao tb(.clk(clk), .rstn(rstn), .pop(pop), .push(push), .opcode(opcode), .din(din),
+					  .empty(empty), .full(full), .carryout(carryout), .s_ula(s_ula));
+
+
+endmodule

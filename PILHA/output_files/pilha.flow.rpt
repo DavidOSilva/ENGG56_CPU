@@ -1,5 +1,5 @@
 Flow report for pilha
-Tue Nov 21 04:53:45 2023
+Wed Nov 22 23:03:23 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Nov 21 04:53:45 2023       ;
+; Flow Status                        ; Successful - Wed Nov 22 23:03:23 2023       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; pilha                                       ;
 ; Top-level Entity Name              ; pilha                                       ;
@@ -62,7 +62,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/21/2023 04:53:37 ;
+; Start date & time ; 11/22/2023 23:03:16 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; pilha               ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 246337688034351.170055321721060        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 246337688034351.170070499518288        ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb             ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb                                     ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
@@ -96,8 +96,8 @@ refer to the applicable agreement for further details.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:08     ; 1.0                     ; 4708 MB             ; 00:00:07                           ;
-; Total                  ; 00:00:08     ; --                      ; --                  ; 00:00:07                           ;
+; Analysis & Elaboration ; 00:00:08     ; 1.0                     ; 4708 MB             ; 00:00:08                           ;
+; Total                  ; 00:00:08     ; --                      ; --                  ; 00:00:08                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

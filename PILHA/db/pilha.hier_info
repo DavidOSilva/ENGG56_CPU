@@ -64,8 +64,8 @@ push => next_dout[5].LATCH_ENABLE
 push => next_dout[6].LATCH_ENABLE
 push => next_dout[7].LATCH_ENABLE
 push => next_dout[0].LATCH_ENABLE
-empty <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-full <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+empty << WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+full << WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 din[0] => stack.DATAIN
 din[1] => stack.DATAIN1
 din[2] => stack.DATAIN2
@@ -74,13 +74,13 @@ din[4] => stack.DATAIN4
 din[5] => stack.DATAIN5
 din[6] => stack.DATAIN6
 din[7] => stack.DATAIN7
-dout[0] <= dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-dout[1] <= dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-dout[2] <= dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-dout[3] <= dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-dout[4] <= dout[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-dout[5] <= dout[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-dout[6] <= dout[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-dout[7] <= dout[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[0] << dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[1] << dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] << dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] << dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[4] << dout[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[5] << dout[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[6] << dout[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[7] << dout[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

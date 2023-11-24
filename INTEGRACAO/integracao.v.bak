@@ -1,0 +1,10 @@
+module integracao(din, rstn, clk, opcode, load, empty, full, s_ula, pop, push);
+
+	input clk, load, rstn, pop, push;
+	input [4:0] opcode;
+	input [7:0] din;
+	output empty, full;
+	output [7:0] s_ula;
+	
+
+endmodule

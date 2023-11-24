@@ -40,8 +40,7 @@ module pilha_tb;
  task read_stack();  //read task
  begin
  pop = 1'b1;
- #10
- pop = 1'b0;
+ #10 pop = 1'b0;
  end
  endtask
    
