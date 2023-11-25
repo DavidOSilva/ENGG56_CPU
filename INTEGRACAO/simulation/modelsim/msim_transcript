@@ -15,11 +15,3 @@
 # ". Lockfile is "C:/Users/david/Dropbox/UFBA/Semestre 2023.2/ENGG56 - PROJETO DE CIRCUITOS INTEGRADOS DIGITAIS/TRABALHO FINAL/ENGG56_CPU/INTEGRACAO/simulation/modelsim/rtl_work/_lock".
 # ** Warning: (vdel-6) -- Waiting for lock by "david@LENOVO-GAMING-3, pid = 24512
 # ". Lockfile is "C:/Users/david/Dropbox/UFBA/Semestre 2023.2/ENGG56 - PROJETO DE CIRCUITOS INTEGRADOS DIGITAIS/TRABALHO FINAL/ENGG56_CPU/INTEGRACAO/simulation/modelsim/rtl_work/_lock".
-vlog -reportprogress 300 -work work {C:/Users/david/Dropbox/UFBA/Semestre 2023.2/ENGG56 - PROJETO DE CIRCUITOS INTEGRADOS DIGITAIS/TRABALHO FINAL/ENGG56_CPU/INTEGRACAO/integracao.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 04:47:36 on Nov 24,2023
-# vlog -reportprogress 300 -work work C:/Users/david/Dropbox/UFBA/Semestre 2023.2/ENGG56 - PROJETO DE CIRCUITOS INTEGRADOS DIGITAIS/TRABALHO FINAL/ENGG56_CPU/INTEGRACAO/integracao.v 
-# ** Warning: (vlog-6) -- Waiting for lock by "david@LENOVO-GAMING-3, pid = 19888
-# ". Lockfile is "C:/Users/david/Dropbox/UFBA/Semestre 2023.2/ENGG56 - PROJETO DE CIRCUITOS INTEGRADOS DIGITAIS/TRABALHO FINAL/ENGG56_CPU/INTEGRACAO/simulation/modelsim/work/_lock".
-# ** Warning: (vdel-6) -- Waiting for lock by "david@LENOVO-GAMING-3, pid = 24512
-# ". Lockfile is "C:/Users/david/Dropbox/UFBA/Semestre 2023.2/ENGG56 - PROJETO DE CIRCUITOS INTEGRADOS DIGITAIS/TRABALHO FINAL/ENGG56_CPU/INTEGRACAO/simulation/modelsim/rtl_work/_lock".
