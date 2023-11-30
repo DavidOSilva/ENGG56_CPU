@@ -1,0 +1,53 @@
+module ALU (
+    input [7:0] in1,
+    input [7:0] in2,
+    input [4:0] selector,
+    output reg signed [7:0] out,
+    output reg carryOut
+);
+
+`include "Definitions.v"
+
+always @(*)
+begin
+    case (selector)
+        `ADD: // ADD
+            begin
+                out = in1 + in2;
+                carryOut = (in1 + in2 > 8'd255) ? 1'b1 : 1'b0;
+            end
+        `SUB: // SUB
+            out = in1 - in2;
+        `MUL: // MUL
+            begin
+                out = in1 * in2;
+                carryOut = (in1 * in2 > 8'd255) ? 1'b1 : 1'b0;
+            end
+        `DIV: // DIV
+            out = in1 / in2;
+        `AND: // AND
+            out = in1 & in2;
+        `NAND: // NAND
+            out = ~(in1 & in2);
+        `OR: // OR
+            out = in1 | in2;
+        `XOR: // XOR 
+            out = in1 ^ in2;
+        `CMP: // CMP
+            if (in1 > in2)
+                out = 8'b00000001;
+            else if (in1 < in2)
+                out = -8'b00000001;
+            else
+                out = 8'b00000000; 
+        `NOT: // NOT in1
+            out = ~in1;
+        default:
+            begin
+                out = 8'b00000000;
+                carryOut = 1'b0;
+            end
+    endcase
+end
+
+endmodule

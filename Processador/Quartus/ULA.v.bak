@@ -1,0 +1,51 @@
+module ULA (
+    input [7:0] temp1,
+    input [7:0] temp2,
+    input [4:0] selector,
+    output reg [7:0] out,
+    output reg carryOut
+);
+
+always @(*)
+begin
+    case (selector)
+        5'b00100: // ADD
+            begin
+                out = temp1 + temp2;
+                carryOut = (temp1 + temp2 > 8'd255) ? 1'b1 : 1'b0;
+            end
+        5'b00101: // SUB
+            out = temp1 - temp2;
+        5'b00110: // MUL
+            begin
+                out = temp1 * temp2;
+                carryOut = (temp1 * temp2 > 8'd255) ? 1'b1 : 1'b0;
+            end
+        5'b00111: // DIV
+            out = temp1 / temp2;
+        5'b01000: // AND
+            out = temp1 & temp2;
+        5'b01001: // NAND
+            out = ~(temp1 & temp2);
+        5'b01010: // OR
+            out = temp1 | temp2;
+        5'b01011: // XOR 
+            out = temp1 ^ temp2;
+        5'b01100: // CMP
+            if (temp1 > temp2)
+                out = 8'b00000001;
+            else if (temp1 < temp2)
+                out = -8'b00000001;
+            else
+                out = 8'b00000000; 
+        5'b01101: // NOT temp1
+            out = ~temp1;
+        default:
+            begin
+                out = 8'b00000000;
+                carryOut = 1'b0;
+            end
+    endcase
+end
+
+endmodule
