@@ -1,0 +1,1978 @@
+# Loading project Processador
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful with warnings.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# vsim work.Testbench 
+# Start time: 04:23:39 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUV'.  Expected 7, found 4.
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench/DUV File: /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v Line: 12
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'carryOut'.
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'empty'.
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'full'.
+# ** Error: (vsim-3043) Unresolved reference to 'opcode'.
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench/DUV/b2v_inst4 File: /home/david/Documents/ufba/ENGG56/ModelSim/CPUControl.v Line: 38
+# Error loading design
+# End time: 04:23:39 on Dec 03,2023, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 10
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful with warnings.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# vsim work.Testbench 
+# Start time: 04:24:10 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUV'.  Expected 7, found 4.
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench/DUV File: /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v Line: 12
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'carryOut'.
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'empty'.
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'full'.
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(20)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 20
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful with warnings.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 04:31:36 on Dec 03,2023, Elapsed time: 0:07:26
+# Errors: 0, Warnings: 7
+# vsim work.Testbench 
+# Start time: 04:31:36 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUV'.  Expected 7, found 4.
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench/DUV File: /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v Line: 12
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'carryOut'.
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'empty'.
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'full'.
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(20)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 20
+step -over
+step -over
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful with warnings.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 04:38:57 on Dec 03,2023, Elapsed time: 0:07:21
+# Errors: 0, Warnings: 6
+# vsim work.Testbench 
+# Start time: 04:38:57 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUV'.  Expected 7, found 4.
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench/DUV File: /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v Line: 12
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'carryOut'.
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'empty'.
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'full'.
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(20)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 20
+step
+step
+step
+step
+step
+step
+step
+run
+run
+run
+run
+run
+run
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v failed with 1 errors.
+# Compile of CPUControl.v was successful with warnings.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 1 failed with 1 error.
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful with warnings.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 04:46:12 on Dec 03,2023, Elapsed time: 0:07:15
+# Errors: 0, Warnings: 7
+# vsim work.Testbench 
+# Start time: 04:46:12 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUV'.  Expected 8, found 4.
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench/DUV File: /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v Line: 12
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'carryOut'.
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'empty'.
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'full'.
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'q_rom_inst'.
+vsim work.Testbench
+# End time: 04:46:31 on Dec 03,2023, Elapsed time: 0:00:19
+# Errors: 0, Warnings: 6
+# vsim work.Testbench 
+# Start time: 04:46:31 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUV'.  Expected 8, found 4.
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench/DUV File: /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v Line: 12
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'carryOut'.
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'empty'.
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'full'.
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'q_rom_inst'.
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful with warnings.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 04:48:12 on Dec 03,2023, Elapsed time: 0:01:41
+# Errors: 0, Warnings: 7
+# vsim work.Testbench 
+# Start time: 04:48:12 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUV'.  Expected 8, found 4.
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench/DUV File: /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v Line: 12
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'carryOut'.
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'empty'.
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'full'.
+# ** Warning: (vsim-3722) /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(12): [TFMPC] - Missing connection for port 'q_rom_inst'.
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(20)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 20
+run
+run
+run
+run
+run
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful with warnings.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 04:50:28 on Dec 03,2023, Elapsed time: 0:02:16
+# Errors: 0, Warnings: 7
+# vsim work.Testbench 
+# Start time: 04:50:28 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful with warnings.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 04:51:08 on Dec 03,2023, Elapsed time: 0:00:40
+# Errors: 0, Warnings: 2
+# vsim work.Testbench 
+# Start time: 04:51:08 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values \
+sim:/Testbench/q_rom_inst
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 04:57:21 on Dec 03,2023, Elapsed time: 0:06:13
+# Errors: 0, Warnings: 2
+# vsim work.Testbench 
+# Start time: 04:57:21 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values \
+sim:/Testbench/q_rom_inst
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/state \
+sim:/Testbench/DUV/b2v_inst4/future_state
+run
+run
+run
+run
+run
+run
+run
+restart
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/ir
+restart
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/values_addr
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/bus_inst_data
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/bus_values_data
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/ip
+restart
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 05:32:31 on Dec 03,2023, Elapsed time: 0:35:10
+# Errors: 0, Warnings: 2
+# vsim work.Testbench 
+# Start time: 05:32:31 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/bus_values_data \
+sim:/Testbench/DUV/b2v_inst4/bus_inst_data \
+sim:/Testbench/DUV/b2v_inst4/values_addr \
+sim:/Testbench/DUV/b2v_inst4/ip
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/state \
+sim:/Testbench/DUV/b2v_inst4/future_state
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/ir
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values \
+sim:/Testbench/q_rom_inst
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+# WARNING: No extended dataflow license exists
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 05:48:40 on Dec 03,2023, Elapsed time: 0:16:09
+# Errors: 0, Warnings: 2
+# vsim work.Testbench 
+# Start time: 05:48:40 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values \
+sim:/Testbench/q_rom_inst
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/ir \
+sim:/Testbench/DUV/b2v_inst4/state \
+sim:/Testbench/DUV/b2v_inst4/future_state
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/ip
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/values_addr
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/bus_values_data \
+sim:/Testbench/DUV/b2v_inst4/bus_inst_data
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+run
+run
+run
+run
+run
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 05:55:56 on Dec 03,2023, Elapsed time: 0:07:16
+# Errors: 0, Warnings: 2
+# vsim work.Testbench 
+# Start time: 05:55:56 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values \
+sim:/Testbench/q_rom_inst
+add wave -position insertpoint sim:/Testbench/DUV/b2v_inst4/*
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/ir \
+sim:/Testbench/DUV/b2v_inst4/state \
+sim:/Testbench/DUV/b2v_inst4/future_state
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/bus_values_data \
+sim:/Testbench/DUV/b2v_inst4/bus_inst_data
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+run
+run
+run
+run
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/david/Documents/ufba/ENGG56/ModelSim/wave.do
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 06:08:22 on Dec 03,2023, Elapsed time: 0:12:26
+# Errors: 0, Warnings: 2
+# vsim work.Testbench 
+# Start time: 06:08:22 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# WARNING: No extended dataflow license exists
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values \
+sim:/Testbench/q_rom_inst
+restart
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/ip \
+sim:/Testbench/DUV/b2v_inst4/ir \
+sim:/Testbench/DUV/b2v_inst4/state \
+sim:/Testbench/DUV/b2v_inst4/future_state
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 06:17:14 on Dec 03,2023, Elapsed time: 0:08:52
+# Errors: 0, Warnings: 2
+# vsim work.Testbench 
+# Start time: 06:17:14 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values \
+sim:/Testbench/q_rom_inst
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/bus_values_data \
+sim:/Testbench/DUV/b2v_inst4/bus_inst_data \
+sim:/Testbench/DUV/b2v_inst4/ip \
+sim:/Testbench/DUV/b2v_inst4/ir \
+sim:/Testbench/DUV/b2v_inst4/state \
+sim:/Testbench/DUV/b2v_inst4/future_state
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 06:24:07 on Dec 03,2023, Elapsed time: 0:06:53
+# Errors: 0, Warnings: 2
+# vsim work.Testbench 
+# Start time: 06:24:07 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values \
+sim:/Testbench/q_rom_inst
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/ip \
+sim:/Testbench/DUV/b2v_inst4/ir
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/state \
+sim:/Testbench/DUV/b2v_inst4/future_state
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 06:31:53 on Dec 03,2023, Elapsed time: 0:07:46
+# Errors: 0, Warnings: 2
+# vsim work.Testbench 
+# Start time: 06:31:53 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values \
+sim:/Testbench/q_rom_inst
+add wave -position insertpoint sim:/Testbench/DUV/b2v_inst4/*
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/bus_values_data \
+sim:/Testbench/DUV/b2v_inst4/bus_inst_data
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/ir
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/ip
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/ir \
+sim:/Testbench/DUV/b2v_inst4/state \
+sim:/Testbench/DUV/b2v_inst4/future_state
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/values_ram_clk \
+sim:/Testbench/DUV/b2v_inst4/inst_ram_clk
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/bus_values_data \
+sim:/Testbench/DUV/b2v_inst4/bus_inst_data
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values \
+sim:/Testbench/q_rom_inst
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/push
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v failed with 1 errors.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 1 failed with 1 error.
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v failed with 1 errors.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 1 failed with 1 error.
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v failed with 1 errors.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 1 failed with 1 error.
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 06:55:30 on Dec 03,2023, Elapsed time: 0:23:37
+# Errors: 0, Warnings: 5
+# vsim work.Testbench 
+# Start time: 06:55:30 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values \
+sim:/Testbench/q_rom_inst
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/bus_values_data \
+sim:/Testbench/DUV/b2v_inst4/bus_inst_data
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/ir \
+sim:/Testbench/DUV/b2v_inst4/state \
+sim:/Testbench/DUV/b2v_inst4/future_state
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/push
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/data_from_stack
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/data_to_push
+restart
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 07:08:13 on Dec 03,2023, Elapsed time: 0:12:43
+# Errors: 0, Warnings: 2
+# vsim work.Testbench 
+# Start time: 07:08:13 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values \
+sim:/Testbench/q_rom_inst
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/ir \
+sim:/Testbench/DUV/b2v_inst4/state \
+sim:/Testbench/DUV/b2v_inst4/future_state
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/data_to_push
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/data_from_stack
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values \
+sim:/Testbench/q_rom_inst
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/ir \
+sim:/Testbench/DUV/b2v_inst4/state \
+sim:/Testbench/DUV/b2v_inst4/future_state
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/data_to_push
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/data_from_stack
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/temp1
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/bus_values_data \
+sim:/Testbench/DUV/b2v_inst4/bus_inst_data
+vsim work.Testbench
+# End time: 07:23:08 on Dec 03,2023, Elapsed time: 0:14:55
+# Errors: 0, Warnings: 3
+# vsim work.Testbench 
+# Start time: 07:23:08 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values \
+sim:/Testbench/q_rom_inst
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/temp1 \
+sim:/Testbench/DUV/b2v_inst4/data_from_stack
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/bus_values_data \
+sim:/Testbench/DUV/b2v_inst4/bus_inst_data
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/ir \
+sim:/Testbench/DUV/b2v_inst4/state \
+sim:/Testbench/DUV/b2v_inst4/future_state
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+run
+run
+run
+run
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 07:50:45 on Dec 03,2023, Elapsed time: 0:27:37
+# Errors: 0, Warnings: 2
+# vsim work.Testbench 
+# Start time: 07:50:45 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values \
+sim:/Testbench/q_rom_inst
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/ir \
+sim:/Testbench/DUV/b2v_inst4/state \
+sim:/Testbench/DUV/b2v_inst4/future_state
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/data_from_stack \
+sim:/Testbench/DUV/b2v_inst4/data_to_push
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst3/din \
+sim:/Testbench/DUV/b2v_inst3/dout
+restart
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/push
+restart
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+run
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/stack_clk
+restart
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 08:04:08 on Dec 03,2023, Elapsed time: 0:13:23
+# Errors: 0, Warnings: 2
+# vsim work.Testbench 
+# Start time: 08:04:08 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values \
+sim:/Testbench/q_rom_inst
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/data_from_stack \
+sim:/Testbench/DUV/b2v_inst4/data_to_push \
+sim:/Testbench/DUV/b2v_inst4/ir \
+sim:/Testbench/DUV/b2v_inst4/state \
+sim:/Testbench/DUV/b2v_inst4/future_state
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/bus_values_data \
+sim:/Testbench/DUV/b2v_inst4/bus_inst_data
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/rst
+restart
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 08:08:58 on Dec 03,2023, Elapsed time: 0:04:50
+# Errors: 0, Warnings: 2
+# vsim work.Testbench 
+# Start time: 08:08:58 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values \
+sim:/Testbench/q_rom_inst
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/ir \
+sim:/Testbench/DUV/b2v_inst4/state \
+sim:/Testbench/DUV/b2v_inst4/future_state
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/push
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/stack_clk
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/data_to_push
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/data_from_stack
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst3/din \
+sim:/Testbench/DUV/b2v_inst3/dout
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst3/stack
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+run
+run
+run
+run
+run
+restart
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+restart
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst3/index
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst3/next_index
+restart
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+restart
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+vsim work.Testbench
+# End time: 08:22:10 on Dec 03,2023, Elapsed time: 0:13:12
+# Errors: 0, Warnings: 2
+# vsim work.Testbench 
+# Start time: 08:22:10 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values \
+sim:/Testbench/q_rom_inst
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst3/din \
+sim:/Testbench/DUV/b2v_inst3/dout
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst3/push
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst3/stack
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst3/index \
+sim:/Testbench/DUV/b2v_inst3/next_index
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/data_from_stack
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/ir \
+sim:/Testbench/DUV/b2v_inst4/state \
+sim:/Testbench/DUV/b2v_inst4/future_state
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+restart
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/stack_clk
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 08:29:52 on Dec 03,2023, Elapsed time: 0:07:42
+# Errors: 0, Warnings: 2
+# vsim work.Testbench 
+# Start time: 08:29:52 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/Testbench/DUV/clk \
+sim:/Testbench/DUV/reset \
+sim:/Testbench/DUV/carryOut \
+sim:/Testbench/DUV/empty \
+sim:/Testbench/DUV/full \
+sim:/Testbench/DUV/q_ram_values \
+sim:/Testbench/DUV/temp1 \
+sim:/Testbench/DUV/q_rom_inst \
+sim:/Testbench/DUV/alu_result \
+sim:/Testbench/DUV/alu_selector \
+sim:/Testbench/DUV/data_bus \
+sim:/Testbench/DUV/data_from_stack \
+sim:/Testbench/DUV/data_to_push \
+sim:/Testbench/DUV/enable_write_reg \
+sim:/Testbench/DUV/inst_addr \
+sim:/Testbench/DUV/inst_bus \
+sim:/Testbench/DUV/inst_ram_clk \
+sim:/Testbench/DUV/pop \
+sim:/Testbench/DUV/push \
+sim:/Testbench/DUV/reg_selector \
+sim:/Testbench/DUV/reset_controller \
+sim:/Testbench/DUV/reset_output \
+sim:/Testbench/DUV/stack_clk \
+sim:/Testbench/DUV/temp1_enter_processor \
+sim:/Testbench/DUV/values_addr \
+sim:/Testbench/DUV/values_data \
+sim:/Testbench/DUV/values_ram_clk \
+sim:/Testbench/DUV/SYNTHESIZED_WIRE_0 \
+sim:/Testbench/DUV/SYNTHESIZED_WIRE_1
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst3/index \
+sim:/Testbench/DUV/b2v_inst3/next_index
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/push
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/ir \
+sim:/Testbench/DUV/b2v_inst4/state \
+sim:/Testbench/DUV/b2v_inst4/future_state
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/stack_clk
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/bus_values_data
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst3/stack
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+run
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v failed with 5 errors.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 1 failed with 5 errors.
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 08:49:17 on Dec 03,2023, Elapsed time: 0:19:25
+# Errors: 0, Warnings: 3
+# vsim work.Testbench 
+# Start time: 08:49:17 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values \
+sim:/Testbench/q_rom_inst
+add wave -position insertpoint sim:/Testbench/DUV/b2v_inst3/*
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst3/stack
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+run
+run
+run
+run
+run
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v failed with 2 errors.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 1 failed with 2 errors.
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 09:48:21 on Dec 03,2023, Elapsed time: 0:59:04
+# Errors: 0, Warnings: 3
+# vsim work.Testbench 
+# Start time: 09:48:21 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (13) does not match connection size (8) for port 'q_rom_inst'. The port definition is at: /home/david/Documents/ufba/ENGG56/ModelSim/Processador.v(28).
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench/DUV File: /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v Line: 13
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values \
+sim:/Testbench/q_rom_inst
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst3/stack
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+run
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (13) does not match connection size (8) for port 'q_rom_inst'. The port definition is at: /home/david/Documents/ufba/ENGG56/ModelSim/Processador.v(28).
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench/DUV File: /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v Line: 13
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst3/index
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/values_addr
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (13) does not match connection size (8) for port 'q_rom_inst'. The port definition is at: /home/david/Documents/ufba/ENGG56/ModelSim/Processador.v(28).
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench/DUV File: /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v Line: 13
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+run
+run
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading work.valuesram(syn)
+# Loading work.instructionsrom(syn)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (13) does not match connection size (8) for port 'q_rom_inst'. The port definition is at: /home/david/Documents/ufba/ENGG56/ModelSim/Processador.v(28).
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench/DUV File: /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v Line: 13
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+run
+# Compile of Testbench.v was successful.
+# Compile of ALU.v was successful.
+# Compile of CPURegisters.v was successful.
+# Compile of Definitions.v was successful.
+# Compile of Stack.v was successful.
+# Compile of Processador.v was successful.
+# Compile of CPUControl.v was successful.
+# Compile of ValuesRAM.vhd was successful.
+# Compile of InstructionsROM.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.Testbench
+# End time: 10:07:50 on Dec 03,2023, Elapsed time: 0:19:29
+# Errors: 0, Warnings: 3
+# vsim work.Testbench 
+# Start time: 10:07:50 on Dec 03,2023
+# Loading work.Testbench
+# Loading work.Processador
+# Loading work.CPURegisters
+# Loading work.ALU
+# Loading work.Stack
+# Loading work.CPUControl
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.valuesram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.instructionsrom(syn)
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/Testbench/clk \
+sim:/Testbench/reset \
+sim:/Testbench/empty \
+sim:/Testbench/full \
+sim:/Testbench/carryOut \
+sim:/Testbench/temp1 \
+sim:/Testbench/q_ram_values \
+sim:/Testbench/q_rom_inst
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst3/stack \
+sim:/Testbench/DUV/b2v_inst3/index
+add wave -position insertpoint  \
+sim:/Testbench/DUV/b2v_inst4/state \
+sim:/Testbench/DUV/b2v_inst4/future_state
+run
+# ** Note: $stop    : /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v(22)
+#    Time: 0 ns  Iteration: 0  Instance: /Testbench
+# Break in Module Testbench at /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v line 22
+run
+run
+run
+run
+run

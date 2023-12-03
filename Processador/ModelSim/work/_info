@@ -1,0 +1,244 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/home/david/Documents/ufba/PCID/TesteMemoria/ModelSim
+vALU
+Z0 !s110 1701608854
+!i10b 1
+!s100 WCWlnzNXH[V;@:7<Zf0O63
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IzdSaeho>RdBBE;[zEaRO33
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 d/home/david/Documents/ufba/ENGG56/ModelSim
+w1701607335
+8/home/david/Documents/ufba/ENGG56/ModelSim/ALU.v
+F/home/david/Documents/ufba/ENGG56/ModelSim/ALU.v
+Z4 FDefinitions.v
+!i122 332
+L0 1 86
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1701608854.000000
+!s107 Definitions.v|/home/david/Documents/ufba/ENGG56/ModelSim/ALU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/david/Documents/ufba/ENGG56/ModelSim/ALU.v|
+!i113 1
+Z7 o-work work
+Z8 tCvgOpt 0
+n@a@l@u
+vCPUControl
+Z9 !s110 1701608855
+!i10b 1
+!s100 QPDbJ:eUA6Fd8CVYDXS4F0
+R1
+IgB4E?3=nbPOhQlab_5d401
+R2
+R3
+w1701607641
+8/home/david/Documents/ufba/ENGG56/ModelSim/CPUControl.v
+F/home/david/Documents/ufba/ENGG56/ModelSim/CPUControl.v
+R4
+!i122 336
+L0 1 291
+R5
+r1
+!s85 0
+31
+Z10 !s108 1701608855.000000
+!s107 Definitions.v|/home/david/Documents/ufba/ENGG56/ModelSim/CPUControl.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/david/Documents/ufba/ENGG56/ModelSim/CPUControl.v|
+!i113 1
+R7
+R8
+n@c@p@u@control
+vCPURegisters
+R0
+!i10b 1
+!s100 hE5IN_Ch7:mPGK@A5@kk@3
+R1
+IMFLY_ak1`Y=C0SjUIWMXG2
+R2
+R3
+w1701245048
+8/home/david/Documents/ufba/ENGG56/ModelSim/CPURegisters.v
+F/home/david/Documents/ufba/ENGG56/ModelSim/CPURegisters.v
+!i122 333
+L0 1 19
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/david/Documents/ufba/ENGG56/ModelSim/CPURegisters.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/david/Documents/ufba/ENGG56/ModelSim/CPURegisters.v|
+!i113 1
+R7
+R8
+n@c@p@u@registers
+Einstructionsrom
+Z11 w1701243955
+Z12 DPx9 altera_mf 20 altera_mf_components 0 22 BN6nPmY:UEbXa[^5b@FTW1
+Z13 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z14 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 338
+R3
+Z15 8/home/david/Documents/ufba/ENGG56/ModelSim/InstructionsROM.vhd
+Z16 F/home/david/Documents/ufba/ENGG56/ModelSim/InstructionsROM.vhd
+l0
+Z17 L43 1
+VzW>=_BT<nBgEcZ162<i=n0
+!s100 SbZ5EB^NGiRIh]UgRga[h3
+Z18 OV;C;2020.1;71
+32
+R9
+!i10b 1
+R10
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/david/Documents/ufba/ENGG56/ModelSim/InstructionsROM.vhd|
+Z20 !s107 /home/david/Documents/ufba/ENGG56/ModelSim/InstructionsROM.vhd|
+!i113 1
+Z21 o-work work -2002 -explicit
+Z22 tExplicit 1 CvgOpt 0
+Asyn
+R12
+R13
+R14
+Z23 DEx4 work 15 instructionsrom 0 22 zW>=_BT<nBgEcZ162<i=n0
+!i122 338
+l57
+Z24 L53 33
+Z25 VHRjAWB?zPOc2N<8lRakn03
+Z26 !s100 jBK^?<eHHTYhBMkG8_=L71
+R18
+32
+R9
+!i10b 1
+R10
+R19
+R20
+!i113 1
+R21
+R22
+vProcessador
+R9
+!i10b 1
+!s100 Ffcd`85@_P82lHGHHlHY=2
+R1
+I[LjTH@[DP2^;5R?:IAn]>2
+R2
+R3
+w1701605582
+8/home/david/Documents/ufba/ENGG56/ModelSim/Processador.v
+F/home/david/Documents/ufba/ENGG56/ModelSim/Processador.v
+!i122 335
+L0 20 120
+R5
+r1
+!s85 0
+31
+R10
+!s107 /home/david/Documents/ufba/ENGG56/ModelSim/Processador.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/david/Documents/ufba/ENGG56/ModelSim/Processador.v|
+!i113 1
+R7
+R8
+n@processador
+vStack
+R9
+!i10b 1
+!s100 hHh^jPj>E<iQ3d6ELT]QT2
+R1
+ITb]`Q:>`47JaN9I3kTiBT0
+R2
+R3
+w1701602210
+8/home/david/Documents/ufba/ENGG56/ModelSim/Stack.v
+F/home/david/Documents/ufba/ENGG56/ModelSim/Stack.v
+!i122 334
+L0 1 71
+R5
+r1
+!s85 0
+31
+R10
+!s107 /home/david/Documents/ufba/ENGG56/ModelSim/Stack.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/david/Documents/ufba/ENGG56/ModelSim/Stack.v|
+!i113 1
+R7
+R8
+n@stack
+vTestbench
+R0
+!i10b 1
+!s100 k46__8djShXgkg12Uzf[V1
+R1
+IJBZCImblz@?UgannPog7V1
+R2
+R3
+w1701608654
+8/home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v
+F/home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v
+!i122 331
+L0 2 30
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/david/Documents/ufba/ENGG56/ModelSim/Testbench.v|
+!i113 1
+R7
+R8
+n@testbench
+Evaluesram
+Z27 w1701585769
+R12
+R13
+R14
+!i122 337
+R3
+Z28 8/home/david/Documents/ufba/ENGG56/ModelSim/ValuesRAM.vhd
+Z29 F/home/david/Documents/ufba/ENGG56/ModelSim/ValuesRAM.vhd
+l0
+R17
+VI6ljIE9ZYXJeDF?0h3^KV2
+!s100 R>OiZTGnlBZEY5DNAaI2P1
+R18
+32
+R9
+!i10b 1
+R10
+Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/david/Documents/ufba/ENGG56/ModelSim/ValuesRAM.vhd|
+Z31 !s107 /home/david/Documents/ufba/ENGG56/ModelSim/ValuesRAM.vhd|
+!i113 1
+R21
+R22
+Asyn
+R12
+R13
+R14
+DEx4 work 9 valuesram 0 22 I6ljIE9ZYXJeDF?0h3^KV2
+!i122 337
+l59
+L55 36
+VM64M0E06g:h0A<0[[EE5m2
+!s100 gGSXSNPAK`kKOfCzjmZ2V1
+R18
+32
+R9
+!i10b 1
+R10
+R30
+R31
+!i113 1
+R21
+R22
