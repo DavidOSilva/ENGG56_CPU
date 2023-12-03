@@ -26,11 +26,16 @@ module Stack(
   reg [WIDTH-1:0] index, next_index; 
   reg [WIDTH-1:0] dout, next_dout;
 
+  initial begin
+    dout  = 8'b0;    // Inicializa o dado de saída em 0
+    index = 1'b0;    // Inicializa o índice em 0
+  end
+
   wire empty, full;
 
   always @(posedge clk) // Bloco sequencial
   begin
-    if (!rstn)
+    if (rstn)
     begin
       dout  <= 8'd0;    // Inicializa o dado de saída em 0
       index <= 1'b0;    // Inicializa o índice em 0

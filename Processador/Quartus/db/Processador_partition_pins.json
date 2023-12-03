@@ -2,7 +2,80 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "q_ram_values[7]",
+					"strict" : false
+				},
+				{
+					"name" : "q_ram_values[6]",
+					"strict" : false
+				},
+				{
+					"name" : "q_ram_values[5]",
+					"strict" : false
+				},
+				{
+					"name" : "q_ram_values[4]",
+					"strict" : false
+				},
+				{
+					"name" : "q_ram_values[3]",
+					"strict" : false
+				},
+				{
+					"name" : "q_ram_values[2]",
+					"strict" : false
+				},
+				{
+					"name" : "q_ram_values[1]",
+					"strict" : false
+				},
+				{
+					"name" : "q_ram_values[0]",
+					"strict" : false
+				},
+				{
+					"name" : "temp1[7]",
+					"strict" : false
+				},
+				{
+					"name" : "temp1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "temp1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "temp1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "temp1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "temp1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "temp1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "temp1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				}
+			]
 		}
 	]
 }

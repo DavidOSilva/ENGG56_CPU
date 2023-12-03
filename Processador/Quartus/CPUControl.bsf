@@ -164,6 +164,13 @@ https://fpgasoftware.intel.com/eula.
 		(text "push" (rect 225 219 243 231)(font "Arial" ))
 		(line (pt 264 224)(pt 248 224)(line_width 1))
 	)
+	(port
+		(pt 264 240)
+		(output)
+		(text "ew_ram_values" (rect 0 0 64 12)(font "Arial" ))
+		(text "ew_ram_values" (rect 179 235 243 247)(font "Arial" ))
+		(line (pt 264 240)(pt 248 240)(line_width 1))
+	)
 	(drawing
 		(rectangle (rect 16 16 248 256)(line_width 1))
 	)

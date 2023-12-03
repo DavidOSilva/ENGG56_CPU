@@ -2,4 +2,220 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow 1200mV 85C Model Setup 'CPUControl:inst4|state.00000'
+Slack : -3.569
+TNS   : -75.504
+
+Type  : Slow 1200mV 85C Model Setup 'CPUControl:inst4|ir[0]'
+Slack : -2.890
+TNS   : -18.510
+
+Type  : Slow 1200mV 85C Model Setup 'CPUControl:inst4|state.00011'
+Slack : -2.855
+TNS   : -24.184
+
+Type  : Slow 1200mV 85C Model Setup 'CPUControl:inst4|ir[1]'
+Slack : -2.702
+TNS   : -18.728
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -2.179
+TNS   : -30.108
+
+Type  : Slow 1200mV 85C Model Setup 'CPUControl:inst4|values_ram_clk'
+Slack : -1.074
+TNS   : -2.525
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : -0.343
+TNS   : -0.343
+
+Type  : Slow 1200mV 85C Model Hold 'CPUControl:inst4|ir[1]'
+Slack : -0.053
+TNS   : -0.053
+
+Type  : Slow 1200mV 85C Model Hold 'CPUControl:inst4|values_ram_clk'
+Slack : 0.632
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CPUControl:inst4|state.00000'
+Slack : 0.834
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CPUControl:inst4|ir[0]'
+Slack : 1.114
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CPUControl:inst4|state.00011'
+Slack : 1.482
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -31.270
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CPUControl:inst4|values_ram_clk'
+Slack : -2.693
+TNS   : -8.079
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CPUControl:inst4|state.00000'
+Slack : 0.363
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CPUControl:inst4|state.00011'
+Slack : 0.407
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CPUControl:inst4|ir[1]'
+Slack : 0.429
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CPUControl:inst4|ir[0]'
+Slack : 0.465
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'CPUControl:inst4|state.00000'
+Slack : -3.181
+TNS   : -66.674
+
+Type  : Slow 1200mV 0C Model Setup 'CPUControl:inst4|state.00011'
+Slack : -2.656
+TNS   : -22.610
+
+Type  : Slow 1200mV 0C Model Setup 'CPUControl:inst4|ir[0]'
+Slack : -2.588
+TNS   : -16.384
+
+Type  : Slow 1200mV 0C Model Setup 'CPUControl:inst4|ir[1]'
+Slack : -2.412
+TNS   : -16.469
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -1.936
+TNS   : -25.429
+
+Type  : Slow 1200mV 0C Model Setup 'CPUControl:inst4|values_ram_clk'
+Slack : -0.898
+TNS   : -2.173
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : -0.259
+TNS   : -0.259
+
+Type  : Slow 1200mV 0C Model Hold 'CPUControl:inst4|ir[1]'
+Slack : -0.051
+TNS   : -0.051
+
+Type  : Slow 1200mV 0C Model Hold 'CPUControl:inst4|values_ram_clk'
+Slack : 0.548
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CPUControl:inst4|state.00000'
+Slack : 0.702
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CPUControl:inst4|ir[0]'
+Slack : 1.241
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CPUControl:inst4|state.00011'
+Slack : 1.443
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -31.270
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CPUControl:inst4|values_ram_clk'
+Slack : -2.649
+TNS   : -7.947
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CPUControl:inst4|state.00000'
+Slack : 0.313
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CPUControl:inst4|state.00011'
+Slack : 0.393
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CPUControl:inst4|ir[0]'
+Slack : 0.405
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CPUControl:inst4|ir[1]'
+Slack : 0.421
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'CPUControl:inst4|state.00000'
+Slack : -1.419
+TNS   : -27.178
+
+Type  : Fast 1200mV 0C Model Setup 'CPUControl:inst4|ir[0]'
+Slack : -1.343
+TNS   : -8.600
+
+Type  : Fast 1200mV 0C Model Setup 'CPUControl:inst4|ir[1]'
+Slack : -1.259
+TNS   : -8.320
+
+Type  : Fast 1200mV 0C Model Setup 'CPUControl:inst4|state.00011'
+Slack : -1.224
+TNS   : -10.076
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -0.703
+TNS   : -8.118
+
+Type  : Fast 1200mV 0C Model Setup 'CPUControl:inst4|values_ram_clk'
+Slack : -0.425
+TNS   : -0.446
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : -0.442
+TNS   : -1.104
+
+Type  : Fast 1200mV 0C Model Hold 'CPUControl:inst4|ir[1]'
+Slack : -0.044
+TNS   : -0.044
+
+Type  : Fast 1200mV 0C Model Hold 'CPUControl:inst4|values_ram_clk'
+Slack : 0.256
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CPUControl:inst4|state.00000'
+Slack : 0.332
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CPUControl:inst4|ir[0]'
+Slack : 0.357
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CPUControl:inst4|state.00011'
+Slack : 0.843
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -25.993
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CPUControl:inst4|values_ram_clk'
+Slack : -1.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CPUControl:inst4|state.00000'
+Slack : 0.291
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CPUControl:inst4|state.00011'
+Slack : 0.308
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CPUControl:inst4|ir[0]'
+Slack : 0.370
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CPUControl:inst4|ir[1]'
+Slack : 0.385
+TNS   : 0.000
+
 ------------------------------------------------------------

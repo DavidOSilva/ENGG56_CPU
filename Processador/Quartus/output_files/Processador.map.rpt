@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Processador
-Wed Nov 29 23:21:36 2023
+Sun Dec  3 09:12:36 2023
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -13,20 +13,21 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis IP Cores Summary
-  9. State Machine - |Processador|CPUControl:inst14|state
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Source assignments for InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated
- 14. Source assignments for ValuesROM:inst|altsyncram:altsyncram_component|altsyncram_mjr3:auto_generated
- 15. Parameter Settings for User Entity Instance: InstructionsROM:inst13|altsyncram:altsyncram_component
- 16. Parameter Settings for User Entity Instance: ValuesROM:inst|altsyncram:altsyncram_component
- 17. Parameter Settings for User Entity Instance: Stack:inst3
- 18. altsyncram Parameter Settings by Entity Instance
- 19. Post-Synthesis Netlist Statistics for Top Partition
- 20. Elapsed Time Per Partition
- 21. Analysis & Synthesis Messages
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |Processador|CPUControl:inst4|state
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Source assignments for InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated
+ 15. Source assignments for ValuesRAM:inst|altsyncram:altsyncram_component|altsyncram_umr3:auto_generated
+ 16. Parameter Settings for User Entity Instance: InstructionsROM:inst13|altsyncram:altsyncram_component
+ 17. Parameter Settings for User Entity Instance: ValuesRAM:inst|altsyncram:altsyncram_component
+ 18. Parameter Settings for User Entity Instance: Stack:inst3
+ 19. altsyncram Parameter Settings by Entity Instance
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -53,18 +54,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Nov 29 23:21:36 2023       ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec  3 09:12:36 2023       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; Processador                                 ;
 ; Top-level Entity Name              ; Processador                                 ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 5                                           ;
+; Total logic elements               ; 102                                         ;
+;     Total combinational functions  ; 102                                         ;
+;     Dedicated logic registers      ; 22                                          ;
+; Total registers                    ; 22                                          ;
+; Total pins                         ; 21                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
+; Total memory bits                  ; 5,120                                       ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
@@ -165,80 +166,103 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                          ;
-+----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                            ; Library ;
-+----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------+---------+
-; Stack.v                          ; yes             ; User Verilog HDL File                  ; /home/david/Documents/ufba/ENGG56/Quartus/Stack.v                       ;         ;
-; Processador.bdf                  ; yes             ; User Block Diagram/Schematic File      ; /home/david/Documents/ufba/ENGG56/Quartus/Processador.bdf               ;         ;
-; Definitions.v                    ; yes             ; User Verilog HDL File                  ; /home/david/Documents/ufba/ENGG56/Quartus/Definitions.v                 ;         ;
-; ALU.v                            ; yes             ; User Verilog HDL File                  ; /home/david/Documents/ufba/ENGG56/Quartus/ALU.v                         ;         ;
-; InstructionsROM.vhd              ; yes             ; User Wizard-Generated File             ; /home/david/Documents/ufba/ENGG56/Quartus/InstructionsROM.vhd           ;         ;
-; ValuesROM.vhd                    ; yes             ; User Wizard-Generated File             ; /home/david/Documents/ufba/ENGG56/Quartus/ValuesROM.vhd                 ;         ;
-; CPURegisters.v                   ; yes             ; User Verilog HDL File                  ; /home/david/Documents/ufba/ENGG56/Quartus/CPURegisters.v                ;         ;
-; CPUControl.v                     ; yes             ; User Verilog HDL File                  ; /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v                  ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; /home/david/Tools/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; /home/david/Tools/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; /home/david/Tools/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; /home/david/Tools/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; aglobal201.inc                   ; yes             ; Megafunction                           ; /home/david/Tools/quartus/libraries/megafunctions/aglobal201.inc        ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; /home/david/Tools/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; /home/david/Tools/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; /home/david/Tools/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; /home/david/Tools/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_2lr3.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf        ;         ;
-; ROM.mif                          ; yes             ; Auto-Found Memory Initialization File  ; /home/david/Documents/ufba/ENGG56/Quartus/ROM.mif                       ;         ;
-; db/altsyncram_mjr3.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_mjr3.tdf        ;         ;
-+----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                      ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                            ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------+---------+
+; Stack.v                          ; yes             ; User Verilog HDL File              ; /home/david/Documents/ufba/ENGG56/Quartus/Stack.v                       ;         ;
+; Processador.bdf                  ; yes             ; User Block Diagram/Schematic File  ; /home/david/Documents/ufba/ENGG56/Quartus/Processador.bdf               ;         ;
+; Definitions.v                    ; yes             ; User Verilog HDL File              ; /home/david/Documents/ufba/ENGG56/Quartus/Definitions.v                 ;         ;
+; ALU.v                            ; yes             ; User Verilog HDL File              ; /home/david/Documents/ufba/ENGG56/Quartus/ALU.v                         ;         ;
+; InstructionsROM.vhd              ; yes             ; User Wizard-Generated File         ; /home/david/Documents/ufba/ENGG56/Quartus/InstructionsROM.vhd           ;         ;
+; CPURegisters.v                   ; yes             ; User Verilog HDL File              ; /home/david/Documents/ufba/ENGG56/Quartus/CPURegisters.v                ;         ;
+; CPUControl.v                     ; yes             ; User Verilog HDL File              ; /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v                  ;         ;
+; ValuesRAM.vhd                    ; yes             ; User Wizard-Generated File         ; /home/david/Documents/ufba/ENGG56/Quartus/ValuesRAM.vhd                 ;         ;
+; ROM.mif                          ; yes             ; User Memory Initialization File    ; /home/david/Documents/ufba/ENGG56/Quartus/ROM.mif                       ;         ;
+; RAM.mif                          ; yes             ; User Memory Initialization File    ; /home/david/Documents/ufba/ENGG56/Quartus/RAM.mif                       ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; /home/david/Tools/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; /home/david/Tools/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; /home/david/Tools/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; /home/david/Tools/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                       ; /home/david/Tools/quartus/libraries/megafunctions/aglobal201.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; /home/david/Tools/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; /home/david/Tools/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                       ; /home/david/Tools/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; /home/david/Tools/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_2lr3.tdf           ; yes             ; Auto-Generated Megafunction        ; /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf        ;         ;
+; db/altsyncram_umr3.tdf           ; yes             ; Auto-Generated Megafunction        ; /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_umr3.tdf        ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                   ;
-+---------------------------------------------+-----------------+
-; Resource                                    ; Usage           ;
-+---------------------------------------------+-----------------+
-;                                             ;                 ;
-; Total combinational functions               ; 0               ;
-; Logic element usage by number of LUT inputs ;                 ;
-;     -- 4 input functions                    ; 0               ;
-;     -- 3 input functions                    ; 0               ;
-;     -- <=2 input functions                  ; 0               ;
-;                                             ;                 ;
-; Logic elements by mode                      ;                 ;
-;     -- normal mode                          ; 0               ;
-;     -- arithmetic mode                      ; 0               ;
-;                                             ;                 ;
-; Total registers                             ; 0               ;
-;     -- Dedicated logic registers            ; 0               ;
-;     -- I/O registers                        ; 0               ;
-;                                             ;                 ;
-; I/O pins                                    ; 5               ;
-;                                             ;                 ;
-; Embedded Multiplier 9-bit elements          ; 0               ;
-;                                             ;                 ;
-; Maximum fan-out node                        ; carryOut~output ;
-; Maximum fan-out                             ; 1               ;
-; Total fan-out                               ; 5               ;
-; Average fan-out                             ; 0.50            ;
-+---------------------------------------------+-----------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 102       ;
+;                                             ;           ;
+; Total combinational functions               ; 102       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 15        ;
+;     -- 3 input functions                    ; 40        ;
+;     -- <=2 input functions                  ; 47        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 95        ;
+;     -- arithmetic mode                      ; 7         ;
+;                                             ;           ;
+; Total registers                             ; 22        ;
+;     -- Dedicated logic registers            ; 22        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 21        ;
+; Total memory bits                           ; 5120      ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 22        ;
+; Total fan-out                               ; 545       ;
+; Average fan-out                             ; 2.93      ;
++---------------------------------------------+-----------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |Processador               ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 5    ; 0            ; |Processador        ; Processador ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                        ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                ; Entity Name     ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |Processador                              ; 102 (0)             ; 22 (0)                    ; 5120        ; 0            ; 0       ; 0         ; 21   ; 0            ; |Processador                                                                                       ; Processador     ; work         ;
+;    |CPUControl:inst4|                     ; 101 (101)           ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|CPUControl:inst4                                                                      ; CPUControl      ; work         ;
+;    |CPURegisters:inst15|                  ; 1 (1)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|CPURegisters:inst15                                                                   ; CPURegisters    ; work         ;
+;    |InstructionsROM:inst13|               ; 0 (0)               ; 0 (0)                     ; 3072        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|InstructionsROM:inst13                                                                ; InstructionsROM ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 3072        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|InstructionsROM:inst13|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
+;          |altsyncram_2lr3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 3072        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated ; altsyncram_2lr3 ; work         ;
+;    |ValuesRAM:inst|                       ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|ValuesRAM:inst                                                                        ; ValuesRAM       ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|ValuesRAM:inst|altsyncram:altsyncram_component                                        ; altsyncram      ; work         ;
+;          |altsyncram_umr3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|ValuesRAM:inst|altsyncram:altsyncram_component|altsyncram_umr3:auto_generated         ; altsyncram_umr3 ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                   ;
++--------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+---------+
+; Name                                                                                             ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF     ;
++--------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+---------+
+; InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|ALTSYNCRAM ; AUTO ; ROM         ; 256          ; 13           ; --           ; --           ; 3328 ; ROM.mif ;
+; ValuesRAM:inst|altsyncram:altsyncram_component|altsyncram_umr3:auto_generated|ALTSYNCRAM         ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; RAM.mif ;
++--------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+---------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -246,34 +270,82 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+-------------------------------------+---------------------+
 ; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                     ; IP Include File     ;
 +--------+--------------+---------+--------------+--------------+-------------------------------------+---------------------+
-; Altera ; ROM: 1-PORT  ; 20.1    ; N/A          ; N/A          ; |Processador|ValuesROM:inst         ; ValuesROM.vhd       ;
+; Altera ; RAM: 1-PORT  ; 20.1    ; N/A          ; N/A          ; |Processador|ValuesRAM:inst         ; ValuesRAM.vhd       ;
 ; Altera ; ROM: 1-PORT  ; 20.1    ; N/A          ; N/A          ; |Processador|InstructionsROM:inst13 ; InstructionsROM.vhd ;
 +--------+--------------+---------+--------------+--------------+-------------------------------------+---------------------+
 
 
 Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Processador|CPUControl:inst14|state                                                                                                                                                                       ;
-+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+
-; Name       ; state.1111 ; state.1110 ; state.1101 ; state.1100 ; state.1011 ; state.1010 ; state.1001 ; state.1000 ; state.0111 ; state.0110 ; state.0101 ; state.0100 ; state.0011 ; state.0010 ; state.0001 ; state.0000 ;
-+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+
-; state.0000 ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ;
-; state.0001 ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 1          ;
-; state.0010 ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 1          ;
-; state.0011 ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 1          ;
-; state.0100 ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 1          ;
-; state.0101 ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 1          ;
-; state.0110 ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ;
-; state.0111 ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ;
-; state.1000 ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ;
-; state.1001 ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ;
-; state.1010 ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ;
-; state.1011 ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ;
-; state.1100 ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ;
-; state.1101 ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ;
-; state.1110 ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ;
-; state.1111 ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ;
-+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Processador|CPUControl:inst4|state                                                                                                                                                                                                                                   ;
++-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+; Name        ; state.10010 ; state.10001 ; state.10000 ; state.01111 ; state.01110 ; state.01101 ; state.01100 ; state.01011 ; state.01010 ; state.01001 ; state.01000 ; state.00111 ; state.00110 ; state.00101 ; state.00100 ; state.00011 ; state.00010 ; state.00001 ; state.00000 ;
++-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+; state.00000 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ;
+; state.00001 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 1           ;
+; state.00010 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 1           ;
+; state.00011 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 1           ;
+; state.00100 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 1           ;
+; state.00101 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; state.00110 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; state.00111 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; state.01000 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; state.01001 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; state.01010 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; state.01011 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; state.01100 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; state.01101 ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; state.01110 ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; state.01111 ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; state.10000 ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; state.10001 ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; state.10010 ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
++-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                      ;
++-----------------------------------------------------+-------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                       ; Free of Timing Hazards ;
++-----------------------------------------------------+-------------------------------------------+------------------------+
+; CPUControl:inst4|ew_ram_values                      ; CPUControl:inst4|WideOr36                 ; yes                    ;
+; CPUControl:inst4|values_ram_clk                     ; CPUControl:inst4|WideOr29                 ; yes                    ;
+; CPUControl:inst4|values_data[7]                     ; CPUControl:inst4|WideOr38                 ; yes                    ;
+; CPUControl:inst4|values_addr[0]                     ; CPUControl:inst4|Selector26               ; yes                    ;
+; CPUControl:inst4|values_addr[1]                     ; CPUControl:inst4|Selector26               ; yes                    ;
+; CPUControl:inst4|values_addr[2]                     ; CPUControl:inst4|Selector26               ; yes                    ;
+; CPUControl:inst4|values_addr[3]                     ; CPUControl:inst4|Selector26               ; yes                    ;
+; CPUControl:inst4|values_addr[4]                     ; CPUControl:inst4|Selector26               ; yes                    ;
+; CPUControl:inst4|values_addr[5]                     ; CPUControl:inst4|Selector26               ; yes                    ;
+; CPUControl:inst4|values_addr[6]                     ; CPUControl:inst4|Selector26               ; yes                    ;
+; CPUControl:inst4|values_addr[7]                     ; CPUControl:inst4|Selector26               ; yes                    ;
+; CPUControl:inst4|values_data[6]                     ; CPUControl:inst4|WideOr38                 ; yes                    ;
+; CPUControl:inst4|values_data[5]                     ; CPUControl:inst4|WideOr38                 ; yes                    ;
+; CPUControl:inst4|values_data[4]                     ; CPUControl:inst4|WideOr38                 ; yes                    ;
+; CPUControl:inst4|values_data[3]                     ; CPUControl:inst4|WideOr38                 ; yes                    ;
+; CPUControl:inst4|values_data[2]                     ; CPUControl:inst4|WideOr38                 ; yes                    ;
+; CPUControl:inst4|values_data[1]                     ; CPUControl:inst4|WideOr38                 ; yes                    ;
+; CPUControl:inst4|values_data[0]                     ; CPUControl:inst4|WideOr38                 ; yes                    ;
+; CPUControl:inst4|ew_reg                             ; CPUControl:inst4|WideOr41                 ; yes                    ;
+; CPUControl:inst4|reg_selector                       ; CPUControl:inst4|WideOr31                 ; yes                    ;
+; CPUControl:inst4|ir[3]                              ; CPUControl:inst4|WideOr40                 ; yes                    ;
+; CPUControl:inst4|ir[2]                              ; CPUControl:inst4|WideOr40                 ; yes                    ;
+; CPUControl:inst4|ir[1]                              ; CPUControl:inst4|WideOr40                 ; yes                    ;
+; CPUControl:inst4|ir[0]                              ; CPUControl:inst4|WideOr40                 ; yes                    ;
+; CPUControl:inst4|future_state.10000_855             ; VCC                                       ; yes                    ;
+; CPUControl:inst4|two_register_instruction           ; CPUControl:inst4|two_register_instruction ; yes                    ;
+; CPUControl:inst4|future_state.00011_943             ; VCC                                       ; yes                    ;
+; CPUControl:inst4|ip[0]                              ; CPUControl:inst4|inst_ram_clk             ; yes                    ;
+; CPUControl:inst4|ip[1]                              ; CPUControl:inst4|inst_ram_clk             ; yes                    ;
+; CPUControl:inst4|ip[2]                              ; CPUControl:inst4|inst_ram_clk             ; yes                    ;
+; CPUControl:inst4|ip[3]                              ; CPUControl:inst4|inst_ram_clk             ; yes                    ;
+; CPUControl:inst4|ip[4]                              ; CPUControl:inst4|inst_ram_clk             ; yes                    ;
+; CPUControl:inst4|ip[5]                              ; CPUControl:inst4|inst_ram_clk             ; yes                    ;
+; CPUControl:inst4|ip[6]                              ; CPUControl:inst4|inst_ram_clk             ; yes                    ;
+; CPUControl:inst4|ip[7]                              ; CPUControl:inst4|inst_ram_clk             ; yes                    ;
+; Number of user-specified and inferred latches = 35  ;                                           ;                        ;
++-----------------------------------------------------+-------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +---------------------------------------------------------------------------------+
@@ -283,53 +355,26 @@ Encoding Type:  One-Hot
 +----------------------------------------+----------------------------------------+
 ; Stack:inst3|index[0..7]                ; Stuck at GND due to stuck port data_in ;
 ; Stack:inst3|dout[0..7]                 ; Stuck at GND due to stuck port data_in ;
+; CPURegisters:inst15|registers[1][7]    ; Lost fanout                            ;
+; CPURegisters:inst15|registers[1][6]    ; Lost fanout                            ;
+; CPURegisters:inst15|registers[1][5]    ; Lost fanout                            ;
+; CPURegisters:inst15|registers[1][4]    ; Lost fanout                            ;
+; CPURegisters:inst15|registers[1][3]    ; Lost fanout                            ;
 ; CPURegisters:inst15|registers[1][2]    ; Lost fanout                            ;
 ; CPURegisters:inst15|registers[1][1]    ; Lost fanout                            ;
 ; CPURegisters:inst15|registers[1][0]    ; Lost fanout                            ;
-; CPURegisters:inst15|registers[1][3]    ; Lost fanout                            ;
-; CPURegisters:inst15|registers[1][4]    ; Lost fanout                            ;
-; CPURegisters:inst15|registers[1][5]    ; Lost fanout                            ;
-; CPURegisters:inst15|registers[1][6]    ; Lost fanout                            ;
-; CPURegisters:inst15|registers[1][7]    ; Lost fanout                            ;
-; CPURegisters:inst15|registers[0][0]    ; Lost fanout                            ;
-; CPURegisters:inst15|registers[0][1]    ; Lost fanout                            ;
-; CPURegisters:inst15|registers[0][2]    ; Lost fanout                            ;
-; CPURegisters:inst15|registers[0][3]    ; Lost fanout                            ;
-; CPURegisters:inst15|registers[0][4]    ; Lost fanout                            ;
-; CPURegisters:inst15|registers[0][5]    ; Lost fanout                            ;
-; CPURegisters:inst15|registers[0][6]    ; Lost fanout                            ;
-; CPURegisters:inst15|registers[0][7]    ; Lost fanout                            ;
-; CPUControl:inst14|state.0011           ; Lost fanout                            ;
-; CPUControl:inst14|state.0100           ; Lost fanout                            ;
-; CPUControl:inst14|state.0101           ; Lost fanout                            ;
-; CPUControl:inst14|state.0110           ; Lost fanout                            ;
-; CPUControl:inst14|state.0111           ; Lost fanout                            ;
-; CPUControl:inst14|state.1000           ; Lost fanout                            ;
-; CPUControl:inst14|state.1001           ; Lost fanout                            ;
-; CPUControl:inst14|state.1010           ; Lost fanout                            ;
-; CPUControl:inst14|state.1100           ; Lost fanout                            ;
-; CPUControl:inst14|state.1101           ; Lost fanout                            ;
-; CPUControl:inst14|state.1110           ; Lost fanout                            ;
-; CPUControl:inst14|state.1111           ; Lost fanout                            ;
-; CPUControl:inst14|state~2              ; Lost fanout                            ;
-; CPUControl:inst14|state~3              ; Lost fanout                            ;
-; CPUControl:inst14|state~4              ; Lost fanout                            ;
-; CPUControl:inst14|state~5              ; Lost fanout                            ;
-; CPUControl:inst14|state.0000           ; Lost fanout                            ;
-; CPUControl:inst14|state.0001           ; Lost fanout                            ;
-; CPUControl:inst14|state.0010           ; Lost fanout                            ;
-; CPUControl:inst14|state.1011           ; Lost fanout                            ;
-; Total Number of Removed Registers = 52 ;                                        ;
+; CPUControl:inst4|state.01001           ; Lost fanout                            ;
+; CPUControl:inst4|state.01100           ; Lost fanout                            ;
+; CPUControl:inst4|state.01101           ; Lost fanout                            ;
+; CPUControl:inst4|state.01110           ; Lost fanout                            ;
+; CPUControl:inst4|state.01111           ; Lost fanout                            ;
+; CPUControl:inst4|state~2               ; Lost fanout                            ;
+; CPUControl:inst4|state~3               ; Lost fanout                            ;
+; CPUControl:inst4|state~4               ; Lost fanout                            ;
+; CPUControl:inst4|state~5               ; Lost fanout                            ;
+; CPUControl:inst4|state~6               ; Lost fanout                            ;
+; Total Number of Removed Registers = 34 ;                                        ;
 +----------------------------------------+----------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                             ;
-+---------------------------+--------------------+----------------------------------------+
-; Register name             ; Reason for Removal ; Registers Removed due to This Register ;
-+---------------------------+--------------------+----------------------------------------+
-; CPUControl:inst14|state~2 ; Lost Fanouts       ; CPUControl:inst14|state.0010           ;
-+---------------------------+--------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -337,12 +382,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 22    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 8     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -357,7 +402,7 @@ Encoding Type:  One-Hot
 
 
 +------------------------------------------------------------------------------------------------------+
-; Source assignments for ValuesROM:inst|altsyncram:altsyncram_component|altsyncram_mjr3:auto_generated ;
+; Source assignments for ValuesRAM:inst|altsyncram:altsyncram_component|altsyncram_umr3:auto_generated ;
 +---------------------------------+--------------------+------+----------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                     ;
 +---------------------------------+--------------------+------+----------------------------------------+
@@ -427,7 +472,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +---------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: ValuesROM:inst|altsyncram:altsyncram_component ;
+; Parameter Settings for User Entity Instance: ValuesRAM:inst|altsyncram:altsyncram_component ;
 +------------------------------------+----------------------+---------------------------------+
 ; Parameter Name                     ; Value                ; Type                            ;
 +------------------------------------+----------------------+---------------------------------+
@@ -437,7 +482,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                    ;
 ; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                  ;
 ; WIDTH_BYTEENA                      ; 1                    ; Untyped                         ;
-; OPERATION_MODE                     ; ROM                  ; Untyped                         ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                         ;
 ; WIDTH_A                            ; 8                    ; Signed Integer                  ;
 ; WIDTHAD_A                          ; 8                    ; Signed Integer                  ;
 ; NUMWORDS_A                         ; 256                  ; Signed Integer                  ;
@@ -469,7 +514,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                         ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                         ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                         ;
-; INIT_FILE                          ; ROM.mif              ; Untyped                         ;
+; INIT_FILE                          ; RAM.mif              ; Untyped                         ;
 ; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                         ;
 ; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer                  ;
 ; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                         ;
@@ -482,7 +527,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                         ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                  ;
 ; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                         ;
-; CBXI_PARAMETER                     ; altsyncram_mjr3      ; Untyped                         ;
+; CBXI_PARAMETER                     ; altsyncram_umr3      ; Untyped                         ;
 +------------------------------------+----------------------+---------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -515,8 +560,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- OUTDATA_REG_B                      ; UNREGISTERED                                           ;
 ;     -- RAM_BLOCK_TYPE                     ; AUTO                                                   ;
 ;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                              ;
-; Entity Instance                           ; ValuesROM:inst|altsyncram:altsyncram_component         ;
-;     -- OPERATION_MODE                     ; ROM                                                    ;
+; Entity Instance                           ; ValuesRAM:inst|altsyncram:altsyncram_component         ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                            ;
 ;     -- WIDTH_A                            ; 8                                                      ;
 ;     -- NUMWORDS_A                         ; 256                                                    ;
 ;     -- OUTDATA_REG_A                      ; UNREGISTERED                                           ;
@@ -534,13 +579,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 5                           ;
-; cycloneiii_lcell_comb ; 2                           ;
-;     normal            ; 2                           ;
+; boundary_port         ; 21                          ;
+; cycloneiii_ff         ; 22                          ;
+;     ENA               ; 8                           ;
+;     plain             ; 14                          ;
+; cycloneiii_lcell_comb ; 104                         ;
+;     arith             ; 7                           ;
+;         2 data inputs ; 7                           ;
+;     normal            ; 97                          ;
 ;         0 data inputs ; 2                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 38                          ;
+;         3 data inputs ; 40                          ;
+;         4 data inputs ; 15                          ;
+; cycloneiii_ram_block  ; 20                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.82                        ;
 +-----------------------+-----------------------------+
 
 
@@ -559,7 +614,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Nov 29 23:21:31 2023
+    Info: Processing started: Sun Dec  3 09:12:30 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processador -c Processador
 Warning (125092): Tcl Script File RAM.qip not found
     Info (125063): set_global_assignment -name QIP_FILE RAM.qip
@@ -567,95 +622,131 @@ Warning (18236): Number of processors has not been specified which may cause ove
 Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file Stack.v
     Info (12023): Found entity 1: Stack File: /home/david/Documents/ufba/ENGG56/Quartus/Stack.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file Registers.v
-    Info (12023): Found entity 1: Registers File: /home/david/Documents/ufba/ENGG56/Quartus/Registers.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file Processador.bdf
     Info (12023): Found entity 1: Processador
-Info (12021): Found 1 design units, including 1 entities, in source file Register.v
-    Info (12023): Found entity 1: Register File: /home/david/Documents/ufba/ENGG56/Quartus/Register.v Line: 1
 Info (12021): Found 0 design units, including 0 entities, in source file Definitions.v
 Info (12021): Found 1 design units, including 1 entities, in source file ALU.v
     Info (12023): Found entity 1: ALU File: /home/david/Documents/ufba/ENGG56/Quartus/ALU.v Line: 1
 Info (12021): Found 2 design units, including 1 entities, in source file InstructionsROM.vhd
     Info (12022): Found design unit 1: instructionsrom-SYN File: /home/david/Documents/ufba/ENGG56/Quartus/InstructionsROM.vhd Line: 53
     Info (12023): Found entity 1: InstructionsROM File: /home/david/Documents/ufba/ENGG56/Quartus/InstructionsROM.vhd Line: 43
-Info (12021): Found 2 design units, including 1 entities, in source file ValuesROM.vhd
-    Info (12022): Found design unit 1: valuesrom-SYN File: /home/david/Documents/ufba/ENGG56/Quartus/ValuesROM.vhd Line: 53
-    Info (12023): Found entity 1: ValuesROM File: /home/david/Documents/ufba/ENGG56/Quartus/ValuesROM.vhd Line: 43
 Info (12021): Found 1 design units, including 1 entities, in source file CPURegisters.v
     Info (12023): Found entity 1: CPURegisters File: /home/david/Documents/ufba/ENGG56/Quartus/CPURegisters.v Line: 1
-Warning (10229): Verilog HDL Expression warning at CPUControl.v(109): truncated literal to match 4 bits File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 109
-Warning (10229): Verilog HDL Expression warning at CPUControl.v(111): truncated literal to match 4 bits File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 111
-Warning (10229): Verilog HDL Expression warning at CPUControl.v(113): truncated literal to match 4 bits File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 113
-Warning (10229): Verilog HDL Expression warning at CPUControl.v(115): truncated literal to match 4 bits File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 115
-Warning (10229): Verilog HDL Expression warning at CPUControl.v(117): truncated literal to match 4 bits File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 117
-Warning (10229): Verilog HDL Expression warning at CPUControl.v(119): truncated literal to match 4 bits File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 119
-Warning (10229): Verilog HDL Expression warning at CPUControl.v(121): truncated literal to match 4 bits File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 121
-Warning (10229): Verilog HDL Expression warning at CPUControl.v(140): truncated literal to match 4 bits File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 140
-Warning (10229): Verilog HDL Expression warning at CPUControl.v(192): truncated literal to match 4 bits File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 192
-Warning (10229): Verilog HDL Expression warning at CPUControl.v(200): truncated literal to match 4 bits File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 200
-Warning (10229): Verilog HDL Expression warning at CPUControl.v(206): truncated literal to match 4 bits File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 206
-Warning (10229): Verilog HDL Expression warning at CPUControl.v(208): truncated literal to match 4 bits File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 208
 Info (12021): Found 1 design units, including 1 entities, in source file CPUControl.v
     Info (12023): Found entity 1: CPUControl File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file ValuesRAM.vhd
+    Info (12022): Found design unit 1: valuesram-SYN File: /home/david/Documents/ufba/ENGG56/Quartus/ValuesRAM.vhd Line: 55
+    Info (12023): Found entity 1: ValuesRAM File: /home/david/Documents/ufba/ENGG56/Quartus/ValuesRAM.vhd Line: 43
 Info (12127): Elaborating entity "Processador" for the top level hierarchy
 Info (12128): Elaborating entity "ALU" for hierarchy "ALU:inst2"
 Warning (10240): Verilog HDL Always Construct warning at ALU.v(13): inferring latch(es) for variable "carryOut", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/ALU.v Line: 13
 Info (10041): Inferred latch for "carryOut" at ALU.v(13) File: /home/david/Documents/ufba/ENGG56/Quartus/ALU.v Line: 13
 Info (12128): Elaborating entity "CPURegisters" for hierarchy "CPURegisters:inst15"
-Info (12128): Elaborating entity "CPUControl" for hierarchy "CPUControl:inst14"
-Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(56): variable "bus_inst_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 56
-Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(129): variable "data_from_stack" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 129
-Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(135): variable "data_from_stack" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 135
-Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(138): variable "two_register_instruction" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 138
-Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(150): variable "data_from_stack" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 150
-Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(157): variable "data_from_stack" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 157
-Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(177): variable "bus_inst_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 177
-Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(185): variable "temp1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 185
-Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(195): variable "bus_inst_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 195
-Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(214): variable "ip" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 214
-Warning (10272): Verilog HDL Case Statement warning at CPUControl.v(208): case item expression covers a value already covered by a previous case item File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 208
-Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(43): inferring latch(es) for variable "ip", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(43): inferring latch(es) for variable "reg_selector", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(43): inferring latch(es) for variable "ew_reg", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(43): inferring latch(es) for variable "values_data", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(43): inferring latch(es) for variable "pop", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(43): inferring latch(es) for variable "alu_selector", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(43): inferring latch(es) for variable "push", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(43): inferring latch(es) for variable "values_addr", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "values_addr[0]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "values_addr[1]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "values_addr[2]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "values_addr[3]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "values_addr[4]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "values_addr[5]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "values_addr[6]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "values_addr[7]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "push" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "alu_selector[0]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "alu_selector[1]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "alu_selector[2]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "alu_selector[3]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "alu_selector[4]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "pop" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "values_data[0]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "values_data[1]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "values_data[2]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "values_data[3]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "values_data[4]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "values_data[5]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "values_data[6]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "values_data[7]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "ew_reg" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "reg_selector" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "ip[0]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "ip[1]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "ip[2]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "ip[3]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "ip[4]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "ip[5]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "ip[6]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
-Info (10041): Inferred latch for "ip[7]" at CPUControl.v(43) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 43
+Info (12128): Elaborating entity "CPUControl" for hierarchy "CPUControl:inst4"
+Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(65): variable "bus_inst_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 65
+Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(68): variable "ir" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 68
+Warning (10270): Verilog HDL Case Statement warning at CPUControl.v(68): incomplete case statement has no default case item File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 68
+Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(138): variable "data_from_stack" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 138
+Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(144): variable "data_from_stack" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 144
+Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(147): variable "two_register_instruction" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 147
+Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(148): variable "ir" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 148
+Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(159): variable "data_from_stack" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 159
+Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(166): variable "data_from_stack" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 166
+Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(171): variable "ir" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 171
+Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(175): variable "ir" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 175
+Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(184): variable "ir" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 184
+Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(186): variable "bus_inst_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 186
+Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(190): variable "bus_inst_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 190
+Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(194): variable "temp1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 194
+Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(198): variable "alu_result" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 198
+Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(208): variable "bus_inst_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 208
+Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(223): variable "bus_inst_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 223
+Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(224): variable "temp1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 224
+Warning (10235): Verilog HDL Always Construct warning at CPUControl.v(240): variable "ip" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 240
+Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(44): inferring latch(es) for variable "future_state", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(44): inferring latch(es) for variable "ip", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(44): inferring latch(es) for variable "data_to_push", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(44): inferring latch(es) for variable "rst", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(44): inferring latch(es) for variable "stack_clk", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(44): inferring latch(es) for variable "values_ram_clk", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(44): inferring latch(es) for variable "inst_ram_clk", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(44): inferring latch(es) for variable "alu_selector", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(44): inferring latch(es) for variable "reg_selector", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(44): inferring latch(es) for variable "pop", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(44): inferring latch(es) for variable "push", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(44): inferring latch(es) for variable "ew_ram_values", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(44): inferring latch(es) for variable "values_addr", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(44): inferring latch(es) for variable "values_data", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(44): inferring latch(es) for variable "ir", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(44): inferring latch(es) for variable "two_register_instruction", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(44): inferring latch(es) for variable "ew_reg", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "ew_reg" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "two_register_instruction" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "ir[0]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "ir[1]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "ir[2]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "ir[3]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "ir[4]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "values_data[0]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "values_data[1]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "values_data[2]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "values_data[3]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "values_data[4]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "values_data[5]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "values_data[6]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "values_data[7]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "values_addr[0]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "values_addr[1]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "values_addr[2]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "values_addr[3]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "values_addr[4]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "values_addr[5]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "values_addr[6]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "values_addr[7]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "ew_ram_values" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "push" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "pop" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "reg_selector" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "alu_selector[0]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "alu_selector[1]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "alu_selector[2]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "alu_selector[3]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "alu_selector[4]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "inst_ram_clk" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "values_ram_clk" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "stack_clk" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "rst" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "data_to_push[0]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "data_to_push[1]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "data_to_push[2]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "data_to_push[3]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "data_to_push[4]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "data_to_push[5]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "data_to_push[6]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "data_to_push[7]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "ip[0]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "ip[1]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "ip[2]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "ip[3]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "ip[4]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "ip[5]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "ip[6]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "ip[7]" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "future_state.10010" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "future_state.10001" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "future_state.10000" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "future_state.01101" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "future_state.01011" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "future_state.01010" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "future_state.01000" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "future_state.00111" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "future_state.00110" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "future_state.00101" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "future_state.00100" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "future_state.00011" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "future_state.00010" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "future_state.00001" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Info (10041): Inferred latch for "future_state.00000" at CPUControl.v(44) File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
 Info (12128): Elaborating entity "InstructionsROM" for hierarchy "InstructionsROM:inst13"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "InstructionsROM:inst13|altsyncram:altsyncram_component" File: /home/david/Documents/ufba/ENGG56/Quartus/InstructionsROM.vhd Line: 60
 Info (12130): Elaborated megafunction instantiation "InstructionsROM:inst13|altsyncram:altsyncram_component" File: /home/david/Documents/ufba/ENGG56/Quartus/InstructionsROM.vhd Line: 60
@@ -713,13 +804,11 @@ Info (12133): Instantiated megafunction "InstructionsROM:inst13|altsyncram:altsy
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_2lr3.tdf
     Info (12023): Found entity 1: altsyncram_2lr3 File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_2lr3" for hierarchy "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated" File: /home/david/Tools/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113016): Width of data items in "ROM.mif" is smaller than the memory width. Padding data items with 0 on MSB to fit in memory.  File: /home/david/Documents/ufba/ENGG56/Quartus/ROM.mif Line: 24
-Critical Warning (127005): Memory depth (256) in the design file differs from memory depth (32) in the Memory Initialization File "/home/david/Documents/ufba/ENGG56/Quartus/ROM.mif" -- setting initial value for remaining addresses to 0 File: /home/david/Documents/ufba/ENGG56/Quartus/InstructionsROM.vhd Line: 60
-Info (12128): Elaborating entity "ValuesROM" for hierarchy "ValuesROM:inst"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "ValuesROM:inst|altsyncram:altsyncram_component" File: /home/david/Documents/ufba/ENGG56/Quartus/ValuesROM.vhd Line: 60
-Info (12130): Elaborated megafunction instantiation "ValuesROM:inst|altsyncram:altsyncram_component" File: /home/david/Documents/ufba/ENGG56/Quartus/ValuesROM.vhd Line: 60
-Info (12133): Instantiated megafunction "ValuesROM:inst|altsyncram:altsyncram_component" with the following parameter: File: /home/david/Documents/ufba/ENGG56/Quartus/ValuesROM.vhd Line: 60
-    Info (12134): Parameter "address_aclr_a" = "NONE"
+Info (12128): Elaborating entity "ValuesRAM" for hierarchy "ValuesRAM:inst"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "ValuesRAM:inst|altsyncram:altsyncram_component" File: /home/david/Documents/ufba/ENGG56/Quartus/ValuesRAM.vhd Line: 62
+Info (12130): Elaborated megafunction instantiation "ValuesRAM:inst|altsyncram:altsyncram_component" File: /home/david/Documents/ufba/ENGG56/Quartus/ValuesRAM.vhd Line: 62
+Info (12133): Instantiated megafunction "ValuesRAM:inst|altsyncram:altsyncram_component" with the following parameter: File: /home/david/Documents/ufba/ENGG56/Quartus/ValuesRAM.vhd Line: 62
+    Info (12134): Parameter "address_aclr_a" = "UNUSED"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
     Info (12134): Parameter "byte_size" = "8"
@@ -739,12 +828,12 @@ Info (12133): Instantiated megafunction "ValuesROM:inst|altsyncram:altsyncram_co
     Info (12134): Parameter "indata_aclr_a" = "UNUSED"
     Info (12134): Parameter "indata_aclr_b" = "NONE"
     Info (12134): Parameter "indata_reg_b" = "CLOCK1"
-    Info (12134): Parameter "init_file" = "ROM.mif"
+    Info (12134): Parameter "init_file" = "RAM.mif"
     Info (12134): Parameter "init_file_layout" = "PORT_A"
     Info (12134): Parameter "maximum_depth" = "0"
     Info (12134): Parameter "numwords_a" = "256"
     Info (12134): Parameter "numwords_b" = "0"
-    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
     Info (12134): Parameter "outdata_aclr_a" = "NONE"
     Info (12134): Parameter "outdata_aclr_b" = "NONE"
     Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
@@ -769,9 +858,9 @@ Info (12133): Instantiated megafunction "ValuesROM:inst|altsyncram:altsyncram_co
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_mjr3.tdf
-    Info (12023): Found entity 1: altsyncram_mjr3 File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_mjr3.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_mjr3" for hierarchy "ValuesROM:inst|altsyncram:altsyncram_component|altsyncram_mjr3:auto_generated" File: /home/david/Tools/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_umr3.tdf
+    Info (12023): Found entity 1: altsyncram_umr3 File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_umr3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_umr3" for hierarchy "ValuesRAM:inst|altsyncram:altsyncram_component|altsyncram_umr3:auto_generated" File: /home/david/Tools/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12128): Elaborating entity "Stack" for hierarchy "Stack:inst3"
 Warning (10240): Verilog HDL Always Construct warning at Stack.v(50): inferring latch(es) for variable "next_dout", which holds its previous value in one or more paths through the always construct File: /home/david/Documents/ufba/ENGG56/Quartus/Stack.v Line: 50
 Info (10041): Inferred latch for "next_dout[0]" at Stack.v(55) File: /home/david/Documents/ufba/ENGG56/Quartus/Stack.v Line: 55
@@ -782,47 +871,104 @@ Info (10041): Inferred latch for "next_dout[4]" at Stack.v(55) File: /home/david
 Info (10041): Inferred latch for "next_dout[5]" at Stack.v(55) File: /home/david/Documents/ufba/ENGG56/Quartus/Stack.v Line: 55
 Info (10041): Inferred latch for "next_dout[6]" at Stack.v(55) File: /home/david/Documents/ufba/ENGG56/Quartus/Stack.v Line: 55
 Info (10041): Inferred latch for "next_dout[7]" at Stack.v(55) File: /home/david/Documents/ufba/ENGG56/Quartus/Stack.v Line: 55
-Warning (14026): LATCH primitive "ALU:inst2|carryOut" is permanently enabled File: /home/david/Documents/ufba/ENGG56/Quartus/ALU.v Line: 7
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "ValuesROM:inst|altsyncram:altsyncram_component|altsyncram_mjr3:auto_generated|q_a[0]" File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_mjr3.tdf Line: 35
-        Warning (14320): Synthesized away node "ValuesROM:inst|altsyncram:altsyncram_component|altsyncram_mjr3:auto_generated|q_a[1]" File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_mjr3.tdf Line: 57
-        Warning (14320): Synthesized away node "ValuesROM:inst|altsyncram:altsyncram_component|altsyncram_mjr3:auto_generated|q_a[2]" File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_mjr3.tdf Line: 79
-        Warning (14320): Synthesized away node "ValuesROM:inst|altsyncram:altsyncram_component|altsyncram_mjr3:auto_generated|q_a[3]" File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_mjr3.tdf Line: 101
-        Warning (14320): Synthesized away node "ValuesROM:inst|altsyncram:altsyncram_component|altsyncram_mjr3:auto_generated|q_a[4]" File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_mjr3.tdf Line: 123
-        Warning (14320): Synthesized away node "ValuesROM:inst|altsyncram:altsyncram_component|altsyncram_mjr3:auto_generated|q_a[5]" File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_mjr3.tdf Line: 145
-        Warning (14320): Synthesized away node "ValuesROM:inst|altsyncram:altsyncram_component|altsyncram_mjr3:auto_generated|q_a[6]" File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_mjr3.tdf Line: 167
-        Warning (14320): Synthesized away node "ValuesROM:inst|altsyncram:altsyncram_component|altsyncram_mjr3:auto_generated|q_a[7]" File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_mjr3.tdf Line: 189
-        Warning (14320): Synthesized away node "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|q_a[0]" File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 35
-        Warning (14320): Synthesized away node "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|q_a[1]" File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 57
-        Warning (14320): Synthesized away node "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|q_a[2]" File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 79
-        Warning (14320): Synthesized away node "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|q_a[3]" File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 101
-        Warning (14320): Synthesized away node "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|q_a[4]" File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 123
-        Warning (14320): Synthesized away node "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|q_a[5]" File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 145
-        Warning (14320): Synthesized away node "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|q_a[6]" File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 167
-        Warning (14320): Synthesized away node "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|q_a[7]" File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 189
-        Warning (14320): Synthesized away node "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|q_a[8]" File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 211
-        Warning (14320): Synthesized away node "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|q_a[9]" File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 233
-        Warning (14320): Synthesized away node "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|q_a[10]" File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 255
-        Warning (14320): Synthesized away node "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|q_a[11]" File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 277
         Warning (14320): Synthesized away node "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|q_a[12]" File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 299
+Warning (13012): Latch CPUControl:inst4|ew_ram_values has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.10000 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|values_ram_clk has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.10001 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|values_data[7] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.10000 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|values_addr[0] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|values_addr[1] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|values_addr[2] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|values_addr[3] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|values_addr[4] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|values_addr[5] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|values_addr[6] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|values_addr[7] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|values_data[6] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.10000 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|values_data[5] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.10000 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|values_data[4] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.10000 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|values_data[3] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.10000 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|values_data[2] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.10000 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|values_data[1] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.10000 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|values_data[0] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.10000 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|ew_reg has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00101 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|reg_selector has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00110 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|ir[3] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00001 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|ir[2] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00001 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|ir[1] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00001 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|ir[0] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00001 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|two_register_instruction has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 35
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|ir[0] File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+Warning (13012): Latch CPUControl:inst4|ip[0] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.10010 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|ip[1] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.10010 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|ip[2] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.10010 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|ip[3] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.10010 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|ip[4] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.10010 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|ip[5] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.10010 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|ip[6] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.10010 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
+Warning (13012): Latch CPUControl:inst4|ip[7] has unsafe behavior File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.10010 File: /home/david/Documents/ufba/ENGG56/Quartus/CPUControl.v Line: 16
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "carryOut" is stuck at GND
     Warning (13410): Pin "empty" is stuck at VCC
     Warning (13410): Pin "full" is stuck at GND
-Info (17049): 36 registers lost all their fanouts during netlist optimizations.
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 18 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "reset"
-    Warning (15610): No output dependent on input pin "clk"
-Info (21057): Implemented 5 device resources after synthesis - the final resource count might be different
+Warning (15400): WYSIWYG primitive "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|ram_block1a0" has a port clk0 that is stuck at GND File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 32
+Warning (15400): WYSIWYG primitive "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|ram_block1a1" has a port clk0 that is stuck at GND File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 32
+Warning (15400): WYSIWYG primitive "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|ram_block1a2" has a port clk0 that is stuck at GND File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 32
+Warning (15400): WYSIWYG primitive "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|ram_block1a3" has a port clk0 that is stuck at GND File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 32
+Warning (15400): WYSIWYG primitive "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|ram_block1a4" has a port clk0 that is stuck at GND File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 32
+Warning (15400): WYSIWYG primitive "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|ram_block1a5" has a port clk0 that is stuck at GND File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 32
+Warning (15400): WYSIWYG primitive "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|ram_block1a6" has a port clk0 that is stuck at GND File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 32
+Warning (15400): WYSIWYG primitive "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|ram_block1a7" has a port clk0 that is stuck at GND File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 32
+Warning (15400): WYSIWYG primitive "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|ram_block1a11" has a port clk0 that is stuck at GND File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 32
+Warning (15400): WYSIWYG primitive "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|ram_block1a10" has a port clk0 that is stuck at GND File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 32
+Warning (15400): WYSIWYG primitive "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|ram_block1a9" has a port clk0 that is stuck at GND File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 32
+Warning (15400): WYSIWYG primitive "InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|ram_block1a8" has a port clk0 that is stuck at GND File: /home/david/Documents/ufba/ENGG56/Quartus/db/altsyncram_2lr3.tdf Line: 32
+Info (21057): Implemented 151 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 3 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 68 warnings
-    Info: Peak virtual memory: 438 megabytes
-    Info: Processing ended: Wed Nov 29 23:21:36 2023
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:14
+    Info (21059): Implemented 19 output pins
+    Info (21061): Implemented 110 logic cells
+    Info (21064): Implemented 20 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 126 warnings
+    Info: Peak virtual memory: 540 megabytes
+    Info: Processing ended: Sun Dec  3 09:12:36 2023
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:15
 
 
