@@ -148,12 +148,8 @@ output reg ew_ram_values);
                 values_data = data_from_stack;
                 pop = 1'b1;
                 stack_clk = 1'b1;
-                if (two_register_instruction) begin
-                    if(ir == `OP_POP)
-                        future_state = `STATE_NEXT;
-                    else
-                        future_state = `STATE_POP_TO_TEMP2_1;
-                end
+                if (two_register_instruction)
+                    future_state = `STATE_POP_TO_TEMP2_1;
                 else
                     future_state = `STATE_EXECUTE_1_REG_INSTRUCTION;
             end
