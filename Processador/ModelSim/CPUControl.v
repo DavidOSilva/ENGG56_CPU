@@ -13,6 +13,9 @@ output reg ew_ram_values);
     reg [4:0] ir = 5'b00000;
     reg [4:0] state = `STATE_FETCH_INST;
     reg [4:0] future_state = `STATE_DECODE;
+    reg is_jmp_inst = 1'b0;
+    reg two_register_instruction = 1'b0;
+    reg temp_memory = 8'b0;
 
     initial begin
         ip = 8'b00000000;
@@ -30,7 +33,6 @@ output reg ew_ram_values);
         values_data = 8'b00000000;
     end
     
-    reg two_register_instruction = 1'b0;
     
     always @(posedge clk) begin
       if(reset)
@@ -57,12 +59,14 @@ output reg ew_ram_values);
                 ew_ram_values = 1'b0;
                 values_addr = 8'b00000000;
                 values_data = 8'b00000000;
+                is_jmp_inst = 1'b0;
                 ir = 5'b00000;
             end
             `STATE_FETCH_INST: begin
                 stack_clk = 1'b0;
                 push = 1'b0;
                 pop = 1'b0;
+                is_jmp_inst = 1'b0;
                 inst_ram_clk = 1'b1;
                 future_state = `STATE_DECODE;
             end
@@ -118,22 +122,24 @@ output reg ew_ram_values);
                         two_register_instruction = 1'b0;
                         future_state = `STATE_POP_TO_TEMP1_1;
                     end
-                    `OP_GOTO:
-                        future_state = `STATE_NEXT;
-                    `OP_IF_EQ:
-                        future_state = `STATE_NEXT;
-                    `OP_IF_GT:
-                        future_state = `STATE_NEXT;
-                    `OP_IF_LT:
-                        future_state = `STATE_NEXT;
-                    `OP_IF_GE:
-                        future_state = `STATE_NEXT;
-                    `OP_IF_LE:
-                        future_state = `STATE_NEXT;
-                    `OP_CALL:
-                        future_state = `STATE_NEXT;
-                    `OP_RET:
-                        future_state = `STATE_NEXT;
+                    `OP_GOTO: begin
+                        future_state = `STATE_CONFIG_DATA_MEM_READ;
+                    end
+                    `OP_IF_EQ, `OP_IF_GT, `OP_IF_GT, `OP_IF_LT, `OP_IF_GE, `OP_IF_LE: begin
+                        alu_selector = `OP_CMP;
+                        reg_selector = 1'b1;
+                        values_data = 8'b0;
+                        ew_reg = 1'b1;
+                        two_register_instruction = 1'b0;
+                        is_jmp_inst = 1'b1;
+                        future_state = `STATE_POP_TO_TEMP1_1;
+                    end
+                    `OP_CALL: begin
+                        future_state = `STATE_CONFIG_DATA_MEM_READ;
+                    end
+                    `OP_RET: begin
+                        future_state = `STATE_CONFIG_DATA_MEM_READ;
+                    end
                 endcase
             end
             `STATE_POP_TO_TEMP1_1: begin
@@ -148,6 +154,7 @@ output reg ew_ram_values);
                 values_data = data_from_stack;
                 pop = 1'b1;
                 stack_clk = 1'b1;
+                ew_reg = 1'b0;
                 if (two_register_instruction)
                     future_state = `STATE_POP_TO_TEMP2_1;
                 else
@@ -157,25 +164,28 @@ output reg ew_ram_values);
                 stack_clk = 1'b0;
                 ew_reg = 1'b0;
                 values_data = data_from_stack;
-                pop = 1'b0;
                 future_state = `STATE_POP_TO_TEMP2_2;
             end
             `STATE_POP_TO_TEMP2_2: begin
                 reg_selector = 1'b1;
                 ew_reg = 1'b1;
                 values_data = data_from_stack;
-                pop = 1'b1;
+                stack_clk = 1'b1;
+                alu_selector = ir;
                 future_state = `STATE_EXECUTE_ALU;
             end
             `STATE_EXECUTE_1_REG_INSTRUCTION: begin
-                alu_selector = ir;
-                future_state = `STATE_EXECUTE_ALU;
+                stack_clk = 1'b0;
+                if(is_jmp_inst)
+                    future_state = `STATE_CONFIG_DATA_MEM_READ;
+                else begin
+                    alu_selector = ir;
+                    future_state = `STATE_EXECUTE_ALU;
+                end
             end
             `STATE_EXECUTE_ALU: begin
-                alu_selector = ir;
-                future_state = `STATE_PREPARE_PUSH_TO_STACK;
-            end
-            `STATE_FETCH_DATA_TO_STACK: begin
+                pop = 1'b0;
+                stack_clk = 1'b0;
                 future_state = `STATE_PREPARE_PUSH_TO_STACK;
             end
             `STATE_PREPARE_PUSH_TO_STACK: begin
@@ -210,7 +220,7 @@ output reg ew_ram_values);
             end
             `STATE_DATA_MEM_READ: begin
                 values_ram_clk = 1'b1;
-                future_state = `STATE_NEXT;
+                future_state = `STATE_JMP_NEXT;
             end
             `STATE_CONFIG_INST_MEM_READ: begin
                 future_state = `STATE_DATA_MEM_READ;
@@ -221,13 +231,83 @@ output reg ew_ram_values);
             `STATE_PREPARE_SEND_TO_RAM: begin
                 values_ram_clk = 1'b0;
                 values_addr = bus_inst_data[7:0];
-                values_data = temp1;
+                values_data = data_from_stack;
                 ew_ram_values = 1'b1;
                 future_state = `STATE_SEND_TO_RAM;
             end
             `STATE_SEND_TO_RAM: begin
                 values_ram_clk = 1'b1;
                 future_state = `STATE_NEXT;
+            end
+            `STATE_JMP_NEXT: begin
+                case(ir) 
+                    `OP_IF_EQ: begin
+                        if(alu_result == 8'b0) begin
+                            ip = bus_values_data[7:0];
+                            future_state = `STATE_FETCH_INST;
+                        end
+                        else begin
+                            future_state = `STATE_NEXT;
+                        end
+                    end
+                    `OP_IF_GT: begin
+                        if(alu_result == 8'b0000_0001) begin
+                            ip = bus_values_data[7:0];
+                            future_state = `STATE_FETCH_INST;
+                        end
+                        else begin
+                            future_state = `STATE_NEXT;
+                        end
+                    end
+                    `OP_IF_LT: begin
+                        if(alu_result == 8'b1111_1111) begin
+                            ip = bus_values_data[7:0];
+                            future_state = `STATE_FETCH_INST;
+                        end
+                        else begin
+                            future_state = `STATE_NEXT;
+                        end
+                    end
+                    `OP_IF_GE: begin
+                        if(alu_result == 8'b0 || alu_result == 8'b0000_0001) begin
+                            ip = bus_values_data[7:0];
+                            future_state = `STATE_FETCH_INST;
+                        end
+                        else begin
+                            future_state = `STATE_NEXT;
+                        end
+                    end
+                    `OP_IF_LE: begin
+                        if(alu_result == 8'b0 || alu_result == 8'b1111_1111) begin
+                            ip = bus_values_data[7:0];
+                            future_state = `STATE_FETCH_INST;
+                        end
+                        else begin
+                            future_state = `STATE_NEXT;
+                        end
+                    end
+                    `OP_CALL: begin
+                        temp_memory = ip;
+                        ip = bus_values_data[7:0];
+                        future_state = `STATE_FETCH_INST;
+                    end
+                    `OP_RET: begin
+                        ip = temp_memory + 8'b00000001;
+                        values_ram_clk = 1'b0;
+                        inst_ram_clk = 1'b0;
+                        ew_ram_values = 1'b0;
+                        two_register_instruction = 1'b0;
+                        ew_reg = 1'b0;
+                        future_state = `STATE_FETCH_INST;
+                    end
+                    `OP_GOTO: begin
+                        ip = bus_values_data[7:0];
+                        future_state = `STATE_FETCH_INST;
+                    end
+                    default: begin
+                        future_state = `STATE_RESET;
+                    end
+                endcase
             end
             `STATE_NEXT: begin
                 stack_clk = 1'b1;
