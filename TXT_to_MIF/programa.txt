@@ -1,0 +1,6 @@
+push_i 27
+push_t
+push 1100
+pop  1e
+add
+goto 3
