@@ -84,42 +84,52 @@ output reg ew_ram_values);
                         future_state = `STATE_PREPARE_SEND_TO_RAM;
                     `OP_ADD: begin
                         two_register_instruction = 1'b1;
+                        pop = 1'b1;
                         future_state = `STATE_POP_TO_TEMP1_1;
                     end
                     `OP_SUB: begin
                         two_register_instruction = 1'b1;
+                        pop = 1'b1;
                         future_state = `STATE_POP_TO_TEMP1_1;
                     end
                     `OP_MUL: begin
                         two_register_instruction = 1'b1;
+                        pop = 1'b1;
                         future_state = `STATE_POP_TO_TEMP1_1;
                     end
                     `OP_DIV: begin
                         two_register_instruction = 1'b1;
+                        pop = 1'b1;
                         future_state = `STATE_POP_TO_TEMP1_1;
                     end
                     `OP_AND: begin
                         two_register_instruction = 1'b1;
+                        pop = 1'b1;
                         future_state = `STATE_POP_TO_TEMP1_1;
                     end
                     `OP_NAND: begin
                         two_register_instruction = 1'b1;
+                        pop = 1'b1;
                         future_state = `STATE_POP_TO_TEMP1_1;
                     end
                     `OP_OR: begin
                         two_register_instruction = 1'b1;
+                        pop = 1'b1;
                         future_state = `STATE_POP_TO_TEMP1_1;
                     end
                     `OP_XOR: begin
                         two_register_instruction = 1'b1;
+                        pop = 1'b1;
                         future_state = `STATE_POP_TO_TEMP1_1;
                     end
                     `OP_CMP: begin
                         two_register_instruction = 1'b1;
+                        pop = 1'b1;
                         future_state = `STATE_POP_TO_TEMP1_1;
                     end
                     `OP_NOT: begin
                         two_register_instruction = 1'b0;
+                        pop = 1'b1;
                         future_state = `STATE_POP_TO_TEMP1_1;
                     end
                     `OP_GOTO: begin
@@ -129,6 +139,7 @@ output reg ew_ram_values);
                         alu_selector = `OP_CMP;
                         reg_selector = 1'b1;
                         values_data = 8'b0;
+                        pop = 1'b1;
                         ew_reg = 1'b1;
                         two_register_instruction = 1'b0;
                         is_jmp_inst = 1'b1;
@@ -144,33 +155,30 @@ output reg ew_ram_values);
             end
             `STATE_POP_TO_TEMP1_1: begin
                 reg_selector = 1'b0;
-                ew_reg = 1'b1;
+                stack_clk = 1'b1;
                 values_data = data_from_stack;
-                pop = 1'b1;
-                stack_clk = 1'b0;
                 future_state = `STATE_POP_TO_TEMP1_2;
             end
             `STATE_POP_TO_TEMP1_2: begin
-                values_data = data_from_stack;
-                pop = 1'b1;
-                stack_clk = 1'b1;
-                ew_reg = 1'b0;
+                ew_reg = 1'b1;
+                stack_clk = 1'b0;
+                pop = 1'b0;
                 if (two_register_instruction)
                     future_state = `STATE_POP_TO_TEMP2_1;
                 else
                     future_state = `STATE_EXECUTE_1_REG_INSTRUCTION;
             end
             `STATE_POP_TO_TEMP2_1: begin
-                stack_clk = 1'b0;
+                pop = 1'b1;
+                reg_selector = 1'b1;
                 ew_reg = 1'b0;
                 values_data = data_from_stack;
                 future_state = `STATE_POP_TO_TEMP2_2;
             end
             `STATE_POP_TO_TEMP2_2: begin
-                reg_selector = 1'b1;
                 ew_reg = 1'b1;
-                values_data = data_from_stack;
                 stack_clk = 1'b1;
+                values_data = data_from_stack;
                 alu_selector = ir;
                 future_state = `STATE_EXECUTE_ALU;
             end
@@ -186,6 +194,7 @@ output reg ew_ram_values);
             `STATE_EXECUTE_ALU: begin
                 pop = 1'b0;
                 stack_clk = 1'b0;
+                ew_reg = 1'b0;
                 future_state = `STATE_PREPARE_PUSH_TO_STACK;
             end
             `STATE_PREPARE_PUSH_TO_STACK: begin
@@ -322,4 +331,3 @@ output reg ew_ram_values);
         endcase
 	end
 endmodule
-
