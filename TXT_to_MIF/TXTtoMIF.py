@@ -25,7 +25,7 @@ def TXT_to_MIF(txt, mif):
             programa.append(base[0:1] + f"{i}" + base[2:10] + f"{opcode}" + f"{operando}" + base[23:]) # Montado programa.
             i = i + 1
 
-        if(len(linhas_txt)<256): programa.append(f'\t[{i}..255]  :   0000000000000;\n') # Zerando linhas restantes.
+        if(len(linhas_txt)<256): programa.append(f'\t[{i}..255]  :   1111111111111;\n') # Zerando linhas restantes.
         
         programa.append(final) #Fecha o conteúdo da ROM no arquivo mif
 
