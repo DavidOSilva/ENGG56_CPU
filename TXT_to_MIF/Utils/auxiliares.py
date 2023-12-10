@@ -81,5 +81,7 @@ def converter_instrucao(opcode):
         return '10100'
     elif opcode == 'ret':
         return '10101'
+    elif opcode == 'null':
+        return '11111'
     else:
         return None  # Retorna null para opcodes desconhecidos.
