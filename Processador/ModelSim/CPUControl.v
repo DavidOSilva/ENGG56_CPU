@@ -15,7 +15,7 @@ output reg ew_ram_values);
     reg [4:0] future_state = `STATE_DECODE;
     reg is_jmp_inst = 1'b0;
     reg two_register_instruction = 1'b0;
-    reg [7:0] temp_memory = 8'b0;
+    reg temp_memory = 8'b0;
 
     initial begin
         ip = 8'b00000000;
