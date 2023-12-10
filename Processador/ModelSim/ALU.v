@@ -1,6 +1,6 @@
 module ALU (
-    input [7:0] in1,
-    input [7:0] in2,
+    input signed [7:0] in1,
+    input signed [7:0] in2,
     input [4:0] selector,
     output reg signed [7:0] out,
     output reg carryOut
@@ -13,12 +13,12 @@ begin
     case (selector)
         `OP_ADD: begin
             out = in1 + in2;
-            carryOut = (in1 + in2 > 8'd255) ? 1'b1 : 1'b0;
+            carryOut = ((out > 8'd128) || (out < -8'd128)) ? 1'b1 : 1'b0;
         end
         `OP_SUB: out = in1 - in2;
         `OP_MUL: begin
             out = in1 * in2;
-            carryOut = (in1 * in2 > 8'd255) ? 1'b1 : 1'b0;
+            carryOut = ((out > 8'd128) || (out < -8'd128)) ? 1'b1 : 1'b0;
         end
         `OP_DIV: out = in1 / in2;
         `OP_AND: out = in1 & in2;
@@ -29,7 +29,7 @@ begin
             if (in1 > in2)
                 out = 8'b00000001;
             else if (in1 < in2)
-                out = -8'b00000001;
+                out = 8'b11111111;
             else
                 out = 8'b00000000; 
         `OP_NOT: out = ~in1;
