@@ -84,8 +84,11 @@ output reg ew_ram_values);
                         future_state = `STATE_PREPARE_PUSH_TO_STACK;
                     `OP_PUSH_T:
                         future_state = `STATE_PREPARE_PUSH_TO_STACK;
-                    `OP_POP:
+                    `OP_POP: begin 
+                        pop = 1'b1;
+                        stack_clk = 1'b0;
                         future_state = `STATE_PREPARE_SEND_TO_RAM;
+                    end
                     `OP_ADD: begin
                         two_register_instruction = 1'b1;
                         pop = 1'b1;
@@ -239,6 +242,7 @@ output reg ew_ram_values);
                 future_state = `STATE_JMP_NEXT;
             end
             `STATE_PREPARE_SEND_TO_RAM: begin
+                stack_clk = 1'b1;
                 values_ram_clk = 1'b0;
                 values_addr = bus_inst_data[7:0];
                 values_data = data_from_stack;
