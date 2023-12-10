@@ -2,6 +2,7 @@
 
 Segue abaixo rascunhos iniciais de como as intruções devem ser passadas para a CPU seguindo as especificações. Dessa forma, ja tentei "combinar" os opcodes com as chave seletora da ULA, esperando que isso ajude futuramente. Note que será necessario passar 13 bits, os 5 bits iniciais se referem ao OPCODE enquanto os 8 finais se tratam do endereço ou valor imediato. Imaginei uma memoria/pilha de 8 palavras, por isso estou usando o valor ilustrativo 00000111 para M, mas obviamente podemos usar algo maior. As instruções que  acompanham um travessão, como não precisam de operandos, imagino quem possam receber qualquer coisa já que não vão usar esses 8 bits finais para nada.
 
+<div align="center">
 | —   | INSTRUÇÃO | OPCODE | M ou IMM    |
 | --- | --------- | ------ | ----------- |
 | 0   | PUSH      | 00000  | 00000111    |
@@ -26,3 +27,4 @@ Segue abaixo rascunhos iniciais de como as intruções devem ser passadas para a
 | 19  | IF_LE     | 10011  | 00000111    |
 | 20  | CALL      | 10100  | 00000111    |
 | 21  | RET       | 10101  | —           |
+</div>
