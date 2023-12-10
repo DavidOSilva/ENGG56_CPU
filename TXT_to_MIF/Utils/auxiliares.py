@@ -16,22 +16,25 @@ def ler_arquivo_txt(nome_arquivo):
     return linhas
 
 def converter_para_binario_8_bits(valor):
-    # Verifica se é binário
-    if all(digito in '01' for digito in valor):
+    if valor[0] == '-':
+        # Trata números negativos usando o complemento de dois
+        if all(digito in '0123456789' for digito in valor[1:]):
+            # Converte para binário e completa com zeros à esquerda para garantir 8 bits
+            binario_sem_sinal = bin(int(valor[1:]))[2:].zfill(8)
+            # Calcula o complemento de dois invertendo os bits e adicionando 1
+            complemento_dois = bin((int(binario_sem_sinal, 2) ^ 0b11111111) + 1)[2:].zfill(8)
+            return complemento_dois
+        else:
+            raise ValueError('Formato não suportado: insira um número binário, decimal ou hexadecimal.')
+    elif all(digito in '01' for digito in valor):
         # Completa com zeros à esquerda para garantir 8 bits
         return valor.zfill(8)
-
-    # Verifica se é decimal
     elif valor.isdigit():
         # Converte para binário e completa com zeros à esquerda para garantir 8 bits
         return bin(int(valor))[2:].zfill(8)
-
-    # Verifica se é hexadecimal
     elif all(digito in '0123456789ABCDEFabcdef' for digito in valor):
         # Converte para binário e completa com zeros à esquerda para garantir 8 bits
         return bin(int(valor, 16))[2:].zfill(8)
-
-    # Se não for nenhum dos formatos válidos
     else:
         raise ValueError('Formato não suportado: insira um número binário, decimal ou hexadecimal.')
         
