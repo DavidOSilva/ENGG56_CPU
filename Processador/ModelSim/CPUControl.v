@@ -151,6 +151,9 @@ output reg ew_ram_values);
                     `OP_RET: begin
                         future_state = `STATE_CONFIG_DATA_MEM_READ;
                     end
+						  default begin
+								future_state = `STATE_DECODE;
+						  end
                 endcase
             end
             `STATE_POP_TO_TEMP1_1: begin
