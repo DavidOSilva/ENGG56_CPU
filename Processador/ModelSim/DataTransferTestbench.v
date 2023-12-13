@@ -37,19 +37,25 @@ begin
     
 end
 
-initial
-begin
-    #10000
-    $stop;
-end
+parameter push_i = 5'b00_001,
+        push = 5'b00_000,
+        pop = 5'b00_011,
+        push_t = 5'b00_010;
 
 always @ (DUV.b2v_inst4.state) 
 begin
-    if(DUV.b2v_inst4.ir == 5'b00_001)
+    case (DUV.b2v_inst4.ir)
+        push_i: testa_push_i;
+        push: testa_push;
+        pop: testa_pop;
+        push_t: testa_push_t; 
+    endcase
+end
+
+task testa_push_i;
+begin
+    if(DUV.b2v_inst4.state == 5'hA)
     begin
-        
-        if(DUV.b2v_inst4.state == 5'hA)
-        begin
         $display("--------------Inicia teste PUSH_I -------------------");
         $display("Acrescentou um valor na pilha usando a instrção PUSH_I");
         display_tos;
@@ -62,14 +68,14 @@ begin
             cenarios_sucesso = cenarios_sucesso + 1;
             idx = 8'b000_001;
         end
-        end
-    end	
+    end
+end
+endtask
 
-    if(DUV.b2v_inst4.ir == 5'b00_000)
+task testa_push;
+begin
+    if(DUV.b2v_inst4.state == 5'h9)
     begin
-        
-        if(DUV.b2v_inst4.state == 5'h9)
-        begin
         $display("--------------Inicia teste PUSH -------------------");
         $display("Acrescentou um valor na pilha usando a instrucao PUSH");
         display_tos;
@@ -84,14 +90,35 @@ begin
             $display("--------------Finaliza teste PUSH -------------------");
             cenarios_sucesso = cenarios_sucesso + 1;
         end
-        end
-    end	
+    end
+end
+endtask
 
-    if(DUV.b2v_inst4.ir == 5'b00_011)
+task testa_push_t;
+begin
+    if(DUV.b2v_inst4.state == 5'h9)
     begin
-        
-        if(DUV.b2v_inst4.state == 5'h2)
+        $display("--------------Inicia teste PUSH_T -------------------");
+        display_temp1;
+        $display("Acrescentou um valor na pilha usando a instrucao PUSH_T");
+        #300
+        idx = DUV.b2v_inst3.index;
+
+        if(DUV.b2v_inst3.stack[idx] === 8'h7)
         begin
+            display_tos;
+            $display("O topo da pilha foi carregado com o valor 7 corretamente");
+            $display("--------------Finaliza teste PUSH_T -------------------");
+            cenarios_sucesso = cenarios_sucesso + 1;
+        end
+    end
+end
+endtask
+
+task testa_pop;
+begin
+    if(DUV.b2v_inst4.state == 5'h2)
+    begin
         $display("--------------Inicia teste POP -------------------");
         display_tos;
         display_ram;
@@ -108,30 +135,9 @@ begin
             $display("--------------Finaliza teste POP -------------------");
             cenarios_sucesso = cenarios_sucesso + 1;
         end
-        end
-    end	
-
-    if(DUV.b2v_inst4.ir == 5'b00_010)
-    begin
-        
-        if(DUV.b2v_inst4.state == 5'h9)
-        begin
-        $display("--------------Inicia teste PUSH_T -------------------");
-        display_temp1;
-        $display("Acrescentou um valor na pilha usando a instrucao PUSH_T");
-        #300
-        idx = DUV.b2v_inst3.index;
-        
-        if(DUV.b2v_inst3.stack[idx] === 8'h7)
-        begin
-            display_tos;
-            $display("O topo da pilha foi carregado com o valor 7 corretamente");
-            $display("--------------Finaliza teste PUSH_T -------------------");
-            cenarios_sucesso = cenarios_sucesso + 1;
-        end
-        end
-    end	
+    end
 end
+endtask
 
 task display_tos;
 begin
