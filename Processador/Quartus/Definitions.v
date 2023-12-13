@@ -1,3 +1,8 @@
+// ENGG56 - PROJETO DE CIRCUITOS INTEGRADOS DIGITAIS
+// TRABALHO PRATICO - PROCESSADOR - DEFINITIONS
+// INTEGRANTES: ANDRE COSTA, DAVID FERRARI, DAVID OLIVEIRA E PALOMA ARIZE.
+
+// Definições de instruções da CPU e estados da FSM. Muito é útil para facilitar a codificação.
 `define OP_PUSH 5'b00_000
 `define OP_PUSH_I 5'b00_001
 `define OP_PUSH_T 5'b00_010
@@ -21,7 +26,6 @@
 `define OP_CALL 5'b10_100
 `define OP_RET 5'b10_101
 
-
 `define STATE_RESET 5'h0
 `define STATE_FETCH_INST 5'h1
 `define STATE_DECODE 5'h2
@@ -35,9 +39,8 @@
 `define STATE_PUSH_TO_STACK 5'hA
 `define STATE_CONFIG_DATA_MEM_READ 5'hB
 `define STATE_DATA_MEM_READ 5'hC
-`define STATE_CONFIG_INST_MEM_READ 5'hD
-`define STATE_INST_MEM_READ 5'hE
-`define STATE_PREPARE_SEND_TO_RAM 5'hF
-`define STATE_SEND_TO_RAM 5'h10
-`define STATE_JMP_NEXT 5'h11
-`define STATE_NEXT 5'h12
+`define STATE_PREPARE_SEND_TO_RAM 5'hD
+`define STATE_SEND_TO_RAM 5'hE
+`define STATE_JMP_NEXT 5'hF
+`define STATE_NEXT 5'h10
+
