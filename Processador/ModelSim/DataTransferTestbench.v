@@ -37,12 +37,6 @@ begin
     
 end
 
-initial
-begin
-    #10000
-    $stop;
-end
-
 always @ (DUV.b2v_inst4.state) 
 begin
     if(DUV.b2v_inst4.ir == 5'b00_001)
@@ -64,8 +58,7 @@ begin
         end
         end
     end	
-
-    if(DUV.b2v_inst4.ir == 5'b00_000)
+    else if(DUV.b2v_inst4.ir == 5'b00_000)
     begin
         
         if(DUV.b2v_inst4.state == 5'h9)
@@ -86,8 +79,7 @@ begin
         end
         end
     end	
-
-    if(DUV.b2v_inst4.ir == 5'b00_011)
+    else if(DUV.b2v_inst4.ir == 5'b00_011)
     begin
         
         if(DUV.b2v_inst4.state == 5'h2)
@@ -110,8 +102,7 @@ begin
         end
         end
     end	
-
-    if(DUV.b2v_inst4.ir == 5'b00_010)
+    else if(DUV.b2v_inst4.ir == 5'b00_010)
     begin
         
         if(DUV.b2v_inst4.state == 5'h9)
