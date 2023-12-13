@@ -1,12 +1,8 @@
+# Ignore everything
+*
 
-*.tdf
-*.cdb
-*.hdb
-*.logdb
-*.hsd
-*.qmsg
-*.hier_info
-*.html
-*.rdb
-*.lpc
-*.sci
+# Allow specific file types
+!*.v
+!*.py
+!*.txt
+!*.mif
