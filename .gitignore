@@ -1,13 +1,12 @@
 
 *.tdf
-*.tdf
-*.tdf
 *.cdb
 *.hdb
-Processador/Quartus/db/Processador.cmp.logdb
+*.logdb
 *.hsd
 *.qmsg
 *.hier_info
-Processador/Quartus/db/Processador.lpc.html
-Processador/Quartus/db/Processador.lpc.rdb
+*.html
+*.rdb
+*.lpc
 *.sci
