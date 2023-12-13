@@ -1,3 +1,7 @@
+// ENGG56 - PROJETO DE CIRCUITOS INTEGRADOS DIGITAIS
+// TRABALHO PRATICO - PROCESSADOR - UNIDADE DE CONTROLE - CPUCONTROL
+// INTEGRANTES: ANDRE COSTA, DAVID FERRARI, DAVID OLIVEIRA E PALOMA ARIZE.
+
 module CPUControl(
 input clk, input reset, 
 input [7:0] bus_values_data, input [12:0] bus_inst_data, input [7:0] alu_result,
@@ -233,12 +237,6 @@ output reg ew_ram_values);
             `STATE_DATA_MEM_READ: begin
                 values_ram_clk = 1'b1;
                 future_state = `STATE_JMP_NEXT;
-            end
-            `STATE_CONFIG_INST_MEM_READ: begin
-                future_state = `STATE_DATA_MEM_READ;
-            end
-            `STATE_INST_MEM_READ: begin
-                future_state = `STATE_NEXT;
             end
             `STATE_PREPARE_SEND_TO_RAM: begin
                 values_ram_clk = 1'b0;

@@ -1,0 +1,8 @@
+# Ignore everything
+*
+
+# Allow specific file types
+!*.v
+!*.py
+!*.txt
+!*.mif
