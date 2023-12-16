@@ -80,7 +80,7 @@ begin
         
         if($signed(DUV.b2v_inst5.stack.stack[idx]) === -1)
         begin
-            display_tos_negativo;
+            display_tos;
             display_esperado;
             $display("--------------Finaliza teste MUL com resultado negativo ----------------");
             cenarios_sucesso = cenarios_sucesso + 1;
@@ -106,7 +106,7 @@ begin
             $display("--------------Finaliza teste MUL -------------------");
             cenarios_sucesso = cenarios_sucesso + 1;
         end
-        else    display_inesperado;
+        else    display_inespera50000do;
     end
     else if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK  && DUV.b2v_inst5.alu.in1 == 8'h12)
     begin
@@ -117,7 +117,7 @@ begin
         
         if($signed(DUV.b2v_inst5.stack.stack[idx]) === -18)
         begin
-            display_tos_negativo;
+            display_tos;
             display_esperado;
             $display("--------------Finaliza teste MUL com resultado negativo ----------------");
             cenarios_sucesso = cenarios_sucesso + 1;
@@ -155,7 +155,7 @@ begin
         
         if($signed(DUV.b2v_inst5.stack.stack[idx]) === -1)
         begin
-            display_tos_negativo;
+            display_tos;
             display_esperado;
             $display("--------------Finaliza teste DIV com resultado negativo--------------");
             cenarios_sucesso = cenarios_sucesso + 1;
@@ -192,7 +192,7 @@ begin
         
         if($signed(DUV.b2v_inst5.stack.stack[idx]) === -2)
         begin
-            display_tos_negativo;
+            display_tos;
             display_esperado;
             $display("--------------Finaliza teste SUB com resultado negativo--------------");
             cenarios_sucesso = cenarios_sucesso + 1;
@@ -203,13 +203,6 @@ end
 endtask
 
 task display_tos;
-begin
-    #1 $display("Topo da pilha: %0d",
-      DUV.b2v_inst5.stack.stack[idx]);
-end
-endtask
-
-task display_tos_negativo;
 begin
     #1 $display("Topo da pilha: %0d",
       $signed(DUV.b2v_inst5.stack.stack[idx]));
