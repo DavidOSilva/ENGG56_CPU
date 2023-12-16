@@ -14,7 +14,7 @@ Ademais, atribuímos a cada instrução da especificação do projeto um opcode 
 Dito isso, note que as instruções armazenadas na ROM recebem até 13 bits, com 5 bits para o opcode da instrução que será executada e os 8 bits restantes relacionados ao valor do operando, caso a instrução precise.
 
 <p align="center">
-  <img src="/Assets/formato-inst.png" alt="Ilustrando como as instruções são armazenadas na ROM"style="width:80%;">
+  <img src="/Assets/formato-inst.png" alt="Ilustrando como as instruções são armazenadas na ROM" style="width:80%;">
 </p>
 
 O programa que o usuário deseja executar é escrito em um arquivo txt, obedecendo uma estrutura básica similar à da linguagem de montagem. Após essa escrita, o arquivo txt é lido por um código criado em Python (TXTtoMIF.py), que faz todo o tratamento do programa para ser interpretado pelo processador. Este código em Python converte um arquivo de texto contendo instruções em uma pseudo linguagem de montagem para um formato de arquivo Memory Initialization File (MIF). O MIF é um formato usado para descrever o conteúdo inicial de uma memória, como uma memória ROM. O MIF resultante após a conversão é salvo no mesmo arquivo MIF de origem.
