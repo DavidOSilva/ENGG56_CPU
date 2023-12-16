@@ -8,10 +8,9 @@ wire full;
 wire carryOut;
 wire [7:0] temp1;
 wire [7:0] q_ram_values;
-wire [12:0] q_rom_inst;
 
 Processador DUV (.clk(clk), .reset(reset), .temp1(temp1), .q_ram_values(q_ram_values), 
-    .q_rom_inst(q_rom_inst), .carryOut(carryOut), .empty(empty), .full(full));
+    .carryOut(carryOut), .empty(empty), .full(full));
 
 `include "Definitions.v"
 
@@ -56,14 +55,14 @@ end
 
 task testa_add;
 begin
-    if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK && DUV.b2v_inst2.in1 == 8'h2)
+    if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK && DUV.b2v_inst5.alu.in1 == 8'h2)
     begin
         $display("--------------Inicia teste ADD -------------------");
         $display("Soma os 2 ultimos valores da pilha e os retira da pilha");
         display_operandos;
-        idx = DUV.b2v_inst3.index;
+        idx = DUV.b2v_inst5.stack.index;
         
-        if(DUV.b2v_inst3.stack[idx] === 5'h9)
+        if(DUV.b2v_inst5.stack.stack[idx] === 5'h9)
         begin
             display_tos;
             display_esperado;
@@ -72,14 +71,14 @@ begin
         end
         else    display_inesperado;
     end
-    else if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK  && DUV.b2v_inst2.in1 == 8'h11)
+    else if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK  && DUV.b2v_inst5.alu.in1 == 8'h11)
     begin
         $display("--------------Inicia teste ADD com resultado negativo -------------------");
         $display("Soma os 2 ultimos valores da pilha e os retira da pilha");
         display_operandos;
-        idx = DUV.b2v_inst3.index;
+        idx = DUV.b2v_inst5.stack.index;
         
-        if($signed(DUV.b2v_inst3.stack[idx]) === -1)
+        if($signed(DUV.b2v_inst5.stack.stack[idx]) === -1)
         begin
             display_tos_negativo;
             display_esperado;
@@ -93,14 +92,14 @@ endtask
 
 task testa_mul;
 begin
-    if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK && DUV.b2v_inst2.in1 == 8'h3)
+    if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK && DUV.b2v_inst5.alu.in1 == 8'h3)
     begin
         $display("--------------Inicia teste MUL -------------------");
         $display("Multiplica os 2 ultimos valores da pilha e os retira da pilha");
         display_operandos;
-        idx = DUV.b2v_inst3.index;
+        idx = DUV.b2v_inst5.stack.index;
         
-        if(DUV.b2v_inst3.stack[idx] === 5'h1b)
+        if(DUV.b2v_inst5.stack.stack[idx] === 5'h1b)
         begin
             display_tos;
             display_esperado;
@@ -109,14 +108,14 @@ begin
         end
         else    display_inesperado;
     end
-    else if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK  && DUV.b2v_inst2.in1 == 8'h12)
+    else if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK  && DUV.b2v_inst5.alu.in1 == 8'h12)
     begin
         $display("--------------Inicia teste MUL com resultado negativo -------------------");
         $display("Multiplica os 2 ultimos valores da pilha e os retira da pilha");
         display_operandos;
-        idx = DUV.b2v_inst3.index;
+        idx = DUV.b2v_inst5.stack.index;
         
-        if($signed(DUV.b2v_inst3.stack[idx]) === -18)
+        if($signed(DUV.b2v_inst5.stack.stack[idx]) === -18)
         begin
             display_tos_negativo;
             display_esperado;
@@ -130,14 +129,14 @@ endtask
 
 task testa_div;
 begin
-    if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK && DUV.b2v_inst2.in1 == 8'h36)
+    if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK && DUV.b2v_inst5.alu.in1 == 8'h36)
     begin
         $display("--------------Inicia teste DIV -------------------");
         $display("Divide o primeiro da pilha pelo segundo e os retira da pilha");
         display_operandos;
-        idx = DUV.b2v_inst3.index;
+        idx = DUV.b2v_inst5.stack.index;
         
-        if(DUV.b2v_inst3.stack[idx] === 5'h2)
+        if(DUV.b2v_inst5.stack.stack[idx] === 5'h2)
         begin
             display_tos;
             display_esperado;
@@ -147,14 +146,14 @@ begin
         else 
         display_inesperado;
     end
-    else if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK && DUV.b2v_inst2.in1 == 8'h2)
+    else if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK && DUV.b2v_inst5.alu.in1 == 8'h2)
     begin
         $display("--------------Inicia teste DIV com resultado negativo -------------");
         $display("Divide o primeiro da pilha pelo segundo e os retira da pilha");
         display_operandos;
-        idx = DUV.b2v_inst3.index;
+        idx = DUV.b2v_inst5.stack.index;
         
-        if($signed(DUV.b2v_inst3.stack[idx]) === -1)
+        if($signed(DUV.b2v_inst5.stack.stack[idx]) === -1)
         begin
             display_tos_negativo;
             display_esperado;
@@ -168,14 +167,14 @@ endtask
 
 task testa_sub;
 begin
-    if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK && DUV.b2v_inst2.in1 == 8'h8)
+    if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK && DUV.b2v_inst5.alu.in1 == 8'h8)
     begin
         $display("--------------Inicia teste SUB -------------------");
         $display("Subtrai o primeiro da pilha pelo segundo e os retira da pilha");
         display_operandos;
-        idx = DUV.b2v_inst3.index;
+        idx = DUV.b2v_inst5.stack.index;
         
-        if(DUV.b2v_inst3.stack[idx] === 5'h6)
+        if(DUV.b2v_inst5.stack.stack[idx] === 5'h6)
         begin
             display_tos;
             display_esperado;
@@ -184,14 +183,14 @@ begin
         end
         else    display_inesperado;
     end
-    else if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK && DUV.b2v_inst2.in1 == 8'h4)
+    else if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK && DUV.b2v_inst5.alu.in1 == 8'h4)
     begin
         $display("--------------Inicia teste SUB com resultado negativo -------------");
         $display("Subtrai o primeiro da pilha pelo segundo e os retira da pilha");
         display_operandos;
-        idx = DUV.b2v_inst3.index;
+        idx = DUV.b2v_inst5.stack.index;
         
-        if($signed(DUV.b2v_inst3.stack[idx]) === -2)
+        if($signed(DUV.b2v_inst5.stack.stack[idx]) === -2)
         begin
             display_tos_negativo;
             display_esperado;
@@ -206,21 +205,21 @@ endtask
 task display_tos;
 begin
     #1 $display("Topo da pilha: %0d",
-      DUV.b2v_inst3.stack[idx]);
+      DUV.b2v_inst5.stack.stack[idx]);
 end
 endtask
 
 task display_tos_negativo;
 begin
     #1 $display("Topo da pilha: %0d",
-      $signed(DUV.b2v_inst3.stack[idx]));
+      $signed(DUV.b2v_inst5.stack.stack[idx]));
 end
 endtask
 
 task display_operandos;
 begin
     #1 $display("Operandos: %0d e %0d",
-      DUV.b2v_inst2.in1, DUV.b2v_inst2.in2);
+      DUV.b2v_inst5.alu.in1, DUV.b2v_inst5.alu.in2);
 end
 endtask
 

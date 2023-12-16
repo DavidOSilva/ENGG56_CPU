@@ -8,10 +8,9 @@ wire full;
 wire carryOut;
 wire [7:0] temp1;
 wire [7:0] q_ram_values;
-wire [12:0] q_rom_inst;
 
 Processador DUV (.clk(clk), .reset(reset), .temp1(temp1), .q_ram_values(q_ram_values), 
-    .q_rom_inst(q_rom_inst), .carryOut(carryOut), .empty(empty), .full(full));
+    .carryOut(carryOut), .empty(empty), .full(full));
 
 `include "Definitions.v"
 
@@ -60,9 +59,9 @@ begin
         $display("--------------Inicia teste PUSH_I -------------------");
         $display("Acrescentou um valor na pilha usando a instrção PUSH_I");
         display_tos;
-        idx = DUV.b2v_inst3.index;
+        idx = DUV.b2v_inst5.stack.index;
         
-        if(DUV.b2v_inst3.stack[idx] === 8'h5)
+        if(DUV.b2v_inst5.stack.stack[idx] === 8'h5)
         begin
             $display("O topo da pilha foi carregado com o valor 5 corretamente");
             $display("--------------Finaliza teste PUSH_I -------------------");
@@ -83,9 +82,9 @@ begin
         display_ram;
         #200
         display_tos;
-        idx = DUV.b2v_inst3.index;
+        idx = DUV.b2v_inst5.stack.index;
         
-        if(DUV.b2v_inst3.stack[idx] === 8'h7)
+        if(DUV.b2v_inst5.stack.stack[idx] === 8'h7)
         begin
             $display("O topo da pilha foi carregado com o valor 7 corretamente");
             $display("--------------Finaliza teste PUSH -------------------");
@@ -103,9 +102,9 @@ begin
         display_temp1;
         $display("Acrescentou um valor na pilha usando a instrucao PUSH_T");
         #300
-        idx = DUV.b2v_inst3.index;
+        idx = DUV.b2v_inst5.stack.index;
 
-        if(DUV.b2v_inst3.stack[idx] === 8'h7)
+        if(DUV.b2v_inst5.stack.stack[idx] === 8'h7)
         begin
             display_tos;
             $display("O topo da pilha foi carregado com o valor 7 corretamente");
@@ -130,7 +129,7 @@ begin
         begin
             display_ram;
             $display("O valor no endereco foi alterado para 12 com sucesso");
-            if(DUV.b2v_inst3.index == 8'b0)
+            if(DUV.b2v_inst5.stack.index == 8'b0)
                 $display("A stack foi esvaziada com sucesso");
 
             $display("--------------Finaliza teste POP -------------------");
@@ -143,7 +142,7 @@ endtask
 task display_tos;
 begin
     #1 $display("Topo da pilha:%0d",
-      DUV.b2v_inst3.stack[idx]);
+      DUV.b2v_inst5.stack.stack[idx]);
 end
 endtask
 
