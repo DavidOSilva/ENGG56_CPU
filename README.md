@@ -8,13 +8,13 @@ A implementação do processador foi subdividida em três grupos de componentes,
 Ademais, atribuímos a cada instrução da especificação do projeto um opcode associado com 5 bits, o que foi bastante útil já que criamos um arquivo definitions.v com a diretiva macro “define” de modo a vincular um texto a um valor binário. Desse modo, a instrução ADD é representada pelo valor 5’b00100 e possui um texto associado pelo arquivo definitions.v como OP_ADD. Veja a seguir a tabela completa das representações em binário(opcode) para cada instrução:
 
 <p align="center">
-  <img src="/Assets/tabela-inst.png" alt="Tabela com todas as representações das instruções em binário" style="width:20%;">
+  <img src="/Assets/tabela-inst.png" alt="Tabela com todas as representações das instruções em binário">
 </p>
 
 Dito isso, note que as instruções armazenadas na ROM recebem até 13 bits, com 5 bits para o opcode da instrução que será executada e os 8 bits restantes relacionados ao valor do operando, caso a instrução precise.
 
 <p align="center">
-  <img src="/Assets/formato-inst.png" alt="Ilustrando como as instruções são armazenadas na ROM">
+  <img src="/Assets/formato-inst.png" alt="Ilustrando como as instruções são armazenadas na ROM"style="width:20%;">
 </p>
 
 O programa que o usuário deseja executar é escrito em um arquivo txt, obedecendo uma estrutura básica similar à da linguagem de montagem. Após essa escrita, o arquivo txt é lido por um código criado em Python (TXTtoMIF.py), que faz todo o tratamento do programa para ser interpretado pelo processador. Este código em Python converte um arquivo de texto contendo instruções em uma pseudo linguagem de montagem para um formato de arquivo Memory Initialization File (MIF). O MIF é um formato usado para descrever o conteúdo inicial de uma memória, como uma memória ROM. O MIF resultante após a conversão é salvo no mesmo arquivo MIF de origem.
