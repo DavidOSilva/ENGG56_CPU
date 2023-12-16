@@ -6,3 +6,5 @@
 !*.py
 !*.txt
 !*.mif
+!*.png
+!*.pdf
