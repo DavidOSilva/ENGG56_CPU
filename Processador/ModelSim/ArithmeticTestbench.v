@@ -13,6 +13,8 @@ wire [12:0] q_rom_inst;
 Processador DUV (.clk(clk), .reset(reset), .temp1(temp1), .q_ram_values(q_ram_values), 
     .q_rom_inst(q_rom_inst), .carryOut(carryOut), .empty(empty), .full(full));
 
+`include "Definitions.v"
+
 always #100 clk = !clk;
 reg [7:0] idx;
 integer cenarios_sucesso;
@@ -37,10 +39,10 @@ begin
     
 end
 
-parameter  add = 5'b00_100,
-        mul = 5'b00_110,
-        div = 5'b00_111,
-        sub = 5'b00_101;
+parameter  add = `OP_ADD,
+        mul = `OP_MUL,
+        div =  `OP_DIV,
+        sub = `OP_SUB;
 
 always @ (DUV.b2v_inst4.state) 
 begin
@@ -54,7 +56,7 @@ end
 
 task testa_add;
 begin
-    if(DUV.b2v_inst4.state == 5'hA && DUV.b2v_inst2.in1 == 8'h2)
+    if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK && DUV.b2v_inst2.in1 == 8'h2)
     begin
         $display("--------------Inicia teste ADD -------------------");
         $display("Soma os 2 ultimos valores da pilha e os retira da pilha");
@@ -70,7 +72,7 @@ begin
         end
         else    display_inesperado;
     end
-    else if(DUV.b2v_inst4.state == 5'hA  && DUV.b2v_inst2.in1 == 8'h11)
+    else if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK  && DUV.b2v_inst2.in1 == 8'h11)
     begin
         $display("--------------Inicia teste ADD com resultado negativo -------------------");
         $display("Soma os 2 ultimos valores da pilha e os retira da pilha");
@@ -91,7 +93,7 @@ endtask
 
 task testa_mul;
 begin
-    if(DUV.b2v_inst4.state == 5'hA && DUV.b2v_inst2.in1 == 8'h3)
+    if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK && DUV.b2v_inst2.in1 == 8'h3)
     begin
         $display("--------------Inicia teste MUL -------------------");
         $display("Multiplica os 2 ultimos valores da pilha e os retira da pilha");
@@ -107,7 +109,7 @@ begin
         end
         else    display_inesperado;
     end
-    else if(DUV.b2v_inst4.state == 5'hA  && DUV.b2v_inst2.in1 == 8'h12)
+    else if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK  && DUV.b2v_inst2.in1 == 8'h12)
     begin
         $display("--------------Inicia teste MUL com resultado negativo -------------------");
         $display("Multiplica os 2 ultimos valores da pilha e os retira da pilha");
@@ -128,7 +130,7 @@ endtask
 
 task testa_div;
 begin
-    if(DUV.b2v_inst4.state == 5'hA && DUV.b2v_inst2.in1 == 8'h36)
+    if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK && DUV.b2v_inst2.in1 == 8'h36)
     begin
         $display("--------------Inicia teste DIV -------------------");
         $display("Divide o primeiro da pilha pelo segundo e os retira da pilha");
@@ -145,7 +147,7 @@ begin
         else 
         display_inesperado;
     end
-    else if(DUV.b2v_inst4.state == 5'hA && DUV.b2v_inst2.in1 == 8'h2)
+    else if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK && DUV.b2v_inst2.in1 == 8'h2)
     begin
         $display("--------------Inicia teste DIV com resultado negativo -------------");
         $display("Divide o primeiro da pilha pelo segundo e os retira da pilha");
@@ -166,7 +168,7 @@ endtask
 
 task testa_sub;
 begin
-    if(DUV.b2v_inst4.state == 5'hA && DUV.b2v_inst2.in1 == 8'h8)
+    if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK && DUV.b2v_inst2.in1 == 8'h8)
     begin
         $display("--------------Inicia teste SUB -------------------");
         $display("Subtrai o primeiro da pilha pelo segundo e os retira da pilha");
@@ -182,7 +184,7 @@ begin
         end
         else    display_inesperado;
     end
-    else if(DUV.b2v_inst4.state == 5'hA && DUV.b2v_inst2.in1 == 8'h4)
+    else if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK && DUV.b2v_inst2.in1 == 8'h4)
     begin
         $display("--------------Inicia teste SUB com resultado negativo -------------");
         $display("Subtrai o primeiro da pilha pelo segundo e os retira da pilha");

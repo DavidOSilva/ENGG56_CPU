@@ -13,6 +13,8 @@ wire [12:0] q_rom_inst;
 Processador DUV (.clk(clk), .reset(reset), .temp1(temp1), .q_ram_values(q_ram_values), 
     .q_rom_inst(q_rom_inst), .carryOut(carryOut), .empty(empty), .full(full));
 
+`include "Definitions.v"
+
 always #100 clk = !clk;
 reg [7:0] idx;
 integer cenarios_sucesso;
@@ -34,13 +36,12 @@ begin
     #6000
     display_resultados;
     $stop;
-    
 end
 
-parameter push_i = 5'b00_001,
-        push = 5'b00_000,
-        pop = 5'b00_011,
-        push_t = 5'b00_010;
+parameter push_i = `OP_PUSH_I,
+        push = `OP_PUSH,
+        pop = `OP_POP,
+        push_t = `OP_PUSH_T;
 
 always @ (DUV.b2v_inst4.state) 
 begin
@@ -54,7 +55,7 @@ end
 
 task testa_push_i;
 begin
-    if(DUV.b2v_inst4.state == 5'hA)
+    if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK)
     begin
         $display("--------------Inicia teste PUSH_I -------------------");
         $display("Acrescentou um valor na pilha usando a instrção PUSH_I");
@@ -74,7 +75,7 @@ endtask
 
 task testa_push;
 begin
-    if(DUV.b2v_inst4.state == 5'h9)
+    if(DUV.b2v_inst4.state == `STATE_PREPARE_PUSH_TO_STACK)
     begin
         $display("--------------Inicia teste PUSH -------------------");
         $display("Acrescentou um valor na pilha usando a instrucao PUSH");
@@ -96,7 +97,7 @@ endtask
 
 task testa_push_t;
 begin
-    if(DUV.b2v_inst4.state == 5'h9)
+    if(DUV.b2v_inst4.state == `STATE_PREPARE_PUSH_TO_STACK)
     begin
         $display("--------------Inicia teste PUSH_T -------------------");
         display_temp1;
@@ -117,7 +118,7 @@ endtask
 
 task testa_pop;
 begin
-    if(DUV.b2v_inst4.state == 5'h2)
+    if(DUV.b2v_inst4.state == `STATE_DECODE)
     begin
         $display("--------------Inicia teste POP -------------------");
         display_tos;
