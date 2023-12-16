@@ -11,13 +11,13 @@ z2
 cModel Technology
 d/home/david/Documents/ufba/PCID/TesteMemoria/ModelSim
 vALU
-Z0 !s110 1702685471
+Z0 !s110 1702730197
 !i10b 1
 !s100 5cC3N`m0g0496V4L1FV443
 I@M?mznRJmoomf`Ij3aEcF1
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 dC:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim
-Z3 w1702651833
+Z3 w1702728501
 8C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/ALU.v
 FC:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/ALU.v
 Z4 FDefinitions.v
@@ -26,7 +26,7 @@ Z5 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z6 !s108 1702685471.000000
+Z6 !s108 1702730197.000000
 !s107 Definitions.v|C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/ALU.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/ALU.v|
 !i113 1
@@ -103,14 +103,14 @@ n@c@p@u@registers
 vDatapath
 R0
 !i10b 1
-!s100 eTi8DiB@B:W>m:[H9=W@D0
-IZ3V]8RAlCczQX<VDZzFgJ1
+!s100 e:YF]o:7Y^57L][n9MGdK1
+IfiM:Yn8>i:N:1]e@>dmT01
 R1
 R2
-w1702684649
+w1702730080
 8C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/Datapath.v
 FC:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/Datapath.v
-L0 5
+L0 1
 R5
 r1
 !s85 0
@@ -188,11 +188,11 @@ R18
 vProcessador
 R0
 !i10b 1
-!s100 PhVm3nbZ9KN`@=0XKX>Q83
-IGo]FzGjOlcHA7Xb5c<4@R2
+!s100 oY0PQ:kERJeaYlo8Dn>?T2
+InMN^LWPkkU[54]3id?VbG3
 R1
 R2
-w1702682396
+w1702729974
 8C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/Processador.v
 FC:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/Processador.v
 L0 19
@@ -230,13 +230,13 @@ R7
 R8
 n@stack
 vTestbench
-R0
+Z19 !s110 1702730198
 !i10b 1
-!s100 0b:TfOAHBFaRF?HBIM4;:0
-I;O`59KL=m2R;_GQniz1be2
+!s100 6YMkBKJ;iH4><Jz:af9E>0
+I`6^1mz3;CK7EG<ioOK3ZP2
 R1
 R2
-w1702685461
+w1702730179
 8C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/Testbench.v
 FC:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/Testbench.v
 L0 2
@@ -244,7 +244,7 @@ R5
 r1
 !s85 0
 31
-R6
+Z20 !s108 1702730198.000000
 !s107 C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/Testbench.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/Testbench.v|
 !i113 1
@@ -257,19 +257,19 @@ R9
 R10
 R11
 R2
-Z19 8C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/ValuesRAM.vhd
-Z20 FC:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/ValuesRAM.vhd
+Z21 8C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/ValuesRAM.vhd
+Z22 FC:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/ValuesRAM.vhd
 l0
 L43
 VI6ljIE9ZYXJeDF?0h3^KV2
 !s100 R>OiZTGnlBZEY5DNAaI2P1
 R14
 32
-R0
+R19
 !i10b 1
-R6
-Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/ValuesRAM.vhd|
-Z22 !s107 C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/ValuesRAM.vhd|
+R20
+Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/ValuesRAM.vhd|
+Z24 !s107 C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/ValuesRAM.vhd|
 !i113 1
 R17
 R18
@@ -277,18 +277,18 @@ Asyn
 R9
 R10
 R11
-Z23 DEx4 work 9 valuesram 0 22 I6ljIE9ZYXJeDF?0h3^KV2
+Z25 DEx4 work 9 valuesram 0 22 I6ljIE9ZYXJeDF?0h3^KV2
 l59
 L55
-Z24 VM64M0E06g:h0A<0[[EE5m2
-Z25 !s100 gGSXSNPAK`kKOfCzjmZ2V1
+Z26 VM64M0E06g:h0A<0[[EE5m2
+Z27 !s100 gGSXSNPAK`kKOfCzjmZ2V1
 R14
 32
-R0
+R19
 !i10b 1
-R6
-R21
-R22
+R20
+R23
+R24
 !i113 1
 R17
 R18

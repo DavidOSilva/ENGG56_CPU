@@ -14,7 +14,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
-// CREATED		"Fri Dec 15 20:19:56 2023"
+// CREATED		"Sat Dec 16 09:32:54 2023"
 
 module Processador(
 	clk,
@@ -25,7 +25,8 @@ module Processador(
 	alu_output,
 	q_ram_values,
 	stack_output,
-	temp1
+	temp1,
+	temp2
 );
 
 
@@ -38,10 +39,10 @@ output wire	[7:0] alu_output;
 output wire	[7:0] q_ram_values;
 output wire	[7:0] stack_output;
 output wire	[7:0] temp1;
+output wire	[7:0] temp2;
 
 wire	[7:0] data_from_stack;
 wire	push;
-wire	reset_controller;
 wire	SYNTHESIZED_WIRE_0;
 wire	SYNTHESIZED_WIRE_1;
 wire	[7:0] SYNTHESIZED_WIRE_2;
@@ -83,7 +84,7 @@ InstructionsROM	b2v_inst13(
 
 CPUControl	b2v_inst4(
 	.clk(clk),
-	.reset(reset_controller),
+	.reset(reset),
 	.alu_result(SYNTHESIZED_WIRE_6),
 	.bus_inst_data(SYNTHESIZED_WIRE_7),
 	.bus_values_data(SYNTHESIZED_WIRE_8),
@@ -121,9 +122,9 @@ Datapath	b2v_inst5(
 	.stack_empty(empty),
 	.alu_output(SYNTHESIZED_WIRE_6),
 	.stack_dout(data_from_stack),
-	.temp1(SYNTHESIZED_WIRE_9));
+	.temp1(SYNTHESIZED_WIRE_9),
+	.temp2(temp2));
 
-assign	reset_controller = reset;
 assign	stack_output = data_from_stack;
 
 endmodule

@@ -1,7 +1,4 @@
-C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/Definitions.v {1 {vlog -work work -stats=none C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/Definitions.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-
-} {} {}} C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/ValuesRAM.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/ValuesRAM.vhd
+C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/ValuesRAM.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/ValuesRAM.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -9,6 +6,9 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package altera_mf_components
 -- Compiling entity ValuesRAM
 -- Compiling architecture SYN of valuesram
+
+} {} {}} C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/Definitions.v {1 {vlog -work work -stats=none C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/Definitions.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 
 } {} {}} C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/Stack.v {1 {vlog -work work -stats=none C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/Stack.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -33,19 +33,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	CPURegisters
 
-} {} {}} C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/ALU.v {1 {vlog -work work -stats=none C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/ALU.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module ALU
-
-Top level modules:
-	ALU
-
 } {} {}} C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/ArithmeticTestbench.v {1 {vlog -work work -stats=none C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/ArithmeticTestbench.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module ArithmeticTestbench
 
 Top level modules:
 	ArithmeticTestbench
+
+} {} {}} C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/ALU.v {1 {vlog -work work -stats=none C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/ALU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU
+
+Top level modules:
+	ALU
 
 } {} {}} C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/Processador.v {1 {vlog -work work -stats=none C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/ModelSim/Processador.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
