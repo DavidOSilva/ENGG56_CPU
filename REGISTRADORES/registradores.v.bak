@@ -1,2 +1,0 @@
-module registradores(din, opcode, read, rstn, clk, temp1, temp2);
-endmodule

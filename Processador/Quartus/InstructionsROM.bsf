@@ -4,9 +4,9 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and any partner logic 
+and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -16,39 +16,38 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details, at
-https://fpgasoftware.intel.com/eula.
+refer to the applicable agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 0 0 216 128)
-	(text "InstructionsROM" (rect 59 0 177 16)(font "Arial" (font_size 10)))
-	(text "inst" (rect 8 113 25 124)(font "Arial" ))
+	(rect 64 64 280 192)
+	(text "InstructionsROM" (rect 96 104 210 120)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 1 25 13)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "address[7..0]" (rect 0 0 73 13)(font "Arial" (font_size 8)))
-		(text "address[7..0]" (rect 4 19 65 31)(font "Arial" (font_size 8)))
+		(text "address[7..0]" (rect 0 0 75 14)(font "Arial" (font_size 8)))
+		(text "address[7..0]" (rect 4 19 79 33)(font "Arial" (font_size 8)))
 		(line (pt 0 32)(pt 88 32)(line_width 3))
 	)
 	(port
 		(pt 0 112)
 		(input)
-		(text "clock" (rect 0 0 30 13)(font "Arial" (font_size 8)))
-		(text "clock" (rect 4 99 27 111)(font "Arial" (font_size 8)))
+		(text "clock" (rect 0 0 29 14)(font "Arial" (font_size 8)))
+		(text "clock" (rect 4 99 33 113)(font "Arial" (font_size 8)))
 		(line (pt 0 112)(pt 80 112))
 	)
 	(port
 		(pt 216 32)
 		(output)
-		(text "q[12..0]" (rect 0 0 42 13)(font "Arial" (font_size 8)))
-		(text "q[12..0]" (rect 177 19 212 31)(font "Arial" (font_size 8)))
+		(text "q[12..0]" (rect 0 0 42 14)(font "Arial" (font_size 8)))
+		(text "q[12..0]" (rect 177 19 219 33)(font "Arial" (font_size 8)))
 		(line (pt 216 32)(pt 136 32)(line_width 3))
 	)
 	(drawing
-		(text "13 bits" (rect 110 19 193 156)(font "Arial" )(vertical))
-		(text "256 words" (rect 120 10 211 172)(font "Arial" )(vertical))
-		(text "Block type: AUTO" (rect 48 115 171 240)(font "Arial" ))
+		(text "13 bits" (rect 110 19 122 52)(font "Arial" )(vertical))
+		(text "256 words" (rect 120 10 132 59)(font "Arial" )(vertical))
+		(text "Block type: AUTO" (rect 7 75 96 87)(font "Arial" ))
 		(line (pt 104 24)(pt 136 24))
 		(line (pt 136 24)(pt 136 96))
 		(line (pt 136 96)(pt 104 96))

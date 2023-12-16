@@ -1,6 +1,6 @@
-// Copyright (C) 2020  Intel Corporation. All rights reserved.
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
 // Your use of Intel Corporation's design tools, logic functions 
-// and other software and tools, and any partner logic 
+// and other software and tools, and its AMPP partner logic 
 // functions, and any output files from any of the foregoing 
 // (including device programming or simulation files), and any 
 // associated documentation or information are expressly subject 
@@ -10,12 +10,11 @@
 // agreement, including, without limitation, that your use is for
 // the sole purpose of programming logic devices manufactured by
 // Intel and sold by Intel or its authorized distributors.  Please
-// refer to the applicable agreement for further details, at
-// https://fpgasoftware.intel.com/eula.
+// refer to the applicable agreement for further details.
 
 // PROGRAM		"Quartus Prime"
-// VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Sun Dec  3 04:19:55 2023"
+// VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
+// CREATED		"Fri Dec 15 20:19:56 2023"
 
 module Processador(
 	clk,
@@ -23,9 +22,10 @@ module Processador(
 	carryOut,
 	empty,
 	full,
+	alu_output,
 	q_ram_values,
-	temp1,
-    q_rom_inst
+	stack_output,
+	temp1
 );
 
 
@@ -34,106 +34,96 @@ input wire	reset;
 output wire	carryOut;
 output wire	empty;
 output wire	full;
+output wire	[7:0] alu_output;
 output wire	[7:0] q_ram_values;
+output wire	[7:0] stack_output;
 output wire	[7:0] temp1;
-output wire [12:0] q_rom_inst;
 
-wire	[7:0] alu_result;
-wire	[4:0] alu_selector;
-wire	[7:0] data_bus;
 wire	[7:0] data_from_stack;
-wire	[7:0] data_to_push;
-wire	enable_write_reg;
-wire	[7:0] inst_addr;
-wire	[12:0] inst_bus;
-wire	inst_ram_clk;
-wire	pop;
 wire	push;
-wire	reg_selector;
 wire	reset_controller;
-wire	reset_output;
-wire	stack_clk;
-wire	[7:0] temp1_enter_processor;
-wire	[7:0] values_addr;
-wire	[7:0] values_data;
-wire	values_ram_clk;
 wire	SYNTHESIZED_WIRE_0;
-wire	[7:0] SYNTHESIZED_WIRE_1;
+wire	SYNTHESIZED_WIRE_1;
+wire	[7:0] SYNTHESIZED_WIRE_2;
+wire	[7:0] SYNTHESIZED_WIRE_18;
+wire	SYNTHESIZED_WIRE_4;
+wire	[7:0] SYNTHESIZED_WIRE_5;
+wire	[7:0] SYNTHESIZED_WIRE_6;
+wire	[12:0] SYNTHESIZED_WIRE_7;
+wire	[7:0] SYNTHESIZED_WIRE_8;
+wire	[7:0] SYNTHESIZED_WIRE_9;
+wire	SYNTHESIZED_WIRE_10;
+wire	SYNTHESIZED_WIRE_11;
+wire	SYNTHESIZED_WIRE_12;
+wire	SYNTHESIZED_WIRE_13;
+wire	SYNTHESIZED_WIRE_14;
+wire	[4:0] SYNTHESIZED_WIRE_15;
+wire	[7:0] SYNTHESIZED_WIRE_17;
 
+assign	alu_output = SYNTHESIZED_WIRE_6;
+assign	q_ram_values = SYNTHESIZED_WIRE_8;
+assign	temp1 = SYNTHESIZED_WIRE_9;
 
 
 
 
 ValuesRAM	b2v_inst(
 	.wren(SYNTHESIZED_WIRE_0),
-	.clock(values_ram_clk),
-	.address(values_addr),
-	.data(values_data),
-	.q(data_bus));
+	.clock(SYNTHESIZED_WIRE_1),
+	.address(SYNTHESIZED_WIRE_2),
+	.data(SYNTHESIZED_WIRE_18),
+	.q(SYNTHESIZED_WIRE_8));
 
 
 InstructionsROM	b2v_inst13(
-	.clock(inst_ram_clk),
-	.address(inst_addr),
-	.q(inst_bus));
-
-
-CPURegisters	b2v_inst15(
-	.clk(clk),
-	.sel_in(reg_selector),
-	.enable_write(enable_write_reg),
-	.data_in(values_data),
-	.temp1(temp1_enter_processor),
-	.temp2(SYNTHESIZED_WIRE_1));
-
-
-ALU	b2v_inst2(
-	.in1(temp1_enter_processor),
-	.in2(SYNTHESIZED_WIRE_1),
-	.selector(alu_selector),
-	.carryOut(carryOut),
-	.out(alu_result));
-
-
-Stack	b2v_inst3(
-	.clk(stack_clk),
-	.rstn(reset_output),
-	.pop(pop),
-	.push(push),
-	.din(data_to_push),
-	.empty(empty),
-	.full(full),
-	.dout(data_from_stack));
-	defparam	b2v_inst3.DEPTH = 8;
-	defparam	b2v_inst3.WIDTH = 8;
+	.clock(SYNTHESIZED_WIRE_4),
+	.address(SYNTHESIZED_WIRE_5),
+	.q(SYNTHESIZED_WIRE_7));
 
 
 CPUControl	b2v_inst4(
 	.clk(clk),
 	.reset(reset_controller),
-	.alu_result(alu_result),
-	.bus_inst_data(inst_bus),
-	.bus_values_data(data_bus),
+	.alu_result(SYNTHESIZED_WIRE_6),
+	.bus_inst_data(SYNTHESIZED_WIRE_7),
+	.bus_values_data(SYNTHESIZED_WIRE_8),
 	.data_from_stack(data_from_stack),
-	.temp1(temp1_enter_processor),
-	.reg_selector(reg_selector),
-	.rst(reset_output),
-	.stack_clk(stack_clk),
-	.values_ram_clk(values_ram_clk),
-	.inst_ram_clk(inst_ram_clk),
-	.ew_reg(enable_write_reg),
-	.pop(pop),
+	.temp1(SYNTHESIZED_WIRE_9),
+	.reg_selector(SYNTHESIZED_WIRE_13),
+	.rst(SYNTHESIZED_WIRE_12),
+	.stack_clk(SYNTHESIZED_WIRE_11),
+	.values_ram_clk(SYNTHESIZED_WIRE_1),
+	.inst_ram_clk(SYNTHESIZED_WIRE_4),
+	.ew_reg(SYNTHESIZED_WIRE_14),
+	.pop(SYNTHESIZED_WIRE_10),
 	.push(push),
 	.ew_ram_values(SYNTHESIZED_WIRE_0),
-	.alu_selector(alu_selector),
-	.data_to_push(data_to_push),
-	.ip(inst_addr),
-	.values_addr(values_addr),
-	.values_data(values_data));
+	.alu_selector(SYNTHESIZED_WIRE_15),
+	.data_to_push(SYNTHESIZED_WIRE_17),
+	.ip(SYNTHESIZED_WIRE_5),
+	.values_addr(SYNTHESIZED_WIRE_2),
+	.values_data(SYNTHESIZED_WIRE_18));
+
+
+Datapath	b2v_inst5(
+	.stack_pop(SYNTHESIZED_WIRE_10),
+	.stack_push(push),
+	.stack_clk(SYNTHESIZED_WIRE_11),
+	.stack_rstn(SYNTHESIZED_WIRE_12),
+	.clk(clk),
+	.reg_sel(SYNTHESIZED_WIRE_13),
+	.reg_we(SYNTHESIZED_WIRE_14),
+	.alu_sel(SYNTHESIZED_WIRE_15),
+	.reg_din(SYNTHESIZED_WIRE_18),
+	.stack_din(SYNTHESIZED_WIRE_17),
+	.alu_carry(carryOut),
+	.stack_full(full),
+	.stack_empty(empty),
+	.alu_output(SYNTHESIZED_WIRE_6),
+	.stack_dout(data_from_stack),
+	.temp1(SYNTHESIZED_WIRE_9));
 
 assign	reset_controller = reset;
-assign	q_ram_values = data_bus;
-assign	temp1 = temp1_enter_processor;
-assign	q_rom_inst = inst_bus;
+assign	stack_output = data_from_stack;
 
 endmodule

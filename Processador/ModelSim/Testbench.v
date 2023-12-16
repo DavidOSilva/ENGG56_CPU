@@ -9,9 +9,20 @@ wire carryOut;
 wire [7:0] temp1;
 wire [7:0] q_ram_values;
 wire [12:0] q_rom_inst;
+wire [7:0] alu_output;
+wire [7:0] stack_output;
 
-Processador DUV (.clk(clk), .reset(reset), .temp1(temp1), .q_ram_values(q_ram_values), 
-    .q_rom_inst(q_rom_inst), .carryOut(carryOut), .empty(empty), .full(full));
+Processador CPU (
+	.clk(clk),
+	.reset(rst),
+	.carryOut(carryOut),
+	.empty(empty),
+	.full(full),
+	.alu_output(alu_output),
+	.q_ram_values(q_ram_values),
+	.stack_output(stack_output),
+	.temp1(temp1)
+);
 
 always #100 clk = !clk;
 
