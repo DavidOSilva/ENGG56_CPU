@@ -4,9 +4,9 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and any partner logic 
+and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -16,53 +16,52 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details, at
-https://fpgasoftware.intel.com/eula.
+refer to the applicable agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 0 0 216 128)
-	(text "ValuesRAM" (rect 74 0 156 16)(font "Arial" (font_size 10)))
-	(text "inst" (rect 8 113 25 124)(font "Arial" ))
+	(rect 64 64 280 192)
+	(text "ValuesRAM" (rect 128 104 209 120)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 0 25 12)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "data[7..0]" (rect 0 0 53 13)(font "Arial" (font_size 8)))
-		(text "data[7..0]" (rect 4 19 48 31)(font "Arial" (font_size 8)))
+		(text "data[7..0]" (rect 0 0 53 14)(font "Arial" (font_size 8)))
+		(text "data[7..0]" (rect 4 19 57 33)(font "Arial" (font_size 8)))
 		(line (pt 0 32)(pt 88 32)(line_width 3))
 	)
 	(port
 		(pt 0 48)
 		(input)
-		(text "wren" (rect 0 0 28 13)(font "Arial" (font_size 8)))
-		(text "wren" (rect 4 35 28 47)(font "Arial" (font_size 8)))
+		(text "wren" (rect 0 0 30 14)(font "Arial" (font_size 8)))
+		(text "wren" (rect 4 35 34 49)(font "Arial" (font_size 8)))
 		(line (pt 0 48)(pt 88 48))
 	)
 	(port
 		(pt 0 64)
 		(input)
-		(text "address[7..0]" (rect 0 0 73 13)(font "Arial" (font_size 8)))
-		(text "address[7..0]" (rect 4 51 65 63)(font "Arial" (font_size 8)))
+		(text "address[7..0]" (rect 0 0 75 14)(font "Arial" (font_size 8)))
+		(text "address[7..0]" (rect 4 51 79 65)(font "Arial" (font_size 8)))
 		(line (pt 0 64)(pt 88 64)(line_width 3))
 	)
 	(port
 		(pt 0 112)
 		(input)
-		(text "clock" (rect 0 0 30 13)(font "Arial" (font_size 8)))
-		(text "clock" (rect 4 99 27 111)(font "Arial" (font_size 8)))
+		(text "clock" (rect 0 0 29 14)(font "Arial" (font_size 8)))
+		(text "clock" (rect 4 99 33 113)(font "Arial" (font_size 8)))
 		(line (pt 0 112)(pt 80 112))
 	)
 	(port
 		(pt 216 32)
 		(output)
-		(text "q[7..0]" (rect 0 0 35 13)(font "Arial" (font_size 8)))
-		(text "q[7..0]" (rect 183 19 212 31)(font "Arial" (font_size 8)))
+		(text "q[7..0]" (rect 0 0 35 14)(font "Arial" (font_size 8)))
+		(text "q[7..0]" (rect 183 19 218 33)(font "Arial" (font_size 8)))
 		(line (pt 216 32)(pt 136 32)(line_width 3))
 	)
 	(drawing
-		(text "8 bits" (rect 110 20 191 152)(font "Arial" )(vertical))
-		(text "256 words" (rect 120 10 211 172)(font "Arial" )(vertical))
-		(text "Block type: AUTO" (rect 48 115 171 240)(font "Arial" ))
+		(text "8 bits" (rect 110 20 122 47)(font "Arial" )(vertical))
+		(text "256 words" (rect 120 10 132 59)(font "Arial" )(vertical))
+		(text "Block type: AUTO" (rect 8 115 97 127)(font "Arial" ))
 		(line (pt 104 24)(pt 136 24))
 		(line (pt 136 24)(pt 136 96))
 		(line (pt 136 96)(pt 104 96))

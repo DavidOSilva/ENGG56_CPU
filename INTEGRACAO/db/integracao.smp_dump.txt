@@ -1,5 +1,0 @@
-
-State Machine - |integracao|registradores:regs|estado
-Name estado.salvaTemp2 
-estado.salvaTemp1 0 
-estado.salvaTemp2 1 
