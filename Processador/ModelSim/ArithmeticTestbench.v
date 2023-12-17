@@ -21,13 +21,13 @@ integer total_cenarios;
 
 initial
 begin
-    $display("*********************** Inicia testes de instrucoes de aritmetica ***********************");
     clk = 0;
     reset = 0;
     idx = 0;
     cenarios_sucesso = 0;
     total_cenarios = 8;
     $stop;
+    $display("*********************** Inicia testes de instrucoes de aritmetica ***********************");
 end
 
 initial
@@ -106,7 +106,7 @@ begin
             $display("--------------Finaliza teste MUL -------------------");
             cenarios_sucesso = cenarios_sucesso + 1;
         end
-        else    display_inespera50000do;
+        else    display_inesperado;
     end
     else if(DUV.b2v_inst4.state == `STATE_PUSH_TO_STACK  && DUV.b2v_inst5.alu.in1 == 8'h12)
     begin
