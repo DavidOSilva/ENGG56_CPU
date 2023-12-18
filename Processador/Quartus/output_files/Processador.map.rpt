@@ -1,5 +1,5 @@
-Analysis & Elaboration report for Processador
-Sat Dec 16 11:41:10 2023
+Analysis & Synthesis report for Processador
+Sun Dec 17 22:20:58 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -7,17 +7,32 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Analysis & Elaboration IP Cores Summary
-  5. Source assignments for InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated
-  6. Source assignments for ValuesRAM:inst|altsyncram:altsyncram_component|altsyncram_umr3:auto_generated
-  7. Parameter Settings for User Entity Instance: Datapath:inst5|Stack:stack
-  8. Parameter Settings for User Entity Instance: InstructionsROM:inst13|altsyncram:altsyncram_component
-  9. Parameter Settings for User Entity Instance: ValuesRAM:inst|altsyncram:altsyncram_component
- 10. altsyncram Parameter Settings by Entity Instance
- 11. Analysis & Elaboration Settings
- 12. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis DSP Block Usage Summary
+ 10. Analysis & Synthesis IP Cores Summary
+ 11. State Machine - |Processador|CPUControl:inst4|state
+ 12. User-Specified and Inferred Latches
+ 13. Registers Removed During Synthesis
+ 14. General Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated
+ 17. Source assignments for ValuesRAM:inst|altsyncram:altsyncram_component|altsyncram_umr3:auto_generated
+ 18. Parameter Settings for User Entity Instance: Datapath:inst5|Stack:stack
+ 19. Parameter Settings for User Entity Instance: InstructionsROM:inst13|altsyncram:altsyncram_component
+ 20. Parameter Settings for User Entity Instance: ValuesRAM:inst|altsyncram:altsyncram_component
+ 21. Parameter Settings for Inferred Entity Instance: Datapath:inst5|ALU:alu|lpm_divide:Div0
+ 22. Parameter Settings for Inferred Entity Instance: Datapath:inst5|ALU:alu|lpm_mult:Mult0
+ 23. altsyncram Parameter Settings by Entity Instance
+ 24. lpm_mult Parameter Settings by Entity Instance
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
 
 
 
@@ -41,23 +56,109 @@ refer to the applicable agreement for further details.
 
 
 +----------------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                                   ;
+; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Sat Dec 16 11:41:10 2023       ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec 17 22:20:58 2023       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Processador                                 ;
 ; Top-level Entity Name              ; Processador                                 ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 608                                         ;
+;     Total combinational functions  ; 600                                         ;
+;     Dedicated logic registers      ; 49                                          ;
+; Total registers                    ; 49                                          ;
+; Total pins                         ; 45                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 5,376                                       ;
+; Embedded Multiplier 9-bit elements ; 1                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; Processador        ; Processador        ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
 
 
 +------------------------------------------+
@@ -68,22 +169,341 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processors 3-12        ;   0.1%      ;
 +----------------------------+-------------+
 
 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                              ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                    ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------+---------+
+; Stack.v                          ; yes             ; User Verilog HDL File              ; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/Stack.v                ;         ;
+; Processador.bdf                  ; yes             ; User Block Diagram/Schematic File  ; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/Processador.bdf        ;         ;
+; Definitions.v                    ; yes             ; User Verilog HDL File              ; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/Definitions.v          ;         ;
+; ALU.v                            ; yes             ; User Verilog HDL File              ; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/ALU.v                  ;         ;
+; InstructionsROM.vhd              ; yes             ; User Wizard-Generated File         ; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/InstructionsROM.vhd    ;         ;
+; CPURegisters.v                   ; yes             ; User Verilog HDL File              ; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPURegisters.v         ;         ;
+; CPUControl.v                     ; yes             ; User Verilog HDL File              ; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v           ;         ;
+; ValuesRAM.vhd                    ; yes             ; User Wizard-Generated File         ; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/ValuesRAM.vhd          ;         ;
+; ROM.mif                          ; yes             ; User Memory Initialization File    ; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/ROM.mif                ;         ;
+; RAM.mif                          ; yes             ; User Memory Initialization File    ; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/RAM.mif                ;         ;
+; Datapath.v                       ; yes             ; User Verilog HDL File              ; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/Datapath.v             ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                           ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc                    ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                              ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc                           ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                           ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                            ;         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc                               ;         ;
+; altram.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc                               ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                             ;         ;
+; db/altsyncram_2lr3.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/db/altsyncram_2lr3.tdf ;         ;
+; db/altsyncram_umr3.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/db/altsyncram_umr3.tdf ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_divide.tdf                           ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/abs_divider.inc                          ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sign_div_unsign.inc                      ;         ;
+; db/lpm_divide_fvo.tdf            ; yes             ; Auto-Generated Megafunction        ; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/db/lpm_divide_fvo.tdf  ;         ;
+; db/abs_divider_aag.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/db/abs_divider_aag.tdf ;         ;
+; db/alt_u_div_i4f.tdf             ; yes             ; Auto-Generated Megafunction        ; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/db/alt_u_div_i4f.tdf   ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/db/add_sub_7pc.tdf     ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/db/add_sub_8pc.tdf     ;         ;
+; db/lpm_abs_5v9.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/db/lpm_abs_5v9.tdf     ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf                             ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc                          ;         ;
+; multcore.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/multcore.inc                             ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/bypassff.inc                             ;         ;
+; altshift.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altshift.inc                             ;         ;
+; db/mult_73t.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/db/mult_73t.tdf        ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                ;
++---------------------------------------------+------------------------------+
+; Resource                                    ; Usage                        ;
++---------------------------------------------+------------------------------+
+; Estimated Total logic elements              ; 608                          ;
+;                                             ;                              ;
+; Total combinational functions               ; 600                          ;
+; Logic element usage by number of LUT inputs ;                              ;
+;     -- 4 input functions                    ; 242                          ;
+;     -- 3 input functions                    ; 264                          ;
+;     -- <=2 input functions                  ; 94                           ;
+;                                             ;                              ;
+; Logic elements by mode                      ;                              ;
+;     -- normal mode                          ; 518                          ;
+;     -- arithmetic mode                      ; 82                           ;
+;                                             ;                              ;
+; Total registers                             ; 49                           ;
+;     -- Dedicated logic registers            ; 49                           ;
+;     -- I/O registers                        ; 0                            ;
+;                                             ;                              ;
+; I/O pins                                    ; 45                           ;
+; Total memory bits                           ; 5376                         ;
+;                                             ;                              ;
+; Embedded Multiplier 9-bit elements          ; 1                            ;
+;                                             ;                              ;
+; Maximum fan-out node                        ; CPUControl:inst4|state.00000 ;
+; Maximum fan-out                             ; 48                           ;
+; Total fan-out                               ; 2367                         ;
+; Average fan-out                             ; 3.11                         ;
++---------------------------------------------+------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                              ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                   ; Entity Name     ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |Processador                                 ; 600 (8)             ; 49 (0)                    ; 5376        ; 1            ; 1       ; 0         ; 45   ; 0            ; |Processador                                                                                                                                          ; Processador     ; work         ;
+;    |CPUControl:inst4|                        ; 226 (226)           ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|CPUControl:inst4                                                                                                                         ; CPUControl      ; work         ;
+;    |Datapath:inst5|                          ; 366 (0)             ; 32 (0)                    ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |Processador|Datapath:inst5                                                                                                                           ; Datapath        ; work         ;
+;       |ALU:alu|                              ; 218 (106)           ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |Processador|Datapath:inst5|ALU:alu                                                                                                                   ; ALU             ; work         ;
+;          |lpm_divide:Div0|                   ; 112 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|Datapath:inst5|ALU:alu|lpm_divide:Div0                                                                                                   ; lpm_divide      ; work         ;
+;             |lpm_divide_fvo:auto_generated|  ; 112 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|Datapath:inst5|ALU:alu|lpm_divide:Div0|lpm_divide_fvo:auto_generated                                                                     ; lpm_divide_fvo  ; work         ;
+;                |abs_divider_aag:divider|     ; 112 (17)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|Datapath:inst5|ALU:alu|lpm_divide:Div0|lpm_divide_fvo:auto_generated|abs_divider_aag:divider                                             ; abs_divider_aag ; work         ;
+;                   |alt_u_div_i4f:divider|    ; 77 (74)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|Datapath:inst5|ALU:alu|lpm_divide:Div0|lpm_divide_fvo:auto_generated|abs_divider_aag:divider|alt_u_div_i4f:divider                       ; alt_u_div_i4f   ; work         ;
+;                      |add_sub_7pc:add_sub_0| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|Datapath:inst5|ALU:alu|lpm_divide:Div0|lpm_divide_fvo:auto_generated|abs_divider_aag:divider|alt_u_div_i4f:divider|add_sub_7pc:add_sub_0 ; add_sub_7pc     ; work         ;
+;                      |add_sub_8pc:add_sub_1| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|Datapath:inst5|ALU:alu|lpm_divide:Div0|lpm_divide_fvo:auto_generated|abs_divider_aag:divider|alt_u_div_i4f:divider|add_sub_8pc:add_sub_1 ; add_sub_8pc     ; work         ;
+;                   |lpm_abs_5v9:my_abs_den|   ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|Datapath:inst5|ALU:alu|lpm_divide:Div0|lpm_divide_fvo:auto_generated|abs_divider_aag:divider|lpm_abs_5v9:my_abs_den                      ; lpm_abs_5v9     ; work         ;
+;                   |lpm_abs_5v9:my_abs_num|   ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|Datapath:inst5|ALU:alu|lpm_divide:Div0|lpm_divide_fvo:auto_generated|abs_divider_aag:divider|lpm_abs_5v9:my_abs_num                      ; lpm_abs_5v9     ; work         ;
+;          |lpm_mult:Mult0|                    ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |Processador|Datapath:inst5|ALU:alu|lpm_mult:Mult0                                                                                                    ; lpm_mult        ; work         ;
+;             |mult_73t:auto_generated|        ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |Processador|Datapath:inst5|ALU:alu|lpm_mult:Mult0|mult_73t:auto_generated                                                                            ; mult_73t        ; work         ;
+;       |CPURegisters:registers|               ; 2 (2)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|Datapath:inst5|CPURegisters:registers                                                                                                    ; CPURegisters    ; work         ;
+;       |Stack:stack|                          ; 146 (146)           ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|Datapath:inst5|Stack:stack                                                                                                               ; Stack           ; work         ;
+;    |InstructionsROM:inst13|                  ; 0 (0)               ; 0 (0)                     ; 3328        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|InstructionsROM:inst13                                                                                                                   ; InstructionsROM ; work         ;
+;       |altsyncram:altsyncram_component|      ; 0 (0)               ; 0 (0)                     ; 3328        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|InstructionsROM:inst13|altsyncram:altsyncram_component                                                                                   ; altsyncram      ; work         ;
+;          |altsyncram_2lr3:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 3328        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated                                                    ; altsyncram_2lr3 ; work         ;
+;    |ValuesRAM:inst|                          ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|ValuesRAM:inst                                                                                                                           ; ValuesRAM       ; work         ;
+;       |altsyncram:altsyncram_component|      ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|ValuesRAM:inst|altsyncram:altsyncram_component                                                                                           ; altsyncram      ; work         ;
+;          |altsyncram_umr3:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processador|ValuesRAM:inst|altsyncram:altsyncram_component|altsyncram_umr3:auto_generated                                                            ; altsyncram_umr3 ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                   ;
++--------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+---------+
+; Name                                                                                             ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF     ;
++--------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+---------+
+; InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|ALTSYNCRAM ; AUTO ; ROM         ; 256          ; 13           ; --           ; --           ; 3328 ; ROM.mif ;
+; ValuesRAM:inst|altsyncram:altsyncram_component|altsyncram_umr3:auto_generated|ALTSYNCRAM         ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; RAM.mif ;
++--------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 1           ;
+; Simple Multipliers (18-bit)           ; 0           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 1           ;
+; Signed Embedded Multipliers           ; 1           ;
+; Unsigned Embedded Multipliers         ; 0           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration IP Cores Summary                                                                                   ;
+; Analysis & Synthesis IP Cores Summary                                                                                     ;
 +--------+--------------+---------+--------------+--------------+-------------------------------------+---------------------+
 ; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                     ; IP Include File     ;
 +--------+--------------+---------+--------------+--------------+-------------------------------------+---------------------+
 ; Altera ; RAM: 1-PORT  ; 20.1    ; N/A          ; N/A          ; |Processador|ValuesRAM:inst         ; ValuesRAM.vhd       ;
 ; Altera ; ROM: 1-PORT  ; 20.1    ; N/A          ; N/A          ; |Processador|InstructionsROM:inst13 ; InstructionsROM.vhd ;
 +--------+--------------+---------+--------------+--------------+-------------------------------------+---------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Processador|CPUControl:inst4|state                                                                                                                                                                                                       ;
++-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+; Name        ; state.01111 ; state.01110 ; state.01101 ; state.01100 ; state.01011 ; state.01010 ; state.01001 ; state.01000 ; state.00111 ; state.00110 ; state.00101 ; state.00100 ; state.00011 ; state.00010 ; state.00001 ; state.00000 ; state.10000 ;
++-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+; state.00000 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ;
+; state.00001 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 1           ; 0           ;
+; state.00010 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 1           ; 0           ;
+; state.00011 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 1           ; 0           ;
+; state.00100 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 1           ; 0           ;
+; state.00101 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ;
+; state.00110 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ;
+; state.00111 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ;
+; state.01000 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ;
+; state.01001 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ;
+; state.01010 ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ;
+; state.01011 ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ;
+; state.01100 ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ;
+; state.01101 ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ;
+; state.01110 ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ;
+; state.01111 ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ;
+; state.10000 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 1           ;
++-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                            ;
++------------------------------------------------------+--------------------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal            ; Free of Timing Hazards ;
++------------------------------------------------------+--------------------------------+------------------------+
+; Datapath:inst5|ALU:alu|carryOut                      ; Datapath:inst5|ALU:alu|WideOr1 ; yes                    ;
+; CPUControl:inst4|alu_selector[1]                     ; CPUControl:inst4|Selector70    ; yes                    ;
+; CPUControl:inst4|alu_selector[3]                     ; CPUControl:inst4|Selector70    ; yes                    ;
+; CPUControl:inst4|alu_selector[0]                     ; CPUControl:inst4|Selector70    ; yes                    ;
+; CPUControl:inst4|alu_selector[2]                     ; CPUControl:inst4|Selector70    ; yes                    ;
+; CPUControl:inst4|alu_selector[4]                     ; CPUControl:inst4|Selector70    ; yes                    ;
+; CPUControl:inst4|stack_clk                           ; CPUControl:inst4|Selector75    ; yes                    ;
+; CPUControl:inst4|push                                ; CPUControl:inst4|WideOr34      ; yes                    ;
+; CPUControl:inst4|pop                                 ; CPUControl:inst4|Selector66    ; yes                    ;
+; CPUControl:inst4|values_data[7]                      ; CPUControl:inst4|Selector51    ; yes                    ;
+; CPUControl:inst4|ew_reg                              ; CPUControl:inst4|Selector15    ; yes                    ;
+; CPUControl:inst4|reg_selector                        ; CPUControl:inst4|Selector68    ; yes                    ;
+; CPUControl:inst4|values_data[6]                      ; CPUControl:inst4|Selector51    ; yes                    ;
+; CPUControl:inst4|values_data[5]                      ; CPUControl:inst4|Selector51    ; yes                    ;
+; CPUControl:inst4|values_data[4]                      ; CPUControl:inst4|Selector51    ; yes                    ;
+; CPUControl:inst4|values_data[3]                      ; CPUControl:inst4|Selector51    ; yes                    ;
+; CPUControl:inst4|values_data[2]                      ; CPUControl:inst4|Selector51    ; yes                    ;
+; CPUControl:inst4|values_data[1]                      ; CPUControl:inst4|Selector51    ; yes                    ;
+; CPUControl:inst4|values_data[0]                      ; CPUControl:inst4|Selector51    ; yes                    ;
+; CPUControl:inst4|ir[1]                               ; CPUControl:inst4|WideOr40      ; yes                    ;
+; CPUControl:inst4|is_jmp_inst                         ; CPUControl:inst4|Selector42    ; yes                    ;
+; CPUControl:inst4|ir[3]                               ; CPUControl:inst4|WideOr40      ; yes                    ;
+; CPUControl:inst4|ir[0]                               ; CPUControl:inst4|WideOr40      ; yes                    ;
+; CPUControl:inst4|ir[2]                               ; CPUControl:inst4|WideOr40      ; yes                    ;
+; CPUControl:inst4|ir[4]                               ; CPUControl:inst4|WideOr40      ; yes                    ;
+; CPUControl:inst4|ew_ram_values                       ; CPUControl:inst4|Selector62    ; yes                    ;
+; CPUControl:inst4|values_ram_clk                      ; CPUControl:inst4|Selector73    ; yes                    ;
+; CPUControl:inst4|values_addr[0]                      ; CPUControl:inst4|Selector60    ; yes                    ;
+; CPUControl:inst4|values_addr[1]                      ; CPUControl:inst4|Selector60    ; yes                    ;
+; CPUControl:inst4|values_addr[2]                      ; CPUControl:inst4|Selector60    ; yes                    ;
+; CPUControl:inst4|values_addr[3]                      ; CPUControl:inst4|Selector60    ; yes                    ;
+; CPUControl:inst4|values_addr[4]                      ; CPUControl:inst4|Selector60    ; yes                    ;
+; CPUControl:inst4|values_addr[5]                      ; CPUControl:inst4|Selector60    ; yes                    ;
+; CPUControl:inst4|values_addr[6]                      ; CPUControl:inst4|Selector60    ; yes                    ;
+; CPUControl:inst4|values_addr[7]                      ; CPUControl:inst4|Selector60    ; yes                    ;
+; Datapath:inst5|Stack:stack|next_dout[7]              ; CPUControl:inst4|push          ; yes                    ;
+; Datapath:inst5|Stack:stack|next_dout[6]              ; CPUControl:inst4|push          ; yes                    ;
+; Datapath:inst5|Stack:stack|next_dout[5]              ; CPUControl:inst4|push          ; yes                    ;
+; Datapath:inst5|Stack:stack|next_dout[4]              ; CPUControl:inst4|push          ; yes                    ;
+; Datapath:inst5|Stack:stack|next_dout[3]              ; CPUControl:inst4|push          ; yes                    ;
+; Datapath:inst5|Stack:stack|next_dout[2]              ; CPUControl:inst4|push          ; yes                    ;
+; Datapath:inst5|Stack:stack|next_dout[1]              ; CPUControl:inst4|push          ; yes                    ;
+; Datapath:inst5|Stack:stack|next_dout[0]              ; CPUControl:inst4|push          ; yes                    ;
+; CPUControl:inst4|two_register_instruction            ; CPUControl:inst4|Selector17    ; yes                    ;
+; CPUControl:inst4|inst_ram_clk                        ; CPUControl:inst4|Selector71    ; yes                    ;
+; CPUControl:inst4|ip[0]                               ; CPUControl:inst4|Selector86    ; yes                    ;
+; CPUControl:inst4|ip[1]                               ; CPUControl:inst4|Selector86    ; yes                    ;
+; CPUControl:inst4|ip[2]                               ; CPUControl:inst4|Selector86    ; yes                    ;
+; CPUControl:inst4|ip[3]                               ; CPUControl:inst4|Selector86    ; yes                    ;
+; CPUControl:inst4|ip[4]                               ; CPUControl:inst4|Selector86    ; yes                    ;
+; CPUControl:inst4|ip[5]                               ; CPUControl:inst4|Selector86    ; yes                    ;
+; CPUControl:inst4|ip[6]                               ; CPUControl:inst4|Selector86    ; yes                    ;
+; CPUControl:inst4|ip[7]                               ; CPUControl:inst4|Selector86    ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~15                  ; rtl~0                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~31                  ; rtl~2                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~23                  ; rtl~1                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~7                   ; rtl~3                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~47                  ; rtl~4                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~63                  ; rtl~6                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~55                  ; rtl~5                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~39                  ; rtl~7                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~14                  ; rtl~0                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~30                  ; rtl~2                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~22                  ; rtl~1                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~6                   ; rtl~3                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~46                  ; rtl~4                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~62                  ; rtl~6                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~54                  ; rtl~5                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~38                  ; rtl~7                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~13                  ; rtl~0                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~29                  ; rtl~2                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~21                  ; rtl~1                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~5                   ; rtl~3                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~45                  ; rtl~4                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~61                  ; rtl~6                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~53                  ; rtl~5                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~37                  ; rtl~7                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~12                  ; rtl~0                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~28                  ; rtl~2                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~20                  ; rtl~1                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~4                   ; rtl~3                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~44                  ; rtl~4                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~60                  ; rtl~6                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~52                  ; rtl~5                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~36                  ; rtl~7                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~11                  ; rtl~0                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~27                  ; rtl~2                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~19                  ; rtl~1                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~3                   ; rtl~3                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~43                  ; rtl~4                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~59                  ; rtl~6                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~51                  ; rtl~5                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~35                  ; rtl~7                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~10                  ; rtl~0                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~26                  ; rtl~2                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~18                  ; rtl~1                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~2                   ; rtl~3                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~42                  ; rtl~4                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~58                  ; rtl~6                          ; yes                    ;
+; Datapath:inst5|Stack:stack|stack~50                  ; rtl~5                          ; yes                    ;
+; Number of user-specified and inferred latches = 133  ;                                ;                        ;
++------------------------------------------------------+--------------------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; CPUControl:inst4|state~2              ; Lost fanout        ;
+; CPUControl:inst4|state~3              ; Lost fanout        ;
+; CPUControl:inst4|state~4              ; Lost fanout        ;
+; CPUControl:inst4|state~5              ; Lost fanout        ;
+; Total Number of Removed Registers = 4 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 49    ;
+; Number of registers using Synchronous Clear  ; 5     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 24    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Processador|Datapath:inst5|Stack:stack|index[2] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Processador|CPUControl:inst4|state              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Processador|CPUControl:inst4|state              ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |Processador|CPUControl:inst4|Selector38         ;
+; 32:1               ; 2 bits    ; 42 LEs        ; 18 LEs               ; 24 LEs                 ; No         ; |Processador|CPUControl:inst4|Selector29         ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 16 LEs               ; 80 LEs                 ; No         ; |Processador|CPUControl:inst4|Selector13         ;
+; 21:1               ; 7 bits    ; 98 LEs        ; 49 LEs               ; 49 LEs                 ; No         ; |Processador|Datapath:inst5|ALU:alu|Mux0         ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |Processador|CPUControl:inst4|Selector85         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------+
@@ -237,6 +657,64 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Datapath:inst5|ALU:alu|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                       ;
+; LPM_WIDTHD             ; 8              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_fvo ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Datapath:inst5|ALU:alu|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+------------------------+
+; Parameter Name                                 ; Value        ; Type                   ;
++------------------------------------------------+--------------+------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE         ;
+; LPM_WIDTHA                                     ; 8            ; Untyped                ;
+; LPM_WIDTHB                                     ; 8            ; Untyped                ;
+; LPM_WIDTHP                                     ; 16           ; Untyped                ;
+; LPM_WIDTHR                                     ; 16           ; Untyped                ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped                ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                ;
+; LATENCY                                        ; 0            ; Untyped                ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                ;
+; USE_EAB                                        ; OFF          ; Untyped                ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K    ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                ;
+; CBXI_PARAMETER                                 ; mult_73t     ; Untyped                ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                ;
++------------------------------------------------+--------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +----------------------------------------------------------------------------------------------------+
 ; altsyncram Parameter Settings by Entity Instance                                                   ;
 +-------------------------------------------+--------------------------------------------------------+
@@ -268,100 +746,72 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+--------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                            ;
-+------------------------------------------------------------------+--------------------+--------------------+
-; Option                                                           ; Setting            ; Default Value      ;
-+------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; Processador        ; Processador        ;
-; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
-; Use smart compilation                                            ; Off                ; Off                ;
-; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
-; Enable compact report table                                      ; Off                ; Off                ;
-; Restructure Multiplexers                                         ; Auto               ; Auto               ;
-; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
-; Preserve fewer node names                                        ; On                 ; On                 ;
-; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
-; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
-; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
-; State Machine Processing                                         ; Auto               ; Auto               ;
-; Safe State Machine                                               ; Off                ; Off                ;
-; Extract Verilog State Machines                                   ; On                 ; On                 ;
-; Extract VHDL State Machines                                      ; On                 ; On                 ;
-; Ignore Verilog initial constructs                                ; Off                ; Off                ;
-; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
-; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
-; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
-; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
-; Parallel Synthesis                                               ; On                 ; On                 ;
-; DSP Block Balancing                                              ; Auto               ; Auto               ;
-; NOT Gate Push-Back                                               ; On                 ; On                 ;
-; Power-Up Don't Care                                              ; On                 ; On                 ;
-; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
-; Remove Duplicate Registers                                       ; On                 ; On                 ;
-; Ignore CARRY Buffers                                             ; Off                ; Off                ;
-; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
-; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
-; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
-; Ignore LCELL Buffers                                             ; Off                ; Off                ;
-; Ignore SOFT Buffers                                              ; On                 ; On                 ;
-; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
-; Optimization Technique                                           ; Balanced           ; Balanced           ;
-; Carry Chain Length                                               ; 70                 ; 70                 ;
-; Auto Carry Chains                                                ; On                 ; On                 ;
-; Auto Open-Drain Pins                                             ; On                 ; On                 ;
-; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
-; Auto ROM Replacement                                             ; On                 ; On                 ;
-; Auto RAM Replacement                                             ; On                 ; On                 ;
-; Auto DSP Block Replacement                                       ; On                 ; On                 ;
-; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
-; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
-; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
-; Strict RAM Replacement                                           ; Off                ; Off                ;
-; Allow Synchronous Control Signals                                ; On                 ; On                 ;
-; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
-; Auto RAM Block Balancing                                         ; On                 ; On                 ;
-; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
-; Auto Resource Sharing                                            ; Off                ; Off                ;
-; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
-; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
-; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
-; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
-; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
-; Timing-Driven Synthesis                                          ; On                 ; On                 ;
-; Report Parameter Settings                                        ; On                 ; On                 ;
-; Report Source Assignments                                        ; On                 ; On                 ;
-; Report Connectivity Checks                                       ; On                 ; On                 ;
-; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
-; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
-; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
-; HDL message level                                                ; Level2             ; Level2             ;
-; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
-; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
-; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
-; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
-; Clock MUX Protection                                             ; On                 ; On                 ;
-; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
-; Block Design Naming                                              ; Auto               ; Auto               ;
-; SDC constraint protection                                        ; Off                ; Off                ;
-; Synthesis Effort                                                 ; Auto               ; Auto               ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
-; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
-; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
-; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
-; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
-+------------------------------------------------------------------+--------------------+--------------------+
++-------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                ;
++---------------------------------------+---------------------------------------+
+; Name                                  ; Value                                 ;
++---------------------------------------+---------------------------------------+
+; Number of entity instances            ; 1                                     ;
+; Entity Instance                       ; Datapath:inst5|ALU:alu|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 8                                     ;
+;     -- LPM_WIDTHB                     ; 8                                     ;
+;     -- LPM_WIDTHP                     ; 16                                    ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                    ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                    ;
+;     -- USE_EAB                        ; OFF                                   ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                  ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                    ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                    ;
++---------------------------------------+---------------------------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 45                          ;
+; cycloneiii_ff         ; 49                          ;
+;     ENA               ; 19                          ;
+;     ENA SCLR          ; 5                           ;
+;     plain             ; 25                          ;
+; cycloneiii_lcell_comb ; 602                         ;
+;     arith             ; 82                          ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 74                          ;
+;     normal            ; 520                         ;
+;         0 data inputs ; 6                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 79                          ;
+;         3 data inputs ; 190                         ;
+;         4 data inputs ; 242                         ;
+; cycloneiii_mac_mult   ; 1                           ;
+; cycloneiii_mac_out    ; 1                           ;
+; cycloneiii_ram_block  ; 21                          ;
+;                       ;                             ;
+; Max LUT depth         ; 33.40                       ;
+; Average LUT depth     ; 11.47                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Dec 16 11:41:01 2023
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processador -c Processador --analysis_and_elaboration
+    Info: Processing started: Sun Dec 17 22:20:45 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processador -c Processador
 Warning (125092): Tcl Script File RAM.qip not found
     Info (125063): set_global_assignment -name QIP_FILE RAM.qip
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -402,8 +852,6 @@ Warning (10240): Verilog HDL Always Construct warning at ALU.v(17): inferring la
 Info (10041): Inferred latch for "carryOut" at ALU.v(17) File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/ALU.v Line: 17
 Info (12128): Elaborating entity "CPURegisters" for hierarchy "Datapath:inst5|CPURegisters:registers" File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/Datapath.v Line: 29
 Info (12128): Elaborating entity "CPUControl" for hierarchy "CPUControl:inst4"
-Warning (10230): Verilog HDL assignment warning at CPUControl.v(22): truncated value with size 8 to match size of target (1) File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 22
-Warning (10230): Verilog HDL assignment warning at CPUControl.v(304): truncated value with size 8 to match size of target (1) File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 304
 Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(49): inferring latch(es) for variable "ip", which holds its previous value in one or more paths through the always construct File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
 Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(49): inferring latch(es) for variable "data_to_push", which holds its previous value in one or more paths through the always construct File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
 Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(49): inferring latch(es) for variable "stack_clk", which holds its previous value in one or more paths through the always construct File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
@@ -421,7 +869,14 @@ Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(49): infer
 Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(49): inferring latch(es) for variable "ew_reg", which holds its previous value in one or more paths through the always construct File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
 Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(49): inferring latch(es) for variable "two_register_instruction", which holds its previous value in one or more paths through the always construct File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
 Warning (10240): Verilog HDL Always Construct warning at CPUControl.v(49): inferring latch(es) for variable "temp_memory", which holds its previous value in one or more paths through the always construct File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
-Info (10041): Inferred latch for "temp_memory" at CPUControl.v(49) File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+Info (10041): Inferred latch for "temp_memory[0]" at CPUControl.v(49) File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+Info (10041): Inferred latch for "temp_memory[1]" at CPUControl.v(49) File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+Info (10041): Inferred latch for "temp_memory[2]" at CPUControl.v(49) File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+Info (10041): Inferred latch for "temp_memory[3]" at CPUControl.v(49) File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+Info (10041): Inferred latch for "temp_memory[4]" at CPUControl.v(49) File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+Info (10041): Inferred latch for "temp_memory[5]" at CPUControl.v(49) File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+Info (10041): Inferred latch for "temp_memory[6]" at CPUControl.v(49) File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+Info (10041): Inferred latch for "temp_memory[7]" at CPUControl.v(49) File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
 Info (10041): Inferred latch for "two_register_instruction" at CPUControl.v(49) File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
 Info (10041): Inferred latch for "ew_reg" at CPUControl.v(49) File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
 Info (10041): Inferred latch for "ir[0]" at CPUControl.v(49) File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
@@ -588,10 +1043,161 @@ Info (12133): Instantiated megafunction "ValuesRAM:inst|altsyncram:altsyncram_co
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_umr3.tdf
     Info (12023): Found entity 1: altsyncram_umr3 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/db/altsyncram_umr3.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_umr3" for hierarchy "ValuesRAM:inst|altsyncram:altsyncram_component|altsyncram_umr3:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 23 warnings
-    Info: Peak virtual memory: 4798 megabytes
-    Info: Processing ended: Sat Dec 16 11:41:10 2023
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:09
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Datapath:inst5|ALU:alu|Div0" File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/ALU.v Line: 27
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Datapath:inst5|ALU:alu|Mult0" File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/ALU.v Line: 24
+Info (12130): Elaborated megafunction instantiation "Datapath:inst5|ALU:alu|lpm_divide:Div0" File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/ALU.v Line: 27
+Info (12133): Instantiated megafunction "Datapath:inst5|ALU:alu|lpm_divide:Div0" with the following parameter: File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/ALU.v Line: 27
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_fvo.tdf
+    Info (12023): Found entity 1: lpm_divide_fvo File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/db/lpm_divide_fvo.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_aag.tdf
+    Info (12023): Found entity 1: abs_divider_aag File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/db/abs_divider_aag.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_i4f.tdf
+    Info (12023): Found entity 1: alt_u_div_i4f File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/db/alt_u_div_i4f.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/db/add_sub_7pc.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/db/add_sub_8pc.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_5v9.tdf
+    Info (12023): Found entity 1: lpm_abs_5v9 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/db/lpm_abs_5v9.tdf Line: 24
+Info (12130): Elaborated megafunction instantiation "Datapath:inst5|ALU:alu|lpm_mult:Mult0" File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/ALU.v Line: 24
+Info (12133): Instantiated megafunction "Datapath:inst5|ALU:alu|lpm_mult:Mult0" with the following parameter: File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/ALU.v Line: 24
+    Info (12134): Parameter "LPM_WIDTHA" = "8"
+    Info (12134): Parameter "LPM_WIDTHB" = "8"
+    Info (12134): Parameter "LPM_WIDTHP" = "16"
+    Info (12134): Parameter "LPM_WIDTHR" = "16"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_73t.tdf
+    Info (12023): Found entity 1: mult_73t File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/db/mult_73t.tdf Line: 28
+Info (13014): Ignored 14 buffer(s)
+    Info (13016): Ignored 14 CARRY_SUM buffer(s)
+Warning (13012): Latch Datapath:inst5|ALU:alu|carryOut has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/ALU.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|alu_selector[0] File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+Warning (13012): Latch CPUControl:inst4|alu_selector[1] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|alu_selector[3] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00010 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|alu_selector[0] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|alu_selector[2] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00010 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|alu_selector[4] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|push has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 12
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.01010 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|pop has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 12
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|values_data[7] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00011 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|ew_reg has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00010 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|reg_selector has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|values_data[6] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00011 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|values_data[5] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00011 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|values_data[4] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00011 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|values_data[3] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00011 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|values_data[2] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00011 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|values_data[1] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00011 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|values_data[0] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00011 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|ir[1] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00010 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|is_jmp_inst has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 20
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00010 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|ir[3] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00010 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|ir[0] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00010 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|ir[2] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00010 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|ir[4] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00010 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|ew_ram_values has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 13
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.01101 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|values_ram_clk has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.01001 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|values_addr[0] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|values_addr[1] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|values_addr[2] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|values_addr[3] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|values_addr[4] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|values_addr[5] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|values_addr[6] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|values_addr[7] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|two_register_instruction has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal InstructionsROM:inst13|altsyncram:altsyncram_component|altsyncram_2lr3:auto_generated|q_a[12] File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/db/altsyncram_2lr3.tdf Line: 31
+Warning (13012): Latch CPUControl:inst4|inst_ram_clk has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00001 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|ip[0] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|ip[1] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|ip[2] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|ip[3] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|ip[4] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|ip[5] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|ip[6] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|ip[7] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.00000 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|data_to_push[7] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.01001 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|data_to_push[6] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.01001 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|data_to_push[5] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.01001 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|data_to_push[4] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.01001 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|data_to_push[3] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.01001 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|data_to_push[2] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.01001 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|data_to_push[1] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.01001 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Warning (13012): Latch CPUControl:inst4|data_to_push[0] has unsafe behavior File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPUControl:inst4|state.01001 File: C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/CPUControl.v Line: 18
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 683 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 43 output pins
+    Info (21061): Implemented 616 logic cells
+    Info (21064): Implemented 21 RAM segments
+    Info (21062): Implemented 1 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 125 warnings
+    Info: Peak virtual memory: 4859 megabytes
+    Info: Processing ended: Sun Dec 17 22:20:58 2023
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:10
 
 

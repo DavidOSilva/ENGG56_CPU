@@ -1,6 +1,6 @@
 EDA Netlist Writer report for Processador
-Sun Dec  3 09:12:51 2023
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Sun Dec 17 22:29:10 2023
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
@@ -17,9 +17,9 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and any partner logic 
+and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -29,15 +29,14 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details, at
-https://fpgasoftware.intel.com/eula.
+refer to the applicable agreement for further details.
 
 
 
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun Dec  3 09:12:51 2023 ;
+; EDA Netlist Writer Status ; Successful - Sun Dec 17 22:29:10 2023 ;
 ; Revision Name             ; Processador                           ;
 ; Top-level Entity Name     ; Processador                           ;
 ; Family                    ; Cyclone IV E                          ;
@@ -51,7 +50,8 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                                            ; Setting                   ;
 +---------------------------------------------------------------------------------------------------+---------------------------+
 ; Tool Name                                                                                         ; ModelSim-Altera (Verilog) ;
-; Generate functional simulation netlist                                                            ; On                        ;
+; Generate functional simulation netlist                                                            ; Off                       ;
+; Time scale                                                                                        ; 1 ps                      ;
 ; Truncate long hierarchy paths                                                                     ; Off                       ;
 ; Map illegal HDL characters                                                                        ; Off                       ;
 ; Flatten buses into individual nodes                                                               ; Off                       ;
@@ -66,13 +66,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+------------------------------------------------------------------------------+
-; Simulation Generated Files                                                   ;
-+------------------------------------------------------------------------------+
-; Generated Files                                                              ;
-+------------------------------------------------------------------------------+
-; /home/david/Documents/ufba/ENGG56/Quartus/simulation/modelsim/Processador.vo ;
-+------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                                        ;
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                                   ;
++-----------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/simulation/modelsim/Processador_7_1200mv_85c_slow.vo     ;
+; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/simulation/modelsim/Processador_7_1200mv_0c_slow.vo      ;
+; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/simulation/modelsim/Processador_min_1200mv_0c_fast.vo    ;
+; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/simulation/modelsim/Processador.vo                       ;
+; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/simulation/modelsim/Processador_7_1200mv_85c_v_slow.sdo  ;
+; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/simulation/modelsim/Processador_7_1200mv_0c_v_slow.sdo   ;
+; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/simulation/modelsim/Processador_min_1200mv_0c_v_fast.sdo ;
+; C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/simulation/modelsim/Processador_v.sdo                    ;
++-----------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -80,17 +87,24 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
-    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sun Dec  3 09:12:51 2023
-Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off Processador -c Processador
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Sun Dec 17 22:29:09 2023
+Info: Command: quartus_eda --read_settings_files=on --write_settings_files=off Processador -c Processador
 Warning (125092): Tcl Script File RAM.qip not found
     Info (125063): set_global_assignment -name QIP_FILE RAM.qip
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file Processador.vo in folder "/home/david/Documents/ufba/ENGG56/Quartus/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Processador_7_1200mv_85c_slow.vo in folder "C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Processador_7_1200mv_0c_slow.vo in folder "C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Processador_min_1200mv_0c_fast.vo in folder "C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Processador.vo in folder "C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Processador_7_1200mv_85c_v_slow.sdo in folder "C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Processador_7_1200mv_0c_v_slow.sdo in folder "C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Processador_min_1200mv_0c_v_fast.sdo in folder "C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Processador_v.sdo in folder "C:/Users/david/OneDrive/Documentos/GitHub/ENGG56_CPU/Processador/Quartus/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 607 megabytes
-    Info: Processing ended: Sun Dec  3 09:12:51 2023
-    Info: Elapsed time: 00:00:00
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Peak virtual memory: 4663 megabytes
+    Info: Processing ended: Sun Dec 17 22:29:10 2023
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 

@@ -4,6 +4,50 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "carryOut",
+					"strict" : false
+				},
+				{
+					"name" : "empty",
+					"strict" : false
+				},
+				{
+					"name" : "full",
+					"strict" : false
+				},
+				{
+					"name" : "alu_output[7]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_output[6]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_output[5]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_output[4]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_output[3]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_output[2]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_output[1]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_output[0]",
+					"strict" : false
+				},
+				{
 					"name" : "q_ram_values[7]",
 					"strict" : false
 				},
@@ -36,6 +80,38 @@
 					"strict" : false
 				},
 				{
+					"name" : "stack_output[7]",
+					"strict" : false
+				},
+				{
+					"name" : "stack_output[6]",
+					"strict" : false
+				},
+				{
+					"name" : "stack_output[5]",
+					"strict" : false
+				},
+				{
+					"name" : "stack_output[4]",
+					"strict" : false
+				},
+				{
+					"name" : "stack_output[3]",
+					"strict" : false
+				},
+				{
+					"name" : "stack_output[2]",
+					"strict" : false
+				},
+				{
+					"name" : "stack_output[1]",
+					"strict" : false
+				},
+				{
+					"name" : "stack_output[0]",
+					"strict" : false
+				},
+				{
 					"name" : "temp1[7]",
 					"strict" : false
 				},
@@ -65,6 +141,38 @@
 				},
 				{
 					"name" : "temp1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "temp2[7]",
+					"strict" : false
+				},
+				{
+					"name" : "temp2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "temp2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "temp2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "temp2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "temp2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "temp2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "temp2[0]",
 					"strict" : false
 				},
 				{
